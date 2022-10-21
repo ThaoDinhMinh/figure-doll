@@ -3,19 +3,27 @@ import { Action } from '../actions'
 import { TypeProduct } from '../../interface'
 
 interface InitialState {
+  loading: boolean
   products: TypeProduct[] | null
+  error: string | null
 }
 
 const initialState: InitialState = {
-  products: [],
+  products: null,
+  loading: false,
+  error: null,
 }
 
-const reducer = (state: InitialState = initialState, action: Action): TypeProduct[] | [] => {
+const reducer = (state: InitialState = initialState, action: Action): InitialState => {
   switch (action.type) {
+    case ActionType.GETPRODUCTS_PENDING:
+      return { loading: true, error: null, products: null }
     case ActionType.GETPRODUCTS:
-      return (state.products = action.payload)
+      return { loading: false, error: null, products: action.payload }
+    case ActionType.GETPRODUCTS_FAIL:
+      return { loading: false, error: action.payload, products: null }
     default:
-      return (state.products = [])
+      return state
   }
 }
 
