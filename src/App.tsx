@@ -1,20 +1,42 @@
-import { Action } from 'history'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
-import { TypeProduct } from './interface'
+import Detail from './pages/Detail'
+import Gallery from './pages/Gallery'
+import Home from './pages/Home'
+import Introduce from './pages/Introduce'
+import Layout from './pages/Layout'
+import News from './pages/News'
+import PageNotFound from './pages/PageNotFound'
 import { actionCreators } from './state'
-import { RootState } from './state/reducers'
 
 function App() {
-  const text: string = '-NEEjCnC95GO5R7658e1'
+  const Text: string = '-NEEjeC1UiLHueMg-575'
+  const [series, seriesSet] = useState<string>('')
   const dispatch = useDispatch()
-  const { getProducts } = bindActionCreators(actionCreators, dispatch)
-  useEffect(() => {
-    getProducts()
-  }, [])
+  const { getProducts, getProduct } = bindActionCreators(actionCreators, dispatch)
 
-  return <div className="App">Heloo world</div>
+  useEffect(() => {
+    getProducts(series)
+  }, [series])
+  useEffect(() => {
+    getProduct(Text)
+  }, [Text])
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Introduce />} />
+          <Route path="/home" element={<Home seriesSet={seriesSet} />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/detail/:id" element={<Detail />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
 export default App

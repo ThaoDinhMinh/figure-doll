@@ -2,10 +2,13 @@ export interface TypeProduct {
   id: string
   name: string
   img: string
+  images: TypeListImage[]
   read_text: string
   text_mean: string
   main: TypeMainProduct
   posts: TypeListPost[]
+  qty: number
+  price: number
 }
 
 export interface TypeMainProduct {
@@ -14,8 +17,6 @@ export interface TypeMainProduct {
   manufacturer: string
   specifications: string
   height: string
-  images: TypeListImage[]
-  price: string
 }
 
 export interface TypeListImage {
@@ -28,3 +29,5 @@ export interface TypeListPost {
   title: string
   author: string
 }
+
+export type TypeSeries = string[]
