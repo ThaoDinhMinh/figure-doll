@@ -14,7 +14,7 @@ const Items = styled.div`
 
 const ListProducts = () => {
   const { products, loading } = useSelector((state: RootState) => state.products)
-  if (loading) return <h1 style={{ height: '400px', width: '100%' }}>Loadding ...</h1>
+  if (loading) return <h1 style={{ height: '370px', width: '100%' }}>Loadding ...</h1>
   return (
     <Items>
       {products?.map((a) => (

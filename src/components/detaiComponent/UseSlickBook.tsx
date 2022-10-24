@@ -27,7 +27,7 @@ interface Props {
   images: TypeListImage[]
 }
 
-const UseSlick: React.FC<Props> = (props) => {
+const UseSlickBook: React.FC<Props> = (props) => {
   const { images } = props
   const [nav1, nav1Set] = useState<Slider>()
   const [nav2, nav2Set] = useState<Slider>()
@@ -43,7 +43,7 @@ const UseSlick: React.FC<Props> = (props) => {
       <MagnifierContainer>
         <Items className="grup-slick">
           <Items className="slict-right">
-            <Slider asNavFor={nav2} ref={slider1} draggable={true} slidesToShow={1}>
+            <Slider asNavFor={nav2} ref={slider1} draggable={false}>
               {images &&
                 images.map((a) => (
                   <Items key={a.parenId}>
@@ -71,7 +71,7 @@ const UseSlick: React.FC<Props> = (props) => {
             <Slider
               asNavFor={nav1}
               ref={slider2}
-              slidesToShow={5}
+              slidesToShow={1}
               swipeToSlide={true}
               focusOnSelect={true}
               vertical={true}
@@ -93,4 +93,4 @@ const UseSlick: React.FC<Props> = (props) => {
   )
 }
 
-export default UseSlick
+export default UseSlickBook

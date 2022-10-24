@@ -42,6 +42,41 @@ interface GetSeriseFail {
   payload: string
 }
 
+interface GetBooksPending {
+  type: ActionType.GETBOOKS_PENDING
+}
+interface GetBooks {
+  type: ActionType.GETBOOKS
+  payload: TypeProduct[]
+}
+interface GetBooksFail {
+  type: ActionType.GETBOOKS_FAIL
+  payload: string
+}
+
+interface GetOneBookPending {
+  type: ActionType.GETBOOK_PENDING
+}
+interface GetOneBook {
+  type: ActionType.GETBOOK
+  payload: TypeProduct
+}
+interface GetOneBookFail {
+  type: ActionType.GETBOOK_FAIL
+  payload: string
+}
+
+interface GetPublisherPending {
+  type: ActionType.GETPUBLISHER_PENDING
+}
+interface GetPublisher {
+  type: ActionType.GETPUBLISHER
+  payload: TypeSeries
+}
+interface GetPublisherFail {
+  type: ActionType.GETPUBLISHER_FAIL
+  payload: string
+}
 export type Action =
   | GetProductActionPending
   | GetProductAction
@@ -53,3 +88,12 @@ export type Action =
   | GetSerisePending
   | GetSerise
   | GetSeriseFail
+  | GetBooksPending
+  | GetBooks
+  | GetBooksFail
+  | GetOneBookPending
+  | GetOneBook
+  | GetOneBookFail
+  | GetPublisherPending
+  | GetPublisher
+  | GetPublisherFail

@@ -13,10 +13,17 @@ export interface TypeProduct {
 
 export interface TypeMainProduct {
   namePrd: string
-  series: string
-  manufacturer: string
-  specifications: string
-  height: string
+  series?: string
+  manufacturer?: string
+  specifications?: string
+  height?: string
+
+  editor?: string
+  publisher?: string
+  nsx?: string
+  size?: string
+  numberPages?: number
+  language?: string
 }
 
 export interface TypeListImage {
