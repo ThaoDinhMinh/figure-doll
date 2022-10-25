@@ -1,11 +1,11 @@
 import { ActionType } from '../action-types'
 import { Action } from '../actions'
-import { TypeSeries } from '../../interface'
+import { TypeSeriesImage } from '../../interface'
 
 interface InitialState {
   loading: boolean
   error: string | null
-  series: TypeSeries | null
+  series: TypeSeriesImage[] | null
 }
 
 const initialState = {

@@ -1,5 +1,5 @@
 import { ActionType } from '../action-types'
-import { TypeProduct, TypeSeries } from '../../interface'
+import { TypeProduct, TypeSeries, TypeSeriesImage } from '../../interface'
 
 interface GetProductActionPending {
   type: ActionType.GETPRODUCTS_PENDING
@@ -35,7 +35,7 @@ interface GetSerisePending {
 }
 interface GetSerise {
   type: ActionType.GETSERIES
-  payload: TypeSeries
+  payload: TypeSeriesImage[]
 }
 interface GetSeriseFail {
   type: ActionType.GETSERIES_FAIL

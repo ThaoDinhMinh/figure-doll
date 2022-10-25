@@ -18,6 +18,9 @@ const Items = styled.div`
   &.container {
     margin: 0 30px;
   }
+  &.mui-container {
+    margin-top: 20px;
+  }
   &.input-grup {
     position: relative;
     display: flex;
@@ -112,7 +115,7 @@ interface Props {
 }
 const Home: React.FC<Props> = (props) => {
   const [chip, chipSet] = useState<boolean>(true)
-  const [publisher, publisherSet] = useState<string>('')
+  const [publisher, publisherSet] = useState<string>(`orderBy="main"&limitToFirst=10`)
   const [sortFigure, sortFigureSet] = useState<string>('')
   const [sortPrice, sortPriceSet] = useState<string>('')
 
@@ -165,42 +168,9 @@ const Home: React.FC<Props> = (props) => {
         </Items>
       </Items>
 
-      <Items>
-        {chip ? (
-          <Items className="chip">
-            <Items className="chip-items">
-              <Text onClick={() => seriesSet('')} className="text-chip">
-                Tất cả
-              </Text>
-            </Items>
-            {series &&
-              series.map((a, i) => (
-                <Items key={i} className="chip-items">
-                  <Text onClick={() => seriesSet(`orderBy="main/series"&equalTo="${a}"`)} className="text-chip">
-                    {a}
-                  </Text>
-                </Items>
-              ))}
-          </Items>
-        ) : (
-          <Items className="chip">
-            <Items className="chip-items">
-              <Text onClick={() => publisherSet('')} className="text-chip">
-                Tất cả
-              </Text>
-            </Items>
-            {publischer &&
-              publischer.map((a, i) => (
-                <Items key={i} className="chip-items">
-                  <Text onClick={() => publisherSet(`orderBy="main/publisher"&equalTo="${a}"`)} className="text-chip">
-                    {a}
-                  </Text>
-                </Items>
-              ))}
-          </Items>
-        )}
-
+      <Items className="mui-container">
         <Mui chipSet={chipSet} chip={chip} seriesSet={seriesSet} publisherSet={publisherSet} />
+        <h1>Heloo</h1>
       </Items>
     </Items>
   )
