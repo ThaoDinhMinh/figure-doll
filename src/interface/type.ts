@@ -9,6 +9,7 @@ export interface TypeProduct {
   posts: TypeListPost[]
   qty: number
   price: number
+  new: boolean
 }
 
 export interface TypeMainProduct {
@@ -36,5 +37,9 @@ export interface TypeListPost {
   title: string
   author: string
 }
-
+export interface TypeSeriesImage {
+  id: string
+  name: string
+  img: string
+}
 export type TypeSeries = string[]

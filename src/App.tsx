@@ -14,8 +14,8 @@ import DetailBooks from './pages/DetailBooks'
 
 function App() {
   const Text: string = '-NEEjeC1UiLHueMg-575'
-  const Text2: string = ''
-  const [series, seriesSet] = useState<string>('')
+
+  const [series, seriesSet] = useState<string>(`orderBy="new"&equalTo=true&limitToLast=10`)
   const dispatch = useDispatch()
   const { getProducts, getProduct, getBooks } = bindActionCreators(actionCreators, dispatch)
 
@@ -25,9 +25,6 @@ function App() {
   useEffect(() => {
     getProduct(Text)
   }, [Text])
-  useEffect(() => {
-    getBooks(Text2)
-  }, [Text2])
 
   return (
     <BrowserRouter>
