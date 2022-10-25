@@ -5,18 +5,26 @@ import TabContext from '@mui/lab/TabContext'
 import TabList from '@mui/lab/TabList'
 import TabPanel from '@mui/lab/TabPanel'
 import ListProducts from './ListProducts'
+import ListBooks from './ListBooks'
 import styled from 'styled-components'
 const Items = styled.div`
   &.items-left {
     width: 75%;
   }
 `
+interface Props {
+  seriesSet: React.Dispatch<React.SetStateAction<string>>
+  publisherSet: React.Dispatch<React.SetStateAction<string>>
+  chipSet: React.Dispatch<React.SetStateAction<boolean>>
+  chip: boolean
+}
 
-const Mui = () => {
+const Mui: React.FC<Props> = ({ chipSet, chip }) => {
   const [value, setValue] = React.useState('1')
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue)
+    chipSet(!chip)
   }
 
   return (
@@ -33,7 +41,9 @@ const Mui = () => {
             <TabPanel value="1">
               <ListProducts />
             </TabPanel>
-            <TabPanel value="2"></TabPanel>
+            <TabPanel value="2">
+              <ListBooks />
+            </TabPanel>
           </TabContext>
         </Box>
       </Items>

@@ -10,7 +10,7 @@ export const getProducts = (series: string) => {
       dispatch({
         type: ActionType.GETPRODUCTS_PENDING,
       })
-      const respon = await apiBase.get(`/products.json?orderBy="main/series"&${series}`)
+      const respon = await apiBase.get(`/products.json?${series}`)
       let resut: TypeProduct[] = []
       for (let key in respon.data) {
         resut.push({ ...respon.data[key], id: key })
@@ -22,6 +22,68 @@ export const getProducts = (series: string) => {
     } catch (error: any) {
       dispatch({
         type: ActionType.GETPRODUCTS_FAIL,
+        payload: error.message,
+      })
+    }
+  }
+}
+
+export const getBooks = (publisher: string) => {
+  return async (dispatch: Dispatch<Action>) => {
+    try {
+      dispatch({
+        type: ActionType.GETBOOKS_PENDING,
+      })
+      const respon = await apiBase.get(`/book.json?${publisher}`)
+      let resut: TypeProduct[] = []
+      for (let key in respon.data) {
+        resut.push({ ...respon.data[key] })
+      }
+      dispatch({
+        type: ActionType.GETBOOKS,
+        payload: resut,
+      })
+    } catch (error: any) {
+      dispatch({
+        type: ActionType.GETBOOKS_FAIL,
+        payload: error.message,
+      })
+    }
+  }
+}
+export const getBook = (id: string) => {
+  return async (dispatch: Dispatch<Action>) => {
+    try {
+      dispatch({
+        type: ActionType.GETBOOK_PENDING,
+      })
+      const respon = await apiBase.get(`/book.json?orderBy="id"&equalTo="${id}"`)
+      dispatch({
+        type: ActionType.GETBOOK,
+        payload: { ...respon.data[Number(id) - 1] },
+      })
+    } catch (error: any) {
+      dispatch({
+        type: ActionType.GETBOOK_FAIL,
+        payload: error.message,
+      })
+    }
+  }
+}
+export const getFublisher = () => {
+  return async (dispatch: Dispatch<Action>) => {
+    try {
+      dispatch({
+        type: ActionType.GETPUBLISHER_PENDING,
+      })
+      const respon = await apiBase.get('/editor.json')
+      dispatch({
+        type: ActionType.GETPUBLISHER,
+        payload: respon.data,
+      })
+    } catch (error: any) {
+      dispatch({
+        type: ActionType.GETPUBLISHER_FAIL,
         payload: error.message,
       })
     }

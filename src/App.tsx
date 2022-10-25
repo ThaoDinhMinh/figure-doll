@@ -10,12 +10,14 @@ import Layout from './pages/Layout'
 import News from './pages/News'
 import PageNotFound from './pages/PageNotFound'
 import { actionCreators } from './state'
+import DetailBooks from './pages/DetailBooks'
 
 function App() {
   const Text: string = '-NEEjeC1UiLHueMg-575'
+  const Text2: string = ''
   const [series, seriesSet] = useState<string>('')
   const dispatch = useDispatch()
-  const { getProducts, getProduct } = bindActionCreators(actionCreators, dispatch)
+  const { getProducts, getProduct, getBooks } = bindActionCreators(actionCreators, dispatch)
 
   useEffect(() => {
     getProducts(series)
@@ -23,6 +25,10 @@ function App() {
   useEffect(() => {
     getProduct(Text)
   }, [Text])
+  useEffect(() => {
+    getBooks(Text2)
+  }, [Text2])
+
   return (
     <BrowserRouter>
       <Routes>
@@ -32,6 +38,8 @@ function App() {
           <Route path="/news" element={<News />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/detail/:id" element={<Detail />} />
+          <Route path="/detailbooks/:id" element={<DetailBooks />} />
+
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>

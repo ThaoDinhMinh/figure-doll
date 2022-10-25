@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search'
 import Mui from '../components/Mui'
 import styled from 'styled-components'
@@ -41,9 +41,10 @@ const Items = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-top: 5px;
   }
   &.chip-items {
-    padding: 10px;
+    padding: 10px 15px 5px 0;
   }
   &.item-img {
     height: 33.333333%;
@@ -110,14 +111,23 @@ interface Props {
   seriesSet: React.Dispatch<React.SetStateAction<string>>
 }
 const Home: React.FC<Props> = (props) => {
+  const [chip, chipSet] = useState<boolean>(true)
+  const [publisher, publisherSet] = useState<string>('')
+  const [sortFigure, sortFigureSet] = useState<string>('')
+  const [sortPrice, sortPriceSet] = useState<string>('')
+
   const dispatch = useDispatch()
   const { seriesSet } = props
-  const { getSeries } = bindActionCreators(actionCreators, dispatch)
+  const { getSeries, getBooks, getFublisher } = bindActionCreators(actionCreators, dispatch)
   const { series } = useSelector((state: RootState) => state.series)
-
+  const { publischer } = useSelector((state: RootState) => state.pubLisher)
   useEffect(() => {
     getSeries()
+    getFublisher()
   }, [])
+  useEffect(() => {
+    getBooks(publisher)
+  }, [publisher])
 
   return (
     <Items className="container">
@@ -156,22 +166,41 @@ const Home: React.FC<Props> = (props) => {
       </Items>
 
       <Items>
-        <Items className="chip">
-          <Items className="chip-items">
-            <Text onClick={() => seriesSet('')} className="text-chip">
-              Tất cả
-            </Text>
+        {chip ? (
+          <Items className="chip">
+            <Items className="chip-items">
+              <Text onClick={() => seriesSet('')} className="text-chip">
+                Tất cả
+              </Text>
+            </Items>
+            {series &&
+              series.map((a, i) => (
+                <Items key={i} className="chip-items">
+                  <Text onClick={() => seriesSet(`orderBy="main/series"&equalTo="${a}"`)} className="text-chip">
+                    {a}
+                  </Text>
+                </Items>
+              ))}
           </Items>
-          {series &&
-            series.map((a, i) => (
-              <Items key={i} className="chip-items">
-                <Text onClick={() => seriesSet(`?orderBy="main/series"&equalTo="${a}"`)} className="text-chip">
-                  {a}
-                </Text>
-              </Items>
-            ))}
-        </Items>
-        <Mui />
+        ) : (
+          <Items className="chip">
+            <Items className="chip-items">
+              <Text onClick={() => publisherSet('')} className="text-chip">
+                Tất cả
+              </Text>
+            </Items>
+            {publischer &&
+              publischer.map((a, i) => (
+                <Items key={i} className="chip-items">
+                  <Text onClick={() => publisherSet(`orderBy="main/publisher"&equalTo="${a}"`)} className="text-chip">
+                    {a}
+                  </Text>
+                </Items>
+              ))}
+          </Items>
+        )}
+
+        <Mui chipSet={chipSet} chip={chip} seriesSet={seriesSet} publisherSet={publisherSet} />
       </Items>
     </Items>
   )
