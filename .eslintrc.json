@@ -3,25 +3,7 @@
     "browser": true,
     "es2021": true
   },
-  "extends": [
-    "plugin:react/recommended",
-    "airbnb",
-    "plugin:prettier/recommended",
-    "prettier/react",
-    "airbnb/hooks",
-    "some-other-config-you-use",
-    "prettier",
-    "prettier/prettier",
-    "airbnb/hooks",
-    "plugin:@typescript-eslint/recommended",
-
-    "prettier/@typescript-eslint",
-    "prettier/babel",
-    "prettier/flowtype",
-    "prettier/standard",
-    "prettier/unicorn",
-    "prettier/vue"
-  ],
+  "extends": ["plugin:react/recommended", "airbnb", "plugin:prettier/recommended", "prettier/react", "airbnb/hooks"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
