@@ -55,6 +55,7 @@ const Text = styled.p`
     background-color: #d3ad69;
     display: inline-block;
     border: 2px solid transparent;
+    transition: all 0.3s linear;
     border-radius: 8px;
     &:hover {
       cursor: pointer;
@@ -88,7 +89,7 @@ const Textmean = () => {
   return (
     <ViewDiv className="grup-body">
       <ViewDiv className="text-mean-left">
-        <ScrollView animateIn="animate__fadeInLeft" animateOut="animate__fadeOutLeft">
+        <ScrollView animateIn="animate__fadeInLeft" animateOnce={true}>
           <ViewDiv className="g-text-in">
             <Text className="text-head">Chăm sóc tóc</Text>
             <Text className="text-body">
@@ -108,14 +109,14 @@ const Textmean = () => {
       </ViewDiv>
       <ViewDiv className="text-mean-right">
         <ViewDiv className="item-right">
-          <ScrollView animateIn="animate__fadeInRight">
+          <ScrollView animateIn="animate__fadeInRight" animateOnce={true}>
             <ViewDiv>
               <Image className="logo-body" src="/img/logo-body.png" alt="logo" />
             </ViewDiv>
           </ScrollView>
         </ViewDiv>
         <ViewDiv className="item-right">
-          <ScrollView animateIn="animate__fadeInRight" duration={1}>
+          <ScrollView animateIn="animate__fadeInRight" animateOnce={true} duration={1}>
             <ViewDiv className="box-body">
               <Text className="box-body-top">$85 Billion</Text>
               <Text className="box-body-bot">
@@ -125,7 +126,7 @@ const Textmean = () => {
           </ScrollView>
         </ViewDiv>
         <ViewDiv className="item-right">
-          <ScrollView animateIn="animate__fadeInRight" duration={1.5}>
+          <ScrollView animateIn="animate__fadeInRight" animateOnce={true} duration={1.5}>
             <ViewDiv className="box-bot">
               <Text className="box-bot-foot">
                 Ngành công nghiệp chăm sóc tóc đang phát triển với tốc độ tăng trưởng kép 14%

@@ -16,8 +16,15 @@ const ViewDiv = styled.div`
     justify-content: center;
   }
   &.image-item {
-    padding: 48px 25px;
-
+    padding: 44px 24px 20px 24px;
+  }
+  &.image-scalc {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 8px solid gray;
     &:hover .image-radios {
       transform: scale(1.1);
     }
@@ -27,13 +34,6 @@ const ViewDiv = styled.div`
     &:hover .line-garen {
       background-color: #090909bc;
     }
-  }
-  &.image-scalc {
-    position: relative;
-    overflow: hidden;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 8px solid gray;
   }
   &.text-mean {
     text-align: center;
@@ -54,13 +54,19 @@ const ViewDiv = styled.div`
   &.line-garen {
     position: absolute;
     top: 0;
-    width: 0%;
+    width: 100%;
     height: 100%;
     background-color: transparent;
-    z-index: 4;
+    z-index: 2;
+    transition: all 0.5s linear;
+  }
+  &.btn-foot {
+    text-align: center;
+    padding: 12px 0 60px 0;
   }
 `
 const Image = styled.img`
+  display: block;
   &.image-radios {
     border-radius: 50%;
     width: 100%;
@@ -68,6 +74,7 @@ const Image = styled.img`
   }
 `
 const Text = styled.p`
+  font-weight: 300;
   &.text-product {
     font-size: 2.5rem;
     font-weight: 300;
@@ -90,6 +97,33 @@ const Text = styled.p`
     font-weight: 300;
     font-size: 0.5rem;
     color: white;
+  }
+  &.t-mean-head {
+    font-size: 1.7rem;
+    color: #121212;
+    margin-bottom: 12px;
+  }
+  &.t-mean-foot {
+    font-size: 0.9rem;
+    color: #666666;
+  }
+
+  &.btn-foot-text {
+    padding: 12px 16px;
+    background-color: #121212;
+    color: #ffffff;
+    font-weight: 400;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s linear;
+    display: inline-block;
+    border: 2px solid transparent;
+    &:hover {
+      background-color: #ffffff;
+      color: #121212;
+      border: 2px solid #121212;
+    }
   }
 `
 
@@ -114,8 +148,8 @@ const Programs = () => {
             </ViewDiv>
           </ViewDiv>
           <ViewDiv className="text-mean">
-            <Text>Tóc dài xoăn lượn sóng</Text>
-            <Text>Kiểu tóc thời thượng của đương đại tạo nên một phong cách riêng !</Text>
+            <Text className="t-mean-head">Tóc dài xoăn lượn sóng</Text>
+            <Text className="t-mean-foot">Kiểu tóc thời thượng của đương đại tạo nên một phong cách riêng !</Text>
           </ViewDiv>
         </ViewDiv>
         <ViewDiv className="container-item">
@@ -130,8 +164,8 @@ const Programs = () => {
             </ViewDiv>
           </ViewDiv>
           <ViewDiv className="text-mean">
-            <Text>Tóc xoăn quyến rũ</Text>
-            <Text>Kiểu tóc mà mọi người luôn ao ước có được !</Text>
+            <Text className="t-mean-head">Tóc xoăn quyến rũ</Text>
+            <Text className="t-mean-foot">Kiểu tóc mà mọi người luôn ao ước có được !</Text>
           </ViewDiv>
         </ViewDiv>
         <ViewDiv className="container-item">
@@ -146,10 +180,13 @@ const Programs = () => {
             </ViewDiv>
           </ViewDiv>
           <ViewDiv className="text-mean">
-            <Text>Tóc thẳng cổ điển</Text>
-            <Text>Kiểu tóc cổ điển đã chiếm được cảm tình của rất nhiều người.</Text>
+            <Text className="t-mean-head">Tóc thẳng cổ điển</Text>
+            <Text className="t-mean-foot">Kiểu tóc cổ điển đã chiếm được cảm tình của rất nhiều người.</Text>
           </ViewDiv>
         </ViewDiv>
+      </ViewDiv>
+      <ViewDiv className="btn-foot">
+        <Text className="btn-foot-text">Xem thêm</Text>
       </ViewDiv>
     </ViewDiv>
   )

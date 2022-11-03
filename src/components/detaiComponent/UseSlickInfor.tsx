@@ -146,12 +146,7 @@ const UseSlickInfor = () => {
           <ViewDiv className="text-scroll">
             <ViewDiv className="grup-srcoll">
               <ViewDiv>
-                <ScrollView
-                  animateIn="animate__fadeInDown"
-                  animateOut="nimate__fadeOutDown"
-                  initiallyVisible={true}
-                  delay={1}
-                >
+                <ScrollView animateIn="animate__fadeInDown" initiallyVisible={true} animateOnce={true} delay={1}>
                   <Text className="text animate__fadeInDown animate__animated animate__repeat-3">
                     Thật tuyệt vời với dịch vụ Làm đẹp
                   </Text>
@@ -160,8 +155,8 @@ const UseSlickInfor = () => {
               <ViewDiv>
                 <ScrollView
                   animateIn="animate__bounceInLeft"
-                  animateOut="animate__bounceOutLeft"
                   duration={0.8}
+                  animateOnce={true}
                   initiallyVisible={true}
                   delay={1}
                 >
@@ -177,7 +172,13 @@ const UseSlickInfor = () => {
                 </ScrollView>
               </ViewDiv>
               <ViewDiv>
-                <ScrollView animateIn="animate__bounceOutLeft" duration={1.5} initiallyVisible={true} delay={1}>
+                <ScrollView
+                  animateOnce={true}
+                  initiallyVisible={true}
+                  animateIn="animate__bounceOutLeft"
+                  duration={1.5}
+                  delay={1}
+                >
                   <ViewDiv className="text-extesion">
                     <FiberManualRecordIcon
                       className="animate__animated animate__delay-2s animate__bounceInLeft"
@@ -191,7 +192,12 @@ const UseSlickInfor = () => {
               </ViewDiv>
 
               <ViewDiv>
-                <ScrollView animateIn="animate__bounceOutLeft" duration={2.2} initiallyVisible={true}>
+                <ScrollView
+                  animateOnce={true}
+                  initiallyVisible={true}
+                  animateIn="animate__bounceOutLeft"
+                  duration={2.2}
+                >
                   <ViewDiv className="text-extesion">
                     <FiberManualRecordIcon
                       className="animate__animated animate__delay-3s animate__bounceInLeft"
@@ -204,7 +210,7 @@ const UseSlickInfor = () => {
                 </ScrollView>
               </ViewDiv>
               <ViewDiv>
-                <ScrollView animateIn="animate__fadeInDown" initiallyVisible={true} duration={2.3}>
+                <ScrollView initiallyVisible={true} animateIn="animate__fadeInDown" animateOnce={true} duration={2.3}>
                   <ViewDiv className="btn-price">
                     <Text className="text-button animate__animated animate__delay-3s animate__fadeInDown">
                       Bắt đầu chỉ từ : 1.300k
@@ -225,7 +231,7 @@ const UseSlickInfor = () => {
             <ViewDiv className="grup-scroll-center">
               <LazyLoad offset={30}>
                 <ViewDiv>
-                  <ScrollView animateIn="animate__fadeInDown" initiallyVisible={true} offset={300}>
+                  <ScrollView animateIn="animate__fadeInDown" initiallyVisible={true} animateOnce={true} offset={300}>
                     <ViewDiv>
                       <Image
                         className="animate__animated animate__fadeInDown"
@@ -239,7 +245,7 @@ const UseSlickInfor = () => {
               </LazyLoad>
               <LazyLoad offset={300}>
                 <ViewDiv>
-                  <ScrollView animateIn="animate__fadeInDown" initiallyVisible={true} offset={641}>
+                  <ScrollView animateIn="animate__fadeInDown" animateOnce={true} initiallyVisible={true} offset={641}>
                     <ViewDiv>
                       <Text className="text-head-extension animate__animated animate__delay-1s animate__fadeInDown">
                         Mọi kiểu tóc đẹp một cách tự nhiên
@@ -250,7 +256,7 @@ const UseSlickInfor = () => {
               </LazyLoad>
               <LazyLoad offset={300}>
                 <ViewDiv>
-                  <ScrollView animateIn="animate__fadeInUp" initiallyVisible={true} offset={641}>
+                  <ScrollView animateIn="animate__fadeInUp" animateOnce={true} initiallyVisible={true} offset={641}>
                     <ViewDiv>
                       <Text className="text-button animate__animated animate__delay-1s animate__fadeInUp">
                         Kiểm tra bộ sưu tập
@@ -268,12 +274,7 @@ const UseSlickInfor = () => {
           <ViewDiv className="text-scroll">
             <ViewDiv className="grup-scroll-center">
               <ViewDiv>
-                <ScrollView
-                  animateIn="animate__fadeInDown"
-                  animateOut="animate__fadeOutUp"
-                  initiallyVisible={true}
-                  offset={641}
-                >
+                <ScrollView animateIn="animate__fadeInDown" initiallyVisible={true} offset={641} animateOnce={true}>
                   <LazyLoad offset={300}>
                     <Text className="text-head-extension animate__animated animate__delay-1s animate__fadeInDown">
                       Làm đẹp tóc một cách tự nhiên
@@ -285,8 +286,8 @@ const UseSlickInfor = () => {
                 <ViewDiv>
                   <ScrollView
                     animateIn="animate__bounceInLeft"
-                    animateOut="animate__bounceOutLeft"
                     duration={0.8}
+                    animateOnce={true}
                     initiallyVisible={true}
                     delay={1}
                   >
@@ -306,8 +307,8 @@ const UseSlickInfor = () => {
                 <ViewDiv>
                   <ScrollView
                     animateIn="animate__bounceInLeft"
-                    animateOut="animate__bounceOutLeft"
                     duration={1.5}
+                    animateOnce={true}
                     initiallyVisible={true}
                     delay={1}
                   >
@@ -330,8 +331,8 @@ const UseSlickInfor = () => {
                 <ViewDiv>
                   <ScrollView
                     animateIn="animate__bounceInLeft"
-                    animateOut="animate__bounceOutLeft"
                     duration={2}
+                    animateOnce={true}
                     initiallyVisible={true}
                     delay={1}
                   >
@@ -355,12 +356,7 @@ const UseSlickInfor = () => {
               <ViewDiv className="grup-childen grup-childen-pad">
                 <LazyLoad offset={300}>
                   <ViewDiv>
-                    <ScrollView
-                      animateIn="animate__fadeInDown"
-                      animateOut="animate__fadeOutUp"
-                      initiallyVisible={true}
-                      offset={641}
-                    >
+                    <ScrollView animateIn="animate__fadeInDown" initiallyVisible={true} animateOnce={true} offset={641}>
                       <Text className="text-price animate__animated animate__fadeInDown  animate__delay-3s ">
                         Chỉ từ :
                       </Text>
@@ -370,8 +366,8 @@ const UseSlickInfor = () => {
                 <ViewDiv>
                   <ScrollView
                     animateIn="animate__fadeInDown"
-                    animateOut="animate__fadeOutUp"
                     initiallyVisible={true}
+                    animateOnce={true}
                     offset={641}
                     duration={2}
                   >

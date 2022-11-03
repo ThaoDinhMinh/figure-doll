@@ -50,6 +50,7 @@ const Text = styled.p`
     border: 2px solid transparent;
     display: inline-block;
     color: white;
+    transition: all 0.3s linear;
     margin-top: 30px;
     border-radius: 8px;
     &:hover {
@@ -68,7 +69,7 @@ const ContentTranperen = () => {
       <ViewDiv className="content-radius">
         <ViewDiv className="content-radius-child">
           <ViewDiv>
-            <ScrollView initiallyVisible={true} animateIn="animate__zoomIn" duration={1.5}>
+            <ScrollView animateIn="animate__zoomIn" duration={1.5} animateOnce={true}>
               <ViewDiv>
                 <Image src="/img/logo_small.png" alt="logo" />
               </ViewDiv>
