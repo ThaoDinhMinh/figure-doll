@@ -92,6 +92,7 @@ const Text = styled.p`
     background-color: #d3ad69;
     display: inline-block;
     border: 2px solid transparent;
+    transition: all 0.3s linear;
     border-radius: 8px;
     &:hover {
       cursor: pointer;
@@ -129,7 +130,7 @@ const Mission = () => {
       <ViewDiv className="g-mission">
         <ViewDiv className="g-body">
           <ViewDiv className="text-top">
-            <ScrollView animateIn="animate__fadeInLeft" duration={2}>
+            <ScrollView animateIn="animate__fadeInLeft" duration={2} animateOnce={true}>
               <ViewDiv className="g-text-all">
                 <ViewDiv className="g-text-hide"></ViewDiv>
                 <ViewDiv className="g-text-body">
@@ -155,7 +156,7 @@ const Mission = () => {
         <ViewDiv className="g-body">
           <ViewDiv className="g-animate">
             <ViewDiv className="animate">
-              <ScrollView animateIn=" animate__fadeInLeft" duration={1.5}>
+              <ScrollView animateIn=" animate__fadeInLeft" duration={1.5} animateOnce={true}>
                 <ViewDiv className="animate-container">
                   <ViewDiv className="card-animate">
                     <ViewDiv className="card-image card-img">
@@ -171,7 +172,7 @@ const Mission = () => {
               </ScrollView>
             </ViewDiv>
             <ViewDiv className="animate">
-              <ScrollView animateIn=" animate__fadeInRight" duration={1.5}>
+              <ScrollView animateIn="animate__fadeInRight" animateOnce={true} duration={1.5}>
                 <ViewDiv className="animate-container">
                   <ViewDiv className="card-animate">
                     <ViewDiv className="card-image card-img">
@@ -187,7 +188,7 @@ const Mission = () => {
               </ScrollView>
             </ViewDiv>
             <ViewDiv className="animate">
-              <ScrollView initiallyVisible={true} animateIn=" animate__fadeInLeft" duration={2}>
+              <ScrollView animateOnce={true} animateIn=" animate__fadeInLeft" duration={2}>
                 <ViewDiv className="animate-container">
                   <ViewDiv className="card-animate">
                     <ViewDiv className="card-image card-img">
@@ -203,7 +204,7 @@ const Mission = () => {
               </ScrollView>
             </ViewDiv>
             <ViewDiv className="animate">
-              <ScrollView animateIn=" animate__fadeInRight" duration={2}>
+              <ScrollView animateIn="animate__fadeInRight" animateOnce={true} duration={2}>
                 <ViewDiv className="animate-container">
                   <ViewDiv className="card-animate">
                     <ViewDiv className="card-image card-img">

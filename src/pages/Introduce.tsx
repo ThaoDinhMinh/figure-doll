@@ -1,15 +1,17 @@
 import React from 'react'
+import 'animate.css'
+import 'animate.css/animate.min.css'
 import styled from 'styled-components'
 import Textmean from '../introductComponent/Textmean'
 import ProductFeatured from '../introductComponent/ProductFeatured'
 import ContentTranperen from '../introductComponent/ContentTranperen'
 import Programs from '../introductComponent/Programs'
-import 'animate.css'
-import 'animate.css/animate.min.css'
-
-import ScrollView from 'react-animate-on-scroll'
 import UseSlickInfor from '../components/detaiComponent/UseSlickInfor'
 import Mission from '../introductComponent/Mission'
+import ScrollView from 'react-animate-on-scroll'
+import UpdateType from '../introductComponent/UpdateType'
+import SlickCeo from '../introductComponent/SlickCeo'
+import FormIntroduct from '../introductComponent/FormIntroduct'
 
 const ViewDiv = styled.div`
   &.container {
@@ -114,7 +116,7 @@ const Introduce = () => {
 
         <ViewDiv className="g-content">
           <ViewDiv className="g-items-scroll">
-            <ScrollView animateIn="animate__fadeInDown">
+            <ScrollView animateIn="animate__fadeInDown" animateOnce={true}>
               <ViewDiv className="card-item">
                 <ViewDiv className="img-g-item">
                   <Image src="/img/img3.jpg" />
@@ -139,7 +141,7 @@ const Introduce = () => {
             </ScrollView>
           </ViewDiv>
           <ViewDiv className="g-items-scroll">
-            <ScrollView animateIn="animate__fadeInDown" duration={2}>
+            <ScrollView animateOnce={true} animateIn="animate__fadeInDown" duration={2}>
               <ViewDiv className="card-item">
                 <ViewDiv className="img-g-item">
                   <Image src="/img/img4.jpg" />
@@ -164,7 +166,7 @@ const Introduce = () => {
             </ScrollView>
           </ViewDiv>
           <ViewDiv className="g-items-scroll">
-            <ScrollView animateIn="animate__fadeInDown" duration={3}>
+            <ScrollView animateIn="animate__fadeInDown" animateOnce={true} duration={3}>
               <ViewDiv className="card-item">
                 <ViewDiv className="img-g-item">
                   <Image src="/img/img5.jpg" />
@@ -196,6 +198,9 @@ const Introduce = () => {
       <ContentTranperen />
       <Mission />
       <Programs />
+      <UpdateType />
+      <SlickCeo />
+      <FormIntroduct />
     </ViewDiv>
   )
 }

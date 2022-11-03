@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { bindActionCreators } from 'redux'
 import Detail from './pages/Detail'
 import Gallery from './pages/Gallery'
+import DetailBooks from './pages/DetailBooks'
 import Home from './pages/Home'
 import Introduce from './pages/Introduce'
 import Layout from './pages/Layout'
 import News from './pages/News'
 import PageNotFound from './pages/PageNotFound'
 import { actionCreators } from './state'
-import DetailBooks from './pages/DetailBooks'
+import { useDispatch } from 'react-redux'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { bindActionCreators } from 'redux'
+
+import 'animate.css'
+import 'animate.css/animate.min.css'
 
 function App() {
   const Text: string = '-NEEjeC1UiLHueMg-575'
