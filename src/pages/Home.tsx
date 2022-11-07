@@ -110,27 +110,17 @@ const Image = styled.img`
     overflow: hidden;
   }
 `
-interface Props {
-  seriesSet: React.Dispatch<React.SetStateAction<string>>
-}
-const Home: React.FC<Props> = (props) => {
+// interface Props {
+//   seriesSet: React.Dispatch<React.SetStateAction<string>>
+// }
+const Home = () => {
   const [chip, chipSet] = useState<boolean>(true)
   const [publisher, publisherSet] = useState<string>(`orderBy="main"&limitToFirst=10`)
-  const [sortFigure, sortFigureSet] = useState<string>('')
-  const [sortPrice, sortPriceSet] = useState<string>('')
 
   const dispatch = useDispatch()
-  const { seriesSet } = props
   const { getSeries, getBooks, getFublisher } = bindActionCreators(actionCreators, dispatch)
   const { series } = useSelector((state: RootState) => state.series)
   const { publischer } = useSelector((state: RootState) => state.pubLisher)
-  useEffect(() => {
-    getSeries()
-    getFublisher()
-  }, [])
-  useEffect(() => {
-    getBooks(publisher)
-  }, [publisher])
 
   return (
     <Items className="container">
@@ -169,7 +159,7 @@ const Home: React.FC<Props> = (props) => {
       </Items>
 
       <Items className="mui-container">
-        <Mui chipSet={chipSet} chip={chip} seriesSet={seriesSet} publisherSet={publisherSet} />
+        <Mui />
         <h1>Heloo</h1>
       </Items>
     </Items>

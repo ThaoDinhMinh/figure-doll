@@ -3,7 +3,6 @@ import { TypeProduct } from '../../interface'
 import { ActionType } from '../action-types'
 import { Action } from '../actions'
 import apiBase from '../../api'
-import { RepeatOnSharp } from '@mui/icons-material'
 
 export const getProducts = (series: string) => {
   return async (dispatch: Dispatch<Action>) => {
@@ -11,7 +10,7 @@ export const getProducts = (series: string) => {
       dispatch({
         type: ActionType.GETPRODUCTS_PENDING,
       })
-      const respon = await apiBase.get(`/products.json?${series}`)
+      const respon = await apiBase.get('')
       let resut: TypeProduct[] = []
       for (let key in respon.data) {
         resut.push({ ...respon.data[key], id: key })
@@ -29,13 +28,13 @@ export const getProducts = (series: string) => {
   }
 }
 
-export const getBooks = (publisher: string) => {
+export const getBooks = () => {
   return async (dispatch: Dispatch<Action>) => {
     try {
       dispatch({
         type: ActionType.GETBOOKS_PENDING,
       })
-      const respon = await apiBase.get(`/book.json?${publisher}`)
+      const respon = await apiBase.get('')
       let resut: TypeProduct[] = []
       for (let key in respon.data) {
         resut.push({ ...respon.data[key] })
@@ -58,7 +57,7 @@ export const getBook = (id: string) => {
       dispatch({
         type: ActionType.GETBOOK_PENDING,
       })
-      const respon = await apiBase.get(`/book.json?orderBy="id"&equalTo="${id}"`)
+      const respon = await apiBase.get('')
       dispatch({
         type: ActionType.GETBOOK,
         payload: { ...respon.data[Number(id) - 1] },
@@ -77,7 +76,7 @@ export const getFublisher = () => {
       dispatch({
         type: ActionType.GETPUBLISHER_PENDING,
       })
-      const respon = await apiBase.get('/editor.json')
+      const respon = await apiBase.get('')
       dispatch({
         type: ActionType.GETPUBLISHER,
         payload: respon.data,
@@ -97,7 +96,7 @@ export const getSeries = () => {
       dispatch({
         type: ActionType.GETSERIES_PENDING,
       })
-      const respon = await apiBase.get('/series.json')
+      const respon = await apiBase.get('')
       dispatch({
         type: ActionType.GETSERIES,
         payload: respon.data,
@@ -117,7 +116,7 @@ export const getProduct = (idAuther: string) => {
       dispatch({
         type: ActionType.GETPRODUCT_PENDING,
       })
-      const respon = await apiBase.get(`/products/${idAuther}/.json`)
+      const respon = await apiBase.get('')
       dispatch({
         type: ActionType.GETPRODUCT,
         payload: respon.data,

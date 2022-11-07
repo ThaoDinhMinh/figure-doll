@@ -17,18 +17,8 @@ import 'animate.css'
 import 'animate.css/animate.min.css'
 
 function App() {
-  const Text: string = '-NEEjeC1UiLHueMg-575'
-
-  const [series, seriesSet] = useState<string>(`orderBy="new"&equalTo=true&limitToLast=10`)
   const dispatch = useDispatch()
   const { getProducts, getProduct, getBooks } = bindActionCreators(actionCreators, dispatch)
-
-  useEffect(() => {
-    getProducts(series)
-  }, [series])
-  useEffect(() => {
-    getProduct(Text)
-  }, [Text])
 
   return (
     <BrowserRouter>
@@ -36,7 +26,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Introduce />} />
           <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="/home" element={<Home seriesSet={seriesSet} />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/news" element={<News />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/detail/:id" element={<Detail />} />

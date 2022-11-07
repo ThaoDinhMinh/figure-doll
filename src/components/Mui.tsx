@@ -121,13 +121,13 @@ const TextRank = styled.p`
   }
 `
 interface Props {
-  seriesSet: React.Dispatch<React.SetStateAction<string>>
-  publisherSet: React.Dispatch<React.SetStateAction<string>>
-  chipSet: React.Dispatch<React.SetStateAction<boolean>>
-  chip: boolean
+  // seriesSet: React.Dispatch<React.SetStateAction<string>>
+  // publisherSet: React.Dispatch<React.SetStateAction<string>>
+  // chipSet: React.Dispatch<React.SetStateAction<boolean>>
+  // chip: boolean
 }
 
-const Mui: React.FC<Props> = ({ chipSet, chip }) => {
+const Mui: React.FC<Props> = () => {
   const [value, setValue] = React.useState('1')
 
   const { products, loading } = useSelector((state: RootState) => state.products)
@@ -135,7 +135,6 @@ const Mui: React.FC<Props> = ({ chipSet, chip }) => {
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue)
-    chipSet(!chip)
   }
 
   return (
@@ -171,7 +170,7 @@ const Mui: React.FC<Props> = ({ chipSet, chip }) => {
       <Items className="items-right">
         <Text className="text-head">Bán chạy nhất</Text>
 
-        {chip ? (
+        {value ? (
           loading ? (
             <h6>Loadding...</h6>
           ) : (
