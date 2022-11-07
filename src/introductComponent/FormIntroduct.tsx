@@ -108,6 +108,8 @@ const TextArea = styled.textarea`
   padding: 15px 15px 15px 25px;
   resize: none;
   border-bottom: 0.5px dashed #d3ad69;
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
 `
 
 const FormIntroduct = () => {
@@ -191,7 +193,7 @@ const FormIntroduct = () => {
               <ViewDiv className="icone">
                 <TextSnippetIcon sx={{ fontSize: 20, color: '#d3ad69' }} />
               </ViewDiv>
-              <TextArea cols={40} rows={10} placeholder="Nhập tin nhắn thêm"></TextArea>
+              <TextArea rows={8} placeholder="Nhập tin nhắn thêm"></TextArea>
             </ViewDiv>
           </Form>
           <ViewDiv className="buttom">

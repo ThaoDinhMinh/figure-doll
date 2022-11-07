@@ -176,7 +176,7 @@ const Introduce = () => {
                     <Text className="number-radius">3</Text>
                   </ViewDiv>
                   <ViewDiv className="text-number">
-                    <Text className="text-head-card">Gội đầu</Text>
+                    <Text className="text-head-card">Dầu dưỡng tóc</Text>
                   </ViewDiv>
 
                   <ViewDiv className="text-number">

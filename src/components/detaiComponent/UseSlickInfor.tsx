@@ -146,77 +146,31 @@ const UseSlickInfor = () => {
           <ViewDiv className="text-scroll">
             <ViewDiv className="grup-srcoll">
               <ViewDiv>
-                <ScrollView animateIn="animate__fadeInDown" initiallyVisible={true} animateOnce={true} delay={1}>
-                  <Text className="text animate__fadeInDown animate__animated animate__repeat-3">
-                    Thật tuyệt vời với dịch vụ Làm đẹp
-                  </Text>
-                </ScrollView>
+                <Text className="text ">Thật tuyệt vời với dịch vụ Làm đẹp</Text>
               </ViewDiv>
               <ViewDiv>
-                <ScrollView
-                  animateIn="animate__bounceInLeft"
-                  duration={0.8}
-                  animateOnce={true}
-                  initiallyVisible={true}
-                  delay={1}
-                >
-                  <ViewDiv className="text-extesion">
-                    <FiberManualRecordIcon
-                      className="animate__animated animate__bounceInLeft animate__delay-1s"
-                      sx={{ color: '#dcdbdb', fontSize: 12 }}
-                    />
-                    <Text className="text-mean-extension animate__animated animate__bounceInLeft animate__delay-1s">
-                      100% tóc thật
-                    </Text>
-                  </ViewDiv>
-                </ScrollView>
+                <ViewDiv className="text-extesion">
+                  <FiberManualRecordIcon sx={{ color: '#dcdbdb', fontSize: 12 }} />
+                  <Text className="text-mean-extension ">100% tóc thật</Text>
+                </ViewDiv>
               </ViewDiv>
               <ViewDiv>
-                <ScrollView
-                  animateOnce={true}
-                  initiallyVisible={true}
-                  animateIn="animate__bounceOutLeft"
-                  duration={1.5}
-                  delay={1}
-                >
-                  <ViewDiv className="text-extesion">
-                    <FiberManualRecordIcon
-                      className="animate__animated animate__delay-2s animate__bounceInLeft"
-                      sx={{ color: '#dcdbdb', fontSize: 12 }}
-                    />
-                    <Text className="text-mean-extension animate__animated animate__bounceInLeft animate__delay-2s">
-                      Điều trị tự nhiên
-                    </Text>
-                  </ViewDiv>
-                </ScrollView>
+                <ViewDiv className="text-extesion">
+                  <FiberManualRecordIcon sx={{ color: '#dcdbdb', fontSize: 12 }} />
+                  <Text className="text-mean-extension ">Điều trị tự nhiên</Text>
+                </ViewDiv>
               </ViewDiv>
 
               <ViewDiv>
-                <ScrollView
-                  animateOnce={true}
-                  initiallyVisible={true}
-                  animateIn="animate__bounceOutLeft"
-                  duration={2.2}
-                >
-                  <ViewDiv className="text-extesion">
-                    <FiberManualRecordIcon
-                      className="animate__animated animate__delay-3s animate__bounceInLeft"
-                      sx={{ color: '#dcdbdb', fontSize: 12 }}
-                    />
-                    <Text className="text-mean-extension animate__animated animate__delay-3s animate__bounceInLeft">
-                      Chất lượng cao
-                    </Text>
-                  </ViewDiv>
-                </ScrollView>
+                <ViewDiv className="text-extesion">
+                  <FiberManualRecordIcon sx={{ color: '#dcdbdb', fontSize: 12 }} />
+                  <Text className="text-mean-extension ">Chất lượng cao</Text>
+                </ViewDiv>
               </ViewDiv>
               <ViewDiv>
-                <ScrollView initiallyVisible={true} animateIn="animate__fadeInDown" animateOnce={true} duration={2.3}>
-                  <ViewDiv className="btn-price">
-                    <Text className="text-button animate__animated animate__delay-3s animate__fadeInDown">
-                      Bắt đầu chỉ từ : 1.300k
-                    </Text>
-                  </ViewDiv>
-                </ScrollView>
+                <ViewDiv className="btn-price">
+                  <Text className="text-button ">Bắt đầu chỉ từ : 1.300k</Text>
+                </ViewDiv>
               </ViewDiv>
             </ViewDiv>
           </ViewDiv>
@@ -231,38 +185,23 @@ const UseSlickInfor = () => {
             <ViewDiv className="grup-scroll-center">
               <LazyLoad offset={30}>
                 <ViewDiv>
-                  <ScrollView animateIn="animate__fadeInDown" initiallyVisible={true} animateOnce={true} offset={300}>
-                    <ViewDiv>
-                      <Image
-                        className="animate__animated animate__fadeInDown"
-                        style={{ height: '120px', width: '142px' }}
-                        src="/img/img-1.png"
-                        alt="logo"
-                      />
-                    </ViewDiv>
-                  </ScrollView>
+                  <ViewDiv>
+                    <Image style={{ height: '120px', width: '142px' }} src="/img/img-1.png" alt="logo" />
+                  </ViewDiv>
                 </ViewDiv>
               </LazyLoad>
               <LazyLoad offset={300}>
                 <ViewDiv>
-                  <ScrollView animateIn="animate__fadeInDown" animateOnce={true} initiallyVisible={true} offset={641}>
-                    <ViewDiv>
-                      <Text className="text-head-extension animate__animated animate__delay-1s animate__fadeInDown">
-                        Mọi kiểu tóc đẹp một cách tự nhiên
-                      </Text>
-                    </ViewDiv>
-                  </ScrollView>
+                  <ViewDiv>
+                    <Text className="text-head-extension">Mọi kiểu tóc đẹp một cách tự nhiên</Text>
+                  </ViewDiv>
                 </ViewDiv>
               </LazyLoad>
               <LazyLoad offset={300}>
                 <ViewDiv>
-                  <ScrollView animateIn="animate__fadeInUp" animateOnce={true} initiallyVisible={true} offset={641}>
-                    <ViewDiv>
-                      <Text className="text-button animate__animated animate__delay-1s animate__fadeInUp">
-                        Kiểm tra bộ sưu tập
-                      </Text>
-                    </ViewDiv>
-                  </ScrollView>
+                  <ViewDiv>
+                    <Text className="text-button ">Kiểm tra bộ sưu tập</Text>
+                  </ViewDiv>
                 </ViewDiv>
               </LazyLoad>
             </ViewDiv>
@@ -274,107 +213,46 @@ const UseSlickInfor = () => {
           <ViewDiv className="text-scroll">
             <ViewDiv className="grup-scroll-center">
               <ViewDiv>
-                <ScrollView animateIn="animate__fadeInDown" initiallyVisible={true} offset={641} animateOnce={true}>
-                  <LazyLoad offset={300}>
-                    <Text className="text-head-extension animate__animated animate__delay-1s animate__fadeInDown">
-                      Làm đẹp tóc một cách tự nhiên
-                    </Text>
-                  </LazyLoad>
-                </ScrollView>
+                <LazyLoad offset={300}>
+                  <Text className="text-head-extension">Làm đẹp tóc một cách tự nhiên</Text>
+                </LazyLoad>
               </ViewDiv>
               <ViewDiv className="grup-childen">
                 <ViewDiv>
-                  <ScrollView
-                    animateIn="animate__bounceInLeft"
-                    duration={0.8}
-                    animateOnce={true}
-                    initiallyVisible={true}
-                    delay={1}
-                  >
-                    <LazyLoad offset={300}>
-                      <ViewDiv className="text-extesion">
-                        <FiberManualRecordIcon
-                          className="animate__animated animate__bounceInLeft  animate__delay-1s"
-                          sx={{ color: '#dcdbdb', fontSize: 12 }}
-                        />
-                        <Text className="text-mean-extension animate__animated  animate__bounceInLeft  animate__delay-1s">
-                          Kẹp tóc bên trong
-                        </Text>
-                      </ViewDiv>
-                    </LazyLoad>
-                  </ScrollView>
+                  <LazyLoad offset={300}>
+                    <ViewDiv className="text-extesion">
+                      <FiberManualRecordIcon sx={{ color: '#dcdbdb', fontSize: 12 }} />
+                      <Text className="text-mean-extension ">Kẹp tóc bên trong</Text>
+                    </ViewDiv>
+                  </LazyLoad>
                 </ViewDiv>
                 <ViewDiv>
-                  <ScrollView
-                    animateIn="animate__bounceInLeft"
-                    duration={1.5}
-                    animateOnce={true}
-                    initiallyVisible={true}
-                    delay={1}
-                  >
-                    <LazyLoad offset={300}>
-                      <ViewDiv className="text-extesion">
-                        <FiberManualRecordIcon
-                          className="animate__animated  animate__bounceInLeft animate__delay-2s"
-                          sx={{ color: '#dcdbdb', fontSize: 12 }}
-                        />
-                        <Text
-                          className="text-mean-extension animate__animated  
-                          animate__bounceInLeft animate__delay-2s"
-                        >
-                          Cuộn tóc
-                        </Text>
-                      </ViewDiv>
-                    </LazyLoad>
-                  </ScrollView>
+                  <LazyLoad offset={300}>
+                    <ViewDiv className="text-extesion">
+                      <FiberManualRecordIcon sx={{ color: '#dcdbdb', fontSize: 12 }} />
+                      <Text className="text-mean-extension ">Cuộn tóc</Text>
+                    </ViewDiv>
+                  </LazyLoad>
                 </ViewDiv>
                 <ViewDiv>
-                  <ScrollView
-                    animateIn="animate__bounceInLeft"
-                    duration={2}
-                    animateOnce={true}
-                    initiallyVisible={true}
-                    delay={1}
-                  >
-                    <LazyLoad offset={300}>
-                      <ViewDiv className="text-extesion">
-                        <FiberManualRecordIcon
-                          className="animate__animated animate__bounceInLeft  animate__delay-3s"
-                          sx={{ color: '#dcdbdb', fontSize: 12 }}
-                        />
-                        <Text
-                          className="text-mean-extension animate__animated animate__bounceInLeft 
-                        animate__delay-3s"
-                        >
-                          Nối tóc
-                        </Text>
-                      </ViewDiv>
-                    </LazyLoad>
-                  </ScrollView>
+                  <LazyLoad offset={300}>
+                    <ViewDiv className="text-extesion">
+                      <FiberManualRecordIcon sx={{ color: '#dcdbdb', fontSize: 12 }} />
+                      <Text className="text-mean-extension">Nối tóc</Text>
+                    </ViewDiv>
+                  </LazyLoad>
                 </ViewDiv>
               </ViewDiv>
               <ViewDiv className="grup-childen grup-childen-pad">
                 <LazyLoad offset={300}>
                   <ViewDiv>
-                    <ScrollView animateIn="animate__fadeInDown" initiallyVisible={true} animateOnce={true} offset={641}>
-                      <Text className="text-price animate__animated animate__fadeInDown  animate__delay-3s ">
-                        Chỉ từ :
-                      </Text>
-                    </ScrollView>
+                    <Text className="text-price ">Chỉ từ :</Text>
                   </ViewDiv>
                 </LazyLoad>
                 <ViewDiv>
-                  <ScrollView
-                    animateIn="animate__fadeInDown"
-                    initiallyVisible={true}
-                    animateOnce={true}
-                    offset={641}
-                    duration={2}
-                  >
-                    <LazyLoad offset={300}>
-                      <Text className="animate__animated animate__fadeInDown  animate__delay-4s price">1.300k</Text>
-                    </LazyLoad>
-                  </ScrollView>
+                  <LazyLoad offset={300}>
+                    <Text className="price">1.300k</Text>
+                  </LazyLoad>
                 </ViewDiv>
               </ViewDiv>
             </ViewDiv>

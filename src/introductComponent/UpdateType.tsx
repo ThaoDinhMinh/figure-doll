@@ -121,6 +121,7 @@ const Image = styled.img`
   display: block;
 `
 const Input = styled.input`
+  outline: none;
   padding: 14px 24px;
   width: 310px;
 `

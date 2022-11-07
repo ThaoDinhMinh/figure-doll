@@ -53,6 +53,7 @@ const ViewDiv = styled.div`
     margin: 0 20px;
     &:hover .text {
       color: #d3ad69;
+      cursor: pointer;
     }
   }
   &.item {
@@ -65,6 +66,7 @@ const ViewDiv = styled.div`
     &:hover .hilden-div-opa {
       animation: ${widting} 0.3s linear;
       background-color: #ffffff80;
+      cursor: pointer;
     }
   }
   &.hilden-div-opa {
@@ -134,6 +136,7 @@ const Text = styled.p`
     font-size: 1rem;
     font-weight: 400;
     line-height: 28px;
+    text-align: center;
   }
   &.price-nomal {
     font-size: 0.9rem;
@@ -207,7 +210,7 @@ const ProductFeatured = () => {
           </ViewDiv>
           <ViewDiv className="text-background">
             <ViewDiv className="text-name">
-              <Text className="text">Tóc giả dài tóc vàng</Text>
+              <Text className="text">Tóc giả dài óng vàng</Text>
             </ViewDiv>
             <ViewDiv className="g-price">
               <Text className="price-nomal">800.000 đ</Text>
