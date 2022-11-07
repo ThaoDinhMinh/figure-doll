@@ -56,6 +56,9 @@ const Header = () => {
           <ViewDiv className="nav-item">
             <Link to="/">Tóc giả</Link>
           </ViewDiv>
+          <ViewDiv className="nav-item">
+            <Link to="/aboutus">Thông tin</Link>
+          </ViewDiv>
         </Navbar>
       </ViewDiv>
     </>
