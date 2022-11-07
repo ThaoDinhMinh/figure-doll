@@ -118,7 +118,7 @@ const Home = () => {
   const [publisher, publisherSet] = useState<string>(`orderBy="main"&limitToFirst=10`)
 
   const dispatch = useDispatch()
-  const { getSeries, getBooks, getFublisher } = bindActionCreators(actionCreators, dispatch)
+  // const { getSeries, getBooks, getFublisher } = bindActionCreators(actionCreators, dispatch)
   const { series } = useSelector((state: RootState) => state.series)
   const { publischer } = useSelector((state: RootState) => state.pubLisher)
 

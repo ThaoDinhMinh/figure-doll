@@ -17,8 +17,8 @@ import 'animate.css'
 import 'animate.css/animate.min.css'
 
 function App() {
-  const dispatch = useDispatch()
-  const { getProducts, getProduct, getBooks } = bindActionCreators(actionCreators, dispatch)
+  // const dispatch = useDispatch()
+  // const { getProducts, getProduct, getBooks } = bindActionCreators(actionCreators, dispatch)
 
   return (
     <BrowserRouter>
