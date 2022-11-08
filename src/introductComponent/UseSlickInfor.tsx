@@ -1,10 +1,8 @@
 import React from 'react'
 import Slider, { Settings } from 'react-slick'
-import { TypeListImage } from '../../interface'
 import styled, { keyframes } from 'styled-components'
-import 'animate.css'
-import 'animate.css/animate.min.css'
-import ScrollView from 'react-animate-on-scroll'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord'
 import LazyLoad from 'react-lazy-load'
 const botomup = keyframes`
@@ -35,7 +33,7 @@ const ViewDiv = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 8vw;
+    margin-left: 12vw;
   }
   &.grup-scroll-center {
     top: 0;
@@ -207,6 +205,7 @@ const UseSlickInfor = () => {
             </ViewDiv>
           </ViewDiv>
         </ViewDiv>
+
         <ViewDiv className="slick-view">
           <Image className="img-slick" src="/img/img.jpg" alt="anh" />
           <ViewDiv className="dark-background"></ViewDiv>

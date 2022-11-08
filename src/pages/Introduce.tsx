@@ -6,12 +6,12 @@ import Textmean from '../introductComponent/Textmean'
 import ProductFeatured from '../introductComponent/ProductFeatured'
 import ContentTranperen from '../introductComponent/ContentTranperen'
 import Programs from '../introductComponent/Programs'
-import UseSlickInfor from '../components/detaiComponent/UseSlickInfor'
 import Mission from '../introductComponent/Mission'
 import ScrollView from 'react-animate-on-scroll'
 import UpdateType from '../introductComponent/UpdateType'
 import SlickCeo from '../introductComponent/SlickCeo'
 import FormIntroduct from '../introductComponent/FormIntroduct'
+import UseSlickInfor from '../introductComponent/UseSlickInfor'
 
 const ViewDiv = styled.div`
   &.container {
@@ -29,11 +29,12 @@ const ViewDiv = styled.div`
     text-align: center;
   }
   &.g-items-scroll {
-    width: 33.333333%;
+    width: 30%;
   }
   &.g-content {
     display: flex;
     padding: 0 80px;
+    justify-content: center;
   }
   &.card-item {
     padding: 30px 20px 0 20px;

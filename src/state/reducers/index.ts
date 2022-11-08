@@ -1,18 +1,8 @@
 import { combineReducers } from 'redux'
-import booksReducer from './booksReducer'
-import productsReducer from './productReducer'
-import selectorReducer from './selecPrReducer'
-import seriesReducer from './seriesReducer'
-import bookReducer from './selecBkReducer'
-import pubLisherReducer from './pubLisherReducer'
+import ceoReducer from './ceoReducer'
 
 const reducers = combineReducers({
-  products: productsReducer,
-  product: selectorReducer,
-  series: seriesReducer,
-  books: booksReducer,
-  book: bookReducer,
-  pubLisher: pubLisherReducer,
+  ceos: ceoReducer,
 })
 
 export default reducers

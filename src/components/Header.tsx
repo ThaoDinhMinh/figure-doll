@@ -45,7 +45,7 @@ const Header = () => {
             <Link to="/">Trang chủ</Link>
           </ViewDiv>
           <ViewDiv className="nav-item">
-            <Link to="/">Bộ sưu tập</Link>
+            <Link to="/news">Bộ sưu tập</Link>
           </ViewDiv>
           <ViewDiv className="nav-item">
             <Link to="/">Cửa hàng</Link>

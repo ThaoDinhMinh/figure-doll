@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Detail from './pages/Detail'
 import Gallery from './pages/Gallery'
-import DetailBooks from './pages/DetailBooks'
 import Home from './pages/Home'
 import Introduce from './pages/Introduce'
 import Layout from './pages/Layout'
@@ -29,9 +27,6 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/news" element={<News />} />
           <Route path="/gallery" element={<Gallery />} />
-          <Route path="/detail/:id" element={<Detail />} />
-          <Route path="/detailbooks/:id" element={<DetailBooks />} />
-
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>

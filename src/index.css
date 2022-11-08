@@ -18,13 +18,6 @@ a {
   text-decoration: none;
 }
 
-.slick-current {
-  --animate-repeat: infinite;
-}
-.input-position {
-  width: 50%;
-  position: relative;
-}
 .slick-dots {
   bottom: 4% !important;
 }

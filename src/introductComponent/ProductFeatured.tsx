@@ -49,7 +49,7 @@ const ViewDiv = styled.div`
     text-align: center;
   }
   &.item-wid {
-    width: 16.666667%;
+    width: 20%;
     margin: 0 20px;
     &:hover .text {
       color: #d3ad69;

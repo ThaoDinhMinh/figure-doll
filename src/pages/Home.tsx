@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search'
-import Mui from '../components/Mui'
 import styled from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '../state/reducers'
@@ -119,8 +118,8 @@ const Home = () => {
 
   const dispatch = useDispatch()
   // const { getSeries, getBooks, getFublisher } = bindActionCreators(actionCreators, dispatch)
-  const { series } = useSelector((state: RootState) => state.series)
-  const { publischer } = useSelector((state: RootState) => state.pubLisher)
+  // const { series } = useSelector((state: RootState) => state.series)
+  // const { publischer } = useSelector((state: RootState) => state.pubLisher)
 
   return (
     <Items className="container">
@@ -159,7 +158,6 @@ const Home = () => {
       </Items>
 
       <Items className="mui-container">
-        <Mui />
         <h1>Heloo</h1>
       </Items>
     </Items>
