@@ -3,49 +3,49 @@
     {
       "id":0,
       "name":"Linda Mathew",
-      "img":"/img/t1-medium.jpg",
+      "img":"/img/t1_medium.jpg",
       "job":"CEO",
       "listen":"Không chỉ là trang phục cũng có kiểu cách , một mái tóc vừa đẹp vừa hợp với mình càng tôn lên vẻ đẹp tiềm ẩn của bạn"
     },
     {
       "id":1,
       "name":"Philip Mathew",
-      "img":"/img/t2-medium.jpg",
+      "img":"/img/t2_medium.jpg",
       "job":"SEO",
       "listen":"Không chỉ là trang phục cũng có kiểu cách , một mái tóc vừa đẹp vừa hợp với mình càng tôn lên vẻ đẹp tiềm ẩn của bạn"
     },
     {
       "id":2,
       "name":"Lissy Philips",
-      "img":"/img/t3-medium.jpg",
+      "img":"/img/t3_medium.jpg",
       "job":"CEO",
       "listen":"Không chỉ là trang phục cũng có kiểu cách , một mái tóc vừa đẹp vừa hợp với mình càng tôn lên vẻ đẹp tiềm ẩn của bạn"
     },
     {
       "id":3,
       "name":"Matina Philips",
-      "img":"/img/t5-medium.jpg",
+      "img":"/img/t5_medium.jpg",
       "job":"CEO",
       "listen":"Không chỉ là trang phục cũng có kiểu cách , một mái tóc vừa đẹp vừa hợp với mình càng tôn lên vẻ đẹp tiềm ẩn của bạn"
     },
     {
       "id":4,
       "name":"Auratiss Jons",
-      "img":"/img/t6-medium.jpg",
+      "img":"/img/t6_medium.jpg",
       "job":"CEO",
       "listen":"Không chỉ là trang phục cũng có kiểu cách , một mái tóc vừa đẹp vừa hợp với mình càng tôn lên vẻ đẹp tiềm ẩn của bạn"
     },
     {
       "id":5,
       "name":"Kusayioh Matess",
-      "img":"/img/t7-medium.jpg",
+      "img":"/img/t7_medium.jpg",
       "job":"CEO",
       "listen":"Không chỉ là trang phục cũng có kiểu cách , một mái tóc vừa đẹp vừa hợp với mình càng tôn lên vẻ đẹp tiềm ẩn của bạn"
     },
     {
       "id":6,
       "name":"Justina Linmat",
-      "img":"/img/t8-medium.jpg",
+      "img":"/img/t8_medium.jpg",
       "job":"CEO",
       "listen":"Không chỉ là trang phục cũng có kiểu cách , một mái tóc vừa đẹp vừa hợp với mình càng tôn lên vẻ đẹp tiềm ẩn của bạn"
     }
@@ -108,16 +108,33 @@
       "style_hair":"Tóc giả màu đen bóng",
       "img":"/img/product6.jpg",
       "imghide":"/img/product7.jpg",
-      "price":"800.000",
+      "price":"500.000",
       "qty":1,
-      "sale":15,
-      "category":"Đầy đủ",
+      "sale":10,
+      "category":"Tóc dệt",
       "main":{
-        "text":"Tóc dài óng vàng siêu xinh dành cho những bạn thích sự mới mẻ muốn thay đổi trong những buổi hẹn hò. Bản có thể để lại ấn tượng sâu sắc đến người ấy !",
+        "text":"Tóc dài màu đen bóng siêu xinh dành cho những bạn thích sự mới mẻ muốn thay đổi trong những buổi hẹn hò. Bản có thể để lại ấn tượng sâu sắc đến người ấy !",
         "bold":"3",
-        "dimensions":"3.4 x 4.3 x 2.3",
-        "color":"Vàng",
+        "dimensions":"4.4 x 2.4 x 5.5",
+        "color":"Xám đen",
         "size":"Vừa phải"
+      }
+    },
+    {
+      "id":4,
+      "style_hair":"Tóc giả dài màu vàng nâu",
+      "img":"/img/product6.jpg",
+      "imghide":"/img/product7.jpg",
+      "price":"700.000",
+      "qty":1,
+      "sale":13,
+      "category":"Đầu đủ",
+      "main":{
+        "text":"Tóc dài màu vàng nâu siêu xinh dành cho những bạn thích sự mới mẻ muốn thay đổi trong những buổi hẹn hò. Bản có thể để lại ấn tượng sâu sắc đến người ấy !",
+        "bold":"4",
+        "dimensions":"4.5 x 5.4 x 6.3",
+        "color":"Vàng & nâu",
+        "size":"Nhỏ"
       }
     }
   ],
@@ -142,5 +159,5 @@
     "Cũng xin lưu ý rằng phí vận chuyển cho nhiều mặt hàng chúng tôi bán dựa trên trọng lượng. Trọng lượng của bất kỳ mục nào như vậy có thể được tìm thấy trên trang chi tiết của nó. Để phản ánh chính sách của các công ty vận chuyển mà chúng tôi sử dụng, tất cả các trọng lượng sẽ được làm tròn thành pound tiếp theo."
 ]
   },
-  "category":["Đầy đủ","Chăm sóc tóc","Một nửa tóc giả","tóc nối","tóc khô chắc","tóc dệt"]
+  "category":["Đầy đủ","Chăm sóc tóc","Một nửa tóc giả","Tóc nối","Tóc khô chắc","Tóc dệt"]
 }

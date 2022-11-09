@@ -2,8 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
+import { data } from './dataItem'
+import UplateComponent from './UplateComponent'
 
-const ViewDiv = styled.div`
+export const ViewDiv = styled.div`
   &.update {
     background: url('/img/img-back-1.jpeg');
     background-repeat: repeat;
@@ -65,7 +67,7 @@ const ViewDiv = styled.div`
     position: relative;
   }
 `
-const Text = styled.p`
+export const Text = styled.p`
   font-weight: 300;
   color: #000000;
   &.text-product {
@@ -115,7 +117,7 @@ const Text = styled.p`
     font-size: 1.6rem;
   }
 `
-const Image = styled.img`
+export const Image = styled.img`
   cursor: pointer;
   width: 100%;
   display: block;
@@ -145,72 +147,9 @@ const UpdateType = () => {
       </ViewDiv>
 
       <ViewDiv className="news">
-        <ViewDiv className="news-items">
-          <ViewDiv className="g-image">
-            <Image src="/img/img-blog-1.jpg" alt="news" />
-            <ViewDiv className="day-month">
-              <ViewDiv className="g-image-child">
-                <CalendarMonthIcon sx={{ fontSize: 20 }} />
-                <Text className="mean">Nov 22 / 2022</Text>
-              </ViewDiv>
-            </ViewDiv>
-          </ViewDiv>
-          <ViewDiv className="t-card">
-            <Text className="text-head">Kiểu tóc thịnh hành nhất</Text>
-            <Text className="text-view">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ullam ipsum odio accusamus repellat
-              fugiat nam quibusdam a blanditiis. Autem animi harum amet sunt ducimus fugit veniam, cupiditate nihil
-              neque.
-            </Text>
-            <ViewDiv className="btn">
-              <Text className="btn-tect">Đọc thêm</Text>
-            </ViewDiv>
-          </ViewDiv>
-        </ViewDiv>
-        <ViewDiv className="news-items news-margin">
-          <ViewDiv className="g-image">
-            <Image src="/img/img-blog-2.jpg" alt="news" />
-            <ViewDiv className="day-month">
-              <ViewDiv className="g-image-child">
-                <CalendarMonthIcon sx={{ fontSize: 20 }} />
-                <Text className="mean">Nov 22 / 2022</Text>
-              </ViewDiv>
-            </ViewDiv>
-          </ViewDiv>
-          <ViewDiv className="t-card">
-            <Text className="text-head">Kiểu tóc thịnh hành nhất</Text>
-            <Text className="text-view">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ullam ipsum odio accusamus repellat
-              fugiat nam quibusdam a blanditiis. Autem animi harum amet sunt ducimus fugit veniam, cupiditate nihil
-              neque.
-            </Text>
-            <ViewDiv className="btn">
-              <Text className="btn-tect">Đọc thêm</Text>
-            </ViewDiv>
-          </ViewDiv>
-        </ViewDiv>
-        <ViewDiv className="news-items">
-          <ViewDiv className="g-image">
-            <Image src="/img/img-blog.jpg" alt="news" />
-            <ViewDiv className="day-month">
-              <ViewDiv className="g-image-child">
-                <CalendarMonthIcon sx={{ fontSize: 20 }} />
-                <Text className="mean">Nov 22 / 2022</Text>
-              </ViewDiv>
-            </ViewDiv>
-          </ViewDiv>
-          <ViewDiv className="t-card">
-            <Text className="text-head">Kiểu tóc thịnh hành nhất</Text>
-            <Text className="text-view">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ullam ipsum odio accusamus repellat
-              fugiat nam quibusdam a blanditiis. Autem animi harum amet sunt ducimus fugit veniam, cupiditate nihil
-              neque.
-            </Text>
-            <ViewDiv className="btn">
-              <Text className="btn-tect">Đọc thêm</Text>
-            </ViewDiv>
-          </ViewDiv>
-        </ViewDiv>
+        {data.map((a) => (
+          <UplateComponent key={a.id} item={a} />
+        ))}
       </ViewDiv>
       <ViewDiv className="uplate-form">
         <ViewDiv className="g-form">

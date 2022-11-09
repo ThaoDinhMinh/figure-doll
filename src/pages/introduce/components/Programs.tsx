@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import { dataProgram } from './dataItem'
+import ProgramComponent from './ProgramComponent'
 
-const ViewDiv = styled.div`
+export const ViewDiv = styled.div`
   &.contail {
     background-color: white;
   }
@@ -65,7 +67,7 @@ const ViewDiv = styled.div`
     padding: 12px 0 60px 0;
   }
 `
-const Image = styled.img`
+export const Image = styled.img`
   display: block;
   &.image-radios {
     border-radius: 50%;
@@ -73,7 +75,7 @@ const Image = styled.img`
     transition: all 0.3s linear;
   }
 `
-const Text = styled.p`
+export const Text = styled.p`
   font-weight: 300;
   &.text-product {
     font-size: 2.5rem;
@@ -136,54 +138,9 @@ const Programs = () => {
       </ViewDiv>
 
       <ViewDiv className="container">
-        <ViewDiv className="container-item">
-          <ViewDiv className="image-item">
-            <ViewDiv className="image-scalc">
-              <Image className="image-radios" src="/img/img-pro.jpg" alt="toc dep" />
-              <ViewDiv className="g-text-g">
-                <Text className="text-sale">40% OFF</Text>
-                <Text className="text-on">Trên sản phẩm</Text>
-              </ViewDiv>
-              <ViewDiv className="line-garen"></ViewDiv>
-            </ViewDiv>
-          </ViewDiv>
-          <ViewDiv className="text-mean">
-            <Text className="t-mean-head">Tóc dài xoăn lượn sóng</Text>
-            <Text className="t-mean-foot">Kiểu tóc thời thượng của đương đại tạo nên một phong cách riêng !</Text>
-          </ViewDiv>
-        </ViewDiv>
-        <ViewDiv className="container-item">
-          <ViewDiv className="image-item">
-            <ViewDiv className="image-scalc">
-              <Image className="image-radios" src="/img/img-pro1.jpg" alt="toc dep" />
-              <ViewDiv className="g-text-g">
-                <Text className="text-sale">60% OFF</Text>
-                <Text className="text-on">Trên sản phẩm</Text>
-              </ViewDiv>
-              <ViewDiv className="line-garen"></ViewDiv>
-            </ViewDiv>
-          </ViewDiv>
-          <ViewDiv className="text-mean">
-            <Text className="t-mean-head">Tóc xoăn quyến rũ</Text>
-            <Text className="t-mean-foot">Kiểu tóc mà mọi người luôn ao ước có được !</Text>
-          </ViewDiv>
-        </ViewDiv>
-        <ViewDiv className="container-item">
-          <ViewDiv className="image-item">
-            <ViewDiv className="image-scalc">
-              <Image className="image-radios" src="/img/img-pro2.jpg" alt="toc dep" />
-              <ViewDiv className="g-text-g">
-                <Text className="text-sale">80% OFF</Text>
-                <Text className="text-on">Trên sản phẩm</Text>
-              </ViewDiv>
-              <ViewDiv className="line-garen"></ViewDiv>
-            </ViewDiv>
-          </ViewDiv>
-          <ViewDiv className="text-mean">
-            <Text className="t-mean-head">Tóc thẳng cổ điển</Text>
-            <Text className="t-mean-foot">Kiểu tóc cổ điển đã chiếm được cảm tình của rất nhiều người.</Text>
-          </ViewDiv>
-        </ViewDiv>
+        {dataProgram.map((a) => (
+          <ProgramComponent key={a.id} item={a} />
+        ))}
       </ViewDiv>
       <ViewDiv className="btn-foot">
         <Text className="btn-foot-text">Xem thêm</Text>

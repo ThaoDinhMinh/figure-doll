@@ -1,13 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { dataSome } from './components/about_data'
 import styled from 'styled-components'
 import NavigateNextIcon from '@mui/icons-material/NavigateNext'
-import OfferSalon from '../aboutusComponent/OfferSalon'
-import OurProgram from '../aboutusComponent/OurProgram'
-import OurStats from '../aboutusComponent/OurStats'
-import SalonTeam from '../aboutusComponent/SalonTeam'
+import OfferSalon from './components/OfferSalon'
+import OurProgram from './components/OurProgram'
+import OurStats from './components/OurStats'
+import SalonTeam from './components/SalonTeam'
+import OurSomeThing from './components/OurSomeThing'
 
-const ViewDiv = styled.div`
+export const ViewDiv = styled.div`
   &.about_us {
     background-image: url('/img/back-about.jpg');
     background-repeat: no-repeat;
@@ -18,15 +20,14 @@ const ViewDiv = styled.div`
     background-image: url('/img/img-back.jpg');
     background-repeat: repeat-x;
     background-position: center;
-    padding: 32px 0;
-    margin-top: -3px;
-    margin-bottom: -3px;
+
     text-align: center;
   }
   &.g-link {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 24px;
   }
   &.container-about {
     background-color: white;
@@ -44,12 +45,12 @@ const ViewDiv = styled.div`
   &.items {
     padding: 58px 60px;
     box-shadow: 1px 2px 8px gray;
-    height: 100%;
   }
   &.about-bd {
     display: flex;
     width: 75%;
     margin: auto;
+    padding-top: 32px;
   }
   &.g-image {
     display: flex;
@@ -77,7 +78,7 @@ const ViewDiv = styled.div`
     padding: 36px 0;
   }
   &.offer-card {
-    width: 25%;
+    width: 31%;
     text-align: center;
     box-shadow: 0px 0px 10px #00000011;
     padding: 32px 0 40px 0;
@@ -92,7 +93,7 @@ const ViewDiv = styled.div`
     margin-top: 24px;
   }
 `
-const Text = styled.p`
+export const Text = styled.p`
   color: #000000;
   font-weight: 300;
   &.text-head {
@@ -100,6 +101,7 @@ const Text = styled.p`
     font-weight: 400;
     line-height: 72px;
     letter-spacing: 4px;
+    padding-top: 32px;
   }
   &.offer-text-header {
     font-size: 2.5rem;
@@ -135,16 +137,20 @@ const Text = styled.p`
     color: #666666;
   }
 `
-const Image = styled.img`
+export const Image = styled.img`
   width: 100%;
   display: block;
   &.offer-img-item {
     margin: auto;
     width: 50%;
     border-radius: 50%;
+    transition: all 0.3s linear;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 `
-const Button = styled.button`
+export const Button = styled.button`
   padding: 14px 18px;
   background-color: #000000;
   transition: all 0.3s linear;
@@ -188,13 +194,13 @@ const AboutUs = () => {
               </Text>
               <ViewDiv className="g-image">
                 <ViewDiv className="img">
-                  <Image src="/img/img-about.jpg" />
+                  <Image src="/img/img-about.jpg" alt="anh dep" />
                 </ViewDiv>
                 <ViewDiv className="img">
-                  <Image src="/img/img-about-2.jpg" />
+                  <Image src="/img/img-about-2.jpg" alt="anh dep" />
                 </ViewDiv>
                 <ViewDiv className="img">
-                  <Image src="/img/img-about-3.jpg" />
+                  <Image src="/img/img-about-3.jpg" alt="anh dep" />
                 </ViewDiv>
               </ViewDiv>
             </ViewDiv>
@@ -209,51 +215,9 @@ const AboutUs = () => {
           </ViewDiv>
           <ViewDiv className="offer-all-card">
             <ViewDiv className="offer-none"></ViewDiv>
-            <ViewDiv className="offer-card">
-              <ViewDiv className="offer-img">
-                <Image className="offer-img-item" src="/img/img-about-4.jpg" alt="anh chuyen gia" />
-              </ViewDiv>
-              <ViewDiv className="offer-text">
-                <Text className="offer-text-head">Điều trị rụng tóc</Text>
-                <Text className="offer-text-mean">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus veritatis tenetur inventore eaque
-                  est architecto explicabo
-                </Text>
-                <ViewDiv className="offer-btn">
-                  <Button>Cửa hàng</Button>
-                </ViewDiv>
-              </ViewDiv>
-            </ViewDiv>
-            <ViewDiv className="offer-card offer-cart-center">
-              <ViewDiv className="offer-img">
-                <Image className="offer-img-item" src="/img/img-about-5.jpg" alt="anh chuyen gia" />
-              </ViewDiv>
-              <ViewDiv className="offer-text">
-                <Text className="offer-text-head">Điều trị mọc tóc</Text>
-                <Text className="offer-text-mean">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus veritatis tenetur inventore eaque
-                  est architecto explicabo
-                </Text>
-                <ViewDiv className="offer-btn">
-                  <Button>Cửa hàng</Button>
-                </ViewDiv>
-              </ViewDiv>
-            </ViewDiv>
-            <ViewDiv className="offer-card">
-              <ViewDiv className="offer-img">
-                <Image className="offer-img-item" src="/img/img-about-6.jpg" alt="anh chuyen gia" />
-              </ViewDiv>
-              <ViewDiv className="offer-text">
-                <Text className="offer-text-head">Kiểm tra tổng thể tóc</Text>
-                <Text className="offer-text-mean">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus veritatis tenetur inventore eaque
-                  est architecto explicabo
-                </Text>
-                <ViewDiv className="offer-btn">
-                  <Button>Cửa hàng</Button>
-                </ViewDiv>
-              </ViewDiv>
-            </ViewDiv>
+            {dataSome.map((a) => (
+              <OurSomeThing key={a.id} item={a} />
+            ))}
             <ViewDiv className="offer-none"></ViewDiv>
           </ViewDiv>
         </ViewDiv>
