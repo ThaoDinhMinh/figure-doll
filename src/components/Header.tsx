@@ -14,7 +14,7 @@ const ViewDiv = styled.div`
     font-weight: 400;
   }
   &.header-top {
-    padding: 20px 0;
+    /* padding: 20px 0; */
   }
   &.header-bot {
     position: -webkit-sticky;

@@ -1,8 +1,10 @@
 import React from 'react'
+import { looking } from './dataItem'
 import styled from 'styled-components'
 import ScrollView from 'react-animate-on-scroll'
+import MissionComponent from './MissionComponent'
 
-const ViewDiv = styled.div`
+export const ViewDiv = styled.div`
   &.text-top {
     margin: 60px 0;
   }
@@ -65,7 +67,7 @@ const ViewDiv = styled.div`
     align-items: center;
   }
 `
-const Text = styled.p`
+export const Text = styled.p`
   &.t-head {
     color: white;
     font-size: 2.5rem;
@@ -119,7 +121,7 @@ const Text = styled.p`
     color: white;
   }
 `
-const Image = styled.img`
+export const Image = styled.img`
   width: 100%;
   display: block;
 `
@@ -155,70 +157,9 @@ const Mission = () => {
         </ViewDiv>
         <ViewDiv className="g-body">
           <ViewDiv className="g-animate">
-            <ViewDiv className="animate">
-              <ScrollView animateIn=" animate__fadeInLeft" duration={1.5} animateOnce={true}>
-                <ViewDiv className="animate-container">
-                  <ViewDiv className="card-animate">
-                    <ViewDiv className="card-image card-img">
-                      <Image src="/img/img1-1.jpg" />
-                    </ViewDiv>
-                    <ViewDiv className="card-image card-text">
-                      <Text className="text-card">Dầu gội & Dầu xả</Text>
-                      <Text className="text-color">3.990.000 đ / -</Text>
-                      <Text className="text-time">3 Tháng</Text>
-                    </ViewDiv>
-                  </ViewDiv>
-                </ViewDiv>
-              </ScrollView>
-            </ViewDiv>
-            <ViewDiv className="animate">
-              <ScrollView animateIn="animate__fadeInRight" animateOnce={true} duration={1.5}>
-                <ViewDiv className="animate-container">
-                  <ViewDiv className="card-animate">
-                    <ViewDiv className="card-image card-img">
-                      <Image src="/img/img2-1.jpg" />
-                    </ViewDiv>
-                    <ViewDiv className="card-image card-text">
-                      <Text className="text-card">Sản phẩm Salon</Text>
-                      <Text className="text-color">Điều trị tại trung tâm</Text>
-                      <Text className="text-time">12:30 - 16:30</Text>
-                    </ViewDiv>
-                  </ViewDiv>
-                </ViewDiv>
-              </ScrollView>
-            </ViewDiv>
-            <ViewDiv className="animate">
-              <ScrollView animateOnce={true} animateIn=" animate__fadeInLeft" duration={2}>
-                <ViewDiv className="animate-container">
-                  <ViewDiv className="card-animate">
-                    <ViewDiv className="card-image card-img">
-                      <Image src="/img/img3-1.jpg" />
-                    </ViewDiv>
-                    <ViewDiv className="card-image card-text">
-                      <Text className="text-card">Thuốc nhuộm tóc</Text>
-                      <Text className="text-color">12.12</Text>
-                      <Text className="text-time">9:00 - 14:30</Text>
-                    </ViewDiv>
-                  </ViewDiv>
-                </ViewDiv>
-              </ScrollView>
-            </ViewDiv>
-            <ViewDiv className="animate">
-              <ScrollView animateIn="animate__fadeInRight" animateOnce={true} duration={2}>
-                <ViewDiv className="animate-container">
-                  <ViewDiv className="card-animate">
-                    <ViewDiv className="card-image card-img">
-                      <Image src="/img/img4-1.jpg" />
-                    </ViewDiv>
-                    <ViewDiv className="card-image card-text">
-                      <Text className="text-card">Các kiểu tóc</Text>
-                      <Text className="text-color">Cái nhìn đặc biệt</Text>
-                      <Text className="text-time">17:30 - 20:30</Text>
-                    </ViewDiv>
-                  </ViewDiv>
-                </ViewDiv>
-              </ScrollView>
-            </ViewDiv>
+            {looking.map((a) => (
+              <MissionComponent key={a.id} item={a} />
+            ))}
           </ViewDiv>
         </ViewDiv>
       </ViewDiv>
