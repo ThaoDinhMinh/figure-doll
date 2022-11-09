@@ -62,3 +62,30 @@ export interface TypeTeam {
   name: string
   job: string
 }
+
+export interface TypeHairProduct {
+  id: number
+  category: string
+  img: string
+  imghide: string
+  price: string
+  qty: number
+  sale: number
+  style_hair: string
+  main: TypeMainHair
+}
+
+export interface TypeMainHair {
+  bold: string
+  color: string
+  dimensions: string
+  size: string
+  text: string
+}
+
+export interface TypeCategory {
+  id: number
+  img: string
+  text: string
+  qty: number
+}

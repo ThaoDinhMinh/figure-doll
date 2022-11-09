@@ -112,6 +112,7 @@ const Introduce = () => {
   const dispatch = useDispatch()
   const { getCeo } = bindActionCreators(actionCreators, dispatch)
   const { loading, ceos } = useSelector((state: RootState) => state.ceos)
+
   useEffect(() => {
     getCeo()
   }, [])
