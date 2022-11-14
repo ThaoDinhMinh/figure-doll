@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord'
 import LazyLoad from 'react-lazy-load'
+import { Link } from 'react-router-dom'
 const botomup = keyframes`
   from {
     height: 10%;
@@ -167,7 +168,9 @@ const UseSlickInfor = () => {
               </ViewDiv>
               <ViewDiv>
                 <ViewDiv className="btn-price">
-                  <Text className="text-button ">Bắt đầu chỉ từ : 1.300k</Text>
+                  <Link to={'/colection'}>
+                    <Text className="text-button ">Bắt đầu chỉ từ : 1.300k</Text>
+                  </Link>
                 </ViewDiv>
               </ViewDiv>
             </ViewDiv>
@@ -198,7 +201,9 @@ const UseSlickInfor = () => {
               <LazyLoad offset={300}>
                 <ViewDiv>
                   <ViewDiv>
-                    <Text className="text-button ">Kiểm tra bộ sưu tập</Text>
+                    <Link to={'/colection'}>
+                      <Text className="text-button ">Kiểm tra bộ sưu tập</Text>
+                    </Link>
                   </ViewDiv>
                 </ViewDiv>
               </LazyLoad>

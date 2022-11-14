@@ -1,5 +1,5 @@
 import { ActionType } from '../action-types'
-import { TypeCategory, TypeCeo, TypeHairProduct } from '../../interface'
+import { TypeCategory, TypeCeo, TypeHairProduct, TypeColor, TypePage } from '../../interface'
 
 interface GetCeoPending {
   type: ActionType.GETCEO_PENDING
@@ -37,6 +37,35 @@ interface GetCategoryFail {
   payload: string
 }
 
+interface GetColorPending {
+  type: ActionType.GET_COLOR_PENDING
+}
+interface GetColor {
+  type: ActionType.GET_COLOR
+  payload: TypeColor[]
+}
+interface GetColorFail {
+  type: ActionType.GET_COLOR_FAIL
+  payload: string
+}
+
+interface GetSelectProductPending {
+  type: ActionType.GET_SELECT_PRODUCT_PENDING
+}
+interface GetSelectProduct {
+  type: ActionType.GET_SELECT_PRODUCT
+  payload: TypeHairProduct
+}
+interface GetSelectProductFail {
+  type: ActionType.GET_SELECT_PRODUCT_FAIL
+  payload: string
+}
+
+interface ChangePage {
+  type: ActionType.CHANGE_PAGE
+  payload: TypePage
+}
+
 export type Action =
   | GetCeoPending
   | GetCeo
@@ -47,3 +76,10 @@ export type Action =
   | GetCategoryPending
   | GetCategory
   | GetCategoryFail
+  | GetColorPending
+  | GetColor
+  | GetColorFail
+  | ChangePage
+  | GetSelectProductPending
+  | GetSelectProduct
+  | GetSelectProductFail

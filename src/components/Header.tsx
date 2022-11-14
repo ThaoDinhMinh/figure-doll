@@ -48,7 +48,7 @@ const Header = () => {
             <Link to="/colection">Bộ sưu tập</Link>
           </ViewDiv>
           <ViewDiv className="nav-item">
-            <Link to="/">Cửa hàng</Link>
+            <Link to="/shop">Cửa hàng</Link>
           </ViewDiv>
           <ViewDiv className="nav-item">
             <Link to="/">Màu tóc</Link>

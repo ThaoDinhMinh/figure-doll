@@ -89,3 +89,13 @@ export interface TypeCategory {
   text: string
   qty: number
 }
+
+export interface TypeColor {
+  text: string
+  clor: string
+}
+
+export interface TypePage {
+  page: string
+  category: string
+}
