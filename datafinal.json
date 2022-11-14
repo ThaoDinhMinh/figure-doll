@@ -64,7 +64,7 @@
         "text":"Tóc vàng nâu siêu xinh dành cho những bạn thích sự mới mẻ muốn thay đổi trong những buổi hẹn hò. Bản có thể để lại ấn tượng sâu sắc đến người ấy !",
         "bold":"2",
         "dimensions":"2.4 x 5.4 x 6.2",
-        "color":"Vàng & nâu",
+        "color":"Vàng và nâu",
         "size":"Vừa phải"
 
       }
@@ -133,7 +133,7 @@
         "text":"Tóc dài xoăn màu vàng nâu siêu xinh dành cho những bạn thích sự mới mẻ muốn thay đổi trong những buổi hẹn hò. Bản có thể để lại ấn tượng sâu sắc đến người ấy !",
         "bold":"5",
         "dimensions":"5.55 x 6.99 x 78",
-        "color":"Vàng & nâu",
+        "color":"Vàng và nâu",
         "size":"Vừa"
       }
     },
@@ -156,10 +156,10 @@
     },
     {
       "id":6,
-      "style_hair":"Tóc giả dài và ngang vai màu bạch kim",
+      "style_hair":"Tóc giả màu bạch kim",
       "img":"/img/product11.jpg",
       "imghide":"/img/product4.jpg",
-      "price":"7000000",
+      "price":"700000",
       "qty":1,
       "sale":15,
       "category":"Quan tâm",
@@ -174,8 +174,8 @@
     {
       "id":7,
       "style_hair":"Tóc thật màu nâu",
-      "img":"/img/product12.jpg",
-      "imghide":"/img/product10.jpg",
+      "img":"/img/product10.jpg",
+      "imghide":"/img/product12.jpg",
       "price":"8400000",
       "qty":1,
       "sale":12,
@@ -193,7 +193,7 @@
       "style_hair":"Tóc nối màu nâu tổng hợp",
       "img":"/img/product13.jpg",
       "imghide":"/img/product8.jpg",
-      "price":"24000000",
+      "price":"2400000",
       "qty":1,
       "sale":12,
       "category":"Tóc nối",
@@ -210,7 +210,7 @@
       "style_hair":"Tóc thật màu đen",
       "img":"/img/product7.jpg",
       "imghide":"/img/product6.jpg",
-      "price":"12000000",
+      "price":"1200000",
       "qty":1,
       "sale":10,
       "category":"Tóc thật",
@@ -218,16 +218,16 @@
         "text":"Tóc thật màu đen tổng hợp siêu xinh dành cho những bạn thích sự mới mẻ muốn thay đổi trong những buổi hẹn hò. Bản có thể để lại ấn tượng sâu sắc đến người ấy !",
         "bold":"3.5",
         "dimensions":"4.5 x 4.4 x 6.3",
-        "color":"Đen & Xám đen",
+        "color":"Đen và Xám đen",
         "size":"Vừa"
       }
     },
     {
       "id":10,
-      "style_hair":"Tóc nối màu bạch kim tổng hợp",
+      "style_hair":"Tóc nối màu bạch kim ",
       "img":"/img/product4.jpg",
       "imghide":"/img/product11.jpg",
-      "price":"16000000",
+      "price":"1600000",
       "qty":1,
       "sale":10,
       "category":"Tóc nối",
@@ -244,7 +244,7 @@
       "style_hair":"Một nửa tóc giả màu nâu",
       "img":"/img/product.jpg",
       "imghide":"/img/product6.jpg",
-      "price":"12000000",
+      "price":"1200000",
       "qty":1,
       "sale":10,
       "category":"Một nửa tóc giả",
@@ -261,7 +261,7 @@
       "style_hair":"Một nửa tóc giả dài màu vàng",
       "img":"/img/product5.jpg",
       "imghide":"/img/product4.jpg",
-      "price":"13000000",
+      "price":"1300000",
       "qty":1,
       "sale":10,
       "category":"Một nửa tóc giả",
@@ -269,7 +269,7 @@
         "text":"Một nửa tóc giả  màu vàng tổng hợp siêu xinh dành cho những bạn thích sự mới mẻ muốn thay đổi trong những buổi hẹn hò. Bản có thể để lại ấn tượng sâu sắc đến người ấy !",
         "bold":"7.5",
         "dimensions":"6.6 x 7.4 x 9.3",
-        "color":"Vàng & Bạch kim",
+        "color":"Vàng và Bạch kim",
         "size":"Lớn"
       }
     },
@@ -278,7 +278,7 @@
       "style_hair":"Tóc dệt dài màu nâu",
       "img":"/img/product2.jpg",
       "imghide":"/img/product7.jpg",
-      "price":"9000000",
+      "price":"900000",
       "qty":1,
       "sale":8,
       "category":"Tóc dệt",
@@ -295,7 +295,7 @@
       "style_hair":"Tóc dệt dài màu nâu",
       "img":"/img/product6.jpg",
       "imghide":"/img/product9.jpg",
-      "price":"9000000",
+      "price":"900000",
       "qty":1,
       "sale":8,
       "category":"Tóc dệt",
@@ -310,8 +310,8 @@
     {
       "id":15,
       "style_hair":"Tóc thật màu nâu",
-      "img":"/img/product12.jpg",
-      "imghide":"/img/product10.jpg",
+      "img":"/img/product10.jpg",
+      "imghide":"/img/product12.jpg",
       "price":"8400000",
       "qty":1,
       "sale":12,
@@ -329,7 +329,7 @@
       "style_hair":"Tóc thật màu đen",
       "img":"/img/product7.jpg",
       "imghide":"/img/product6.jpg",
-      "price":"12000000",
+      "price":"1200000",
       "qty":1,
       "sale":10,
       "category":"Tóc thật",
@@ -337,7 +337,7 @@
         "text":"Tóc thật màu đen tổng hợp siêu xinh dành cho những bạn thích sự mới mẻ muốn thay đổi trong những buổi hẹn hò. Bản có thể để lại ấn tượng sâu sắc đến người ấy !",
         "bold":"3.5",
         "dimensions":"4.5 x 4.4 x 6.3",
-        "color":"Đen & Xám đen",
+        "color":"Đen và Xám đen",
         "size":"Vừa"
       }
     },
@@ -346,7 +346,7 @@
       "style_hair":"Tóc thật dài màu bạch kim",
       "img":"/img/product4.jpg",
       "imghide":"/img/product5.jpg",
-      "price":"14000000",
+      "price":"1400000",
       "qty":1,
       "sale":10,
       "category":"Tóc thật",
@@ -354,7 +354,7 @@
         "text":"Tóc thật màu vàng siêu xinh dành cho những bạn thích sự mới mẻ muốn thay đổi trong những buổi hẹn hò. Bản có thể để lại ấn tượng sâu sắc đến người ấy !",
         "bold":"6.5",
         "dimensions":"4.6 x 3.4 x 6.3",
-        "color":"Bạch kim & Vàng",
+        "color":"Bạch kim và Vàng",
         "size":"Vừa"
       }
     }, 
@@ -363,7 +363,7 @@
       "style_hair":"Tóc thật màu đen",
       "img":"/img/product7.jpg",
       "imghide":"/img/product6.jpg",
-      "price":"12000000",
+      "price":"1200000",
       "qty":1,
       "sale":10,
       "category":"Tóc thật",
@@ -371,7 +371,7 @@
         "text":"Tóc thật màu đen tổng hợp siêu xinh dành cho những bạn thích sự mới mẻ muốn thay đổi trong những buổi hẹn hò. Bản có thể để lại ấn tượng sâu sắc đến người ấy !",
         "bold":"3.5",
         "dimensions":"4.5 x 4.4 x 6.3",
-        "color":"Đen & Xám đen",
+        "color":"Đen và Xám đen",
         "size":"Vừa"
       }
     },
@@ -380,7 +380,7 @@
       "style_hair":"Tóc nối màu bạch kim tổng hợp",
       "img":"/img/product4.jpg",
       "imghide":"/img/product11.jpg",
-      "price":"16000000",
+      "price":"1600000",
       "qty":1,
       "sale":10,
       "category":"Tóc nối",
@@ -405,7 +405,7 @@
         "text":"Tóc vàng nâu siêu xinh dành cho những bạn thích sự mới mẻ muốn thay đổi trong những buổi hẹn hò. Bản có thể để lại ấn tượng sâu sắc đến người ấy !",
         "bold":"2",
         "dimensions":"2.4 x 5.4 x 6.2",
-        "color":"Vàng & nâu",
+        "color":"Vàng và nâu",
         "size":"Vừa phải"
 
       }
@@ -439,5 +439,15 @@
     {"id":3,"text":"Tóc nối","img":"/img/product6.jpg","qty":3},
     {"id":4,"text":"Tóc thật","img":"/img/product4.jpg","qty":6},
     {"id":5,"text":"Tóc dệt","img":"/img/product1.jpg","qty":5}
+  ],
+  "color":[
+    {"text":"Vàng và nâu","clor":"#ebc15b"},
+    {"text":"Bạch kim","clor":"#e0dedb"},
+    {"text":"Đen và Xám đen","clor":"#7d7d7d"},
+    {"text":"Bạch kim và Vàng","clor":"#f2e3c4"},
+    {"text":"Nâu","clor":"#2f251f"},
+    {"text":"Vàng và Bạch kim","clor":"#d3ba9e"},
+    {"text":"Xám đen","clor":"#352d27"},
+    {"text":"Vàng","clor":"#c5a489"}
   ]
 }
