@@ -37,7 +37,7 @@ const ListeningProduct: React.FC<PropsProduct> = (props) => {
               <div className="g-price">
                 <p className="price-nomal">{Number(item?.price).toLocaleString('en-US')} đ</p>
                 <p className="price-new">
-                  {(Number(item?.price) - (Number(item?.price) * item!.sale) / 100).toLocaleString('en-US')} đ
+                  {(Number(item?.price) - (Number(item?.price) * item?.sale!) / 100).toLocaleString('en-US')} đ
                 </p>
               </div>
               <Stack spacing={1}>

@@ -9,13 +9,15 @@ import { actionCreators } from '../../../state'
 
 interface CategoryProps {
   setCateg: React.Dispatch<React.SetStateAction<string>>
+  style: number | undefined
+  setStyle: React.Dispatch<React.SetStateAction<number | undefined>>
 }
 
 const CategoryShop: React.FC<CategoryProps> = (props) => {
   const dispatch = useDispatch()
 
   const { replacePage } = bindActionCreators(actionCreators, dispatch)
-  const { setCateg } = props
+  const { setCateg, style, setStyle } = props
   const { loading, categorys } = useSelector((state: RootState) => state.category)
 
   if (loading) return null
@@ -29,13 +31,14 @@ const CategoryShop: React.FC<CategoryProps> = (props) => {
             onClick={() => {
               setCateg('')
               replacePage({ page: `?orderBy="id"&endAt=11`, category: '' })
+              setStyle(10000)
             }}
           >
             <FiberManualRecordIcon sx={{ color: '#d3ad69', fontSize: 12 }} />
             <span className="span">Tất cả</span>
           </div>
-          {categorys?.map((a) => (
-            <CategoryListning key={a.id} item={a} setCateg={setCateg} />
+          {categorys?.map((a, i) => (
+            <CategoryListning key={a.id} item={a} count={i} setCateg={setCateg} style={style} setStyle={setStyle} />
           ))}
         </div>
       </div>

@@ -12,6 +12,7 @@ import { RootState } from '../../state/reducers'
 const ShopProduct = () => {
   const { page } = useSelector((state: RootState) => state.page)
   const [categ, setCateg] = useState<string>('')
+  const [style, setStyle] = useState<number>()
   const dispatch = useDispatch()
   const { getCategory, getHairProducts, getColor } = bindActionCreators(actionCreators, dispatch)
 
@@ -35,14 +36,14 @@ const ShopProduct = () => {
             </Link>
             <span className="span">/</span>
             <span className="span">Cửa hàng</span>
-            <span className="span">{page.category === '' ? '' : `/ ${page.category}`}</span>
+            <span className="span">{page.category === '' ? '' : `/ ${' '} ${page.category}`}</span>
           </div>
         </div>
       </div>
       <div className="container">
         <div className="category-layout">
-          <CategoryShop setCateg={setCateg} />
-          <ColorHair />
+          <CategoryShop setCateg={setCateg} setStyle={setStyle} style={style} />
+          <ColorHair setStyle={setStyle} style={style} />
         </div>
         <div className="component-container">
           <div className="list-product">
