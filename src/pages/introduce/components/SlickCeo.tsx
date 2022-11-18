@@ -40,7 +40,6 @@ const ViewDiv = styled.div`
   .img {
     width: 100%;
     border-radius: 50%;
-    cursor: pointer;
   }
   .text-name-job {
     padding-top: 16px;
@@ -58,6 +57,7 @@ const ViewDiv = styled.div`
     .img {
       opacity: 0.3;
       transform: scale(0.8);
+      cursor: pointer;
     }
   }
 `

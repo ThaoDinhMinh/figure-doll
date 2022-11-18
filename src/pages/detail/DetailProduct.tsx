@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 import { useSelector, useDispatch } from 'react-redux'
@@ -10,11 +10,12 @@ import ShowDetail from './components/ShowDetail'
 
 const DetailProduct = () => {
   const dispatch = useDispatch()
+  const [idting, idtingSet] = useState<number>(0)
   const { id } = useParams()
   const { getSelectProduct, replacePage } = bindActionCreators(actionCreators, dispatch)
   useEffect(() => {
     getSelectProduct(Number(id))
-  }, [])
+  }, [idting])
   const { loading, selecter } = useSelector((state: RootState) => state.selecter)
 
   if (loading)
@@ -53,7 +54,7 @@ const DetailProduct = () => {
       </div>
       <div className="container-detail">
         <div className="show-detail">
-          <ShowDetail selecter={selecter!} />
+          <ShowDetail idtingSet={idtingSet} selecter={selecter!} />
         </div>
       </div>
     </ViewDetail>

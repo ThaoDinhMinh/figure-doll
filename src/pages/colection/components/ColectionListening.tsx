@@ -17,7 +17,10 @@ const ColectionListening: React.FC<CategoryProps> = (props) => {
   return (
     <ViewDiv className="card-category">
       <Link
-        onClick={() => replacePage({ page: `?orderBy="category"&equalTo="${item.text}"`, category: item.text })}
+        onClick={() => {
+          replacePage({ page: `?orderBy="category"&equalTo="${item.text}"`, category: item.text })
+          window.scrollTo(0, 0)
+        }}
         to={'/shop'}
       >
         <div className="item">

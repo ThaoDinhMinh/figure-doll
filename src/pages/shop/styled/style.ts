@@ -222,6 +222,7 @@ export const ViewProduct = styled.div`
     }
     .g-price {
       display: flex;
+      flex-wrap: wrap;
     }
     .text-name {
       padding: 20px 10px;
@@ -232,7 +233,7 @@ export const ViewProduct = styled.div`
       background-color: white;
     }
     .g-price {
-      padding: 10px 20px 10px 0;
+      padding: 10px 0px 10px 0;
     }
     .img-hilden {
       position: absolute;

@@ -4,12 +4,17 @@ import { ViewProduct } from '../styled'
 import Rating from '@mui/material/Rating'
 import { Stack } from '@mui/material'
 import { Link } from 'react-router-dom'
+import { bindActionCreators } from 'redux'
+import { actionCreators } from '../../../state'
+import { useDispatch } from 'react-redux'
 
 interface PropsProduct {
   item: TypeHairProduct | undefined
 }
 
 const ListeningProduct: React.FC<PropsProduct> = (props) => {
+  const dispatch = useDispatch()
+  const { addCart } = bindActionCreators(actionCreators, dispatch)
   const { item } = props
   return (
     <ViewProduct className="show-item">
@@ -45,7 +50,9 @@ const ListeningProduct: React.FC<PropsProduct> = (props) => {
               </Stack>
             </div>
             <div className="button-item">
-              <button className="btn">Thêm vào giỏ</button>
+              <button onClick={() => (item ? addCart(item) : null)} className="btn">
+                Thêm vào giỏ
+              </button>
             </div>
           </div>
         </div>

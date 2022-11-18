@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { dataProgram } from './dataItem'
 import ProgramComponent from './ProgramComponent'
@@ -143,7 +144,9 @@ const Programs = () => {
         ))}
       </ViewDiv>
       <ViewDiv className="btn-foot">
-        <Text className="btn-foot-text">Xem thêm</Text>
+        <Link to={'/shop'} onClick={() => window.scrollTo(0, 135)}>
+          <Text className="btn-foot-text">Xem thêm</Text>
+        </Link>
       </ViewDiv>
     </ViewDiv>
   )

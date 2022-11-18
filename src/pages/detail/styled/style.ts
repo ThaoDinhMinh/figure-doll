@@ -51,7 +51,6 @@ export const ViewDetail = styled.div`
     display: flex;
   }
   .items {
-    display: flex;
     width: 75%;
   }
   .items-left {
@@ -147,7 +146,6 @@ export const ViewDetail = styled.div`
   }
   .items-end {
     width: 25%;
-    padding: 10px;
     padding-left: 30px;
   }
   .sale-infor-check {
@@ -233,6 +231,91 @@ export const ViewDetail = styled.div`
           border-bottom: 1px solid #666666;
         }
       }
+    }
+  }
+  .share {
+    font-weight: 300;
+    font-size: 0.9rem;
+    margin-top: 16px;
+    display: flex;
+    .fb-share-button {
+      margin: 0 10px;
+    }
+    a {
+      transition: all 0.3s linear;
+      &:hover {
+        filter: brightness(150%);
+      }
+    }
+  }
+  ul {
+    list-style: none;
+  }
+  .h3 {
+    font-weight: 400;
+    font-size: 1.3rem;
+    margin: 24px 0 16px 30px;
+  }
+  li {
+    margin-bottom: 12px;
+    font-weight: 300;
+    font-size: 1rem;
+  }
+  ol {
+    margin-left: 16px;
+    margin-top: 24px;
+  }
+  ol,
+  ul {
+    padding: 0 30px;
+  }
+`
+
+export const SlickView = styled.div`
+  &.rank-sale {
+    margin: 32px 0;
+    .show-item {
+      width: 100%;
+      padding: 0 15px;
+    }
+    .slick-prev,
+    .slick-next {
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 1000;
+      padding: 15px 0 30px 0;
+    }
+    .slick-prev {
+      left: 0;
+    }
+    .slick-next {
+      right: 0;
+    }
+    .slick-list {
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+    h4 {
+      padding-bottom: 24px;
+      font-weight: 400;
+      font-size: 1.4rem;
+      text-align: center;
+    }
+    .item-slider {
+      position: relative;
+    }
+    .click-detail {
+      position: absolute;
+      top: 0;
+      right: 15px;
+      left: 15px;
+      z-index: 100;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    .sale {
+      text-align: right;
+    }
+    .p-sale {
+      display: inline-block;
     }
   }
 `

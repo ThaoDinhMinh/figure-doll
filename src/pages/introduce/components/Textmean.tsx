@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import ScrollView from 'react-animate-on-scroll'
+import { Link } from 'react-router-dom'
 const ViewDiv = styled.div`
   &.grup-body {
     display: flex;
@@ -102,7 +103,9 @@ const Textmean = () => {
               bạn là một chỉ số về tính cách của bạn, có thể tạo nên hoặc thay đổi vẻ ngoài của bạn.
             </Text>
             <ViewDiv className="btn-bot">
-              <Text className="text-btn">Thông tin</Text>
+              <Link to={'/aboutus'}>
+                <Text className="text-btn">Thông tin</Text>
+              </Link>
             </ViewDiv>
           </ViewDiv>
         </ScrollView>

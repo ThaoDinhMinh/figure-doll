@@ -107,7 +107,7 @@ const Footer = () => {
       <ViewDiv className="bg-dark"></ViewDiv>
       <ViewDiv className="footer-items">
         <ViewDiv className="img-top spacing">
-          <Image src="/img/logo_small.png" />
+          <Image src="/img/logo_small.png" alt="logo-footer" />
         </ViewDiv>
         <Form className="form-footer">
           <ViewDiv className="g-input">
