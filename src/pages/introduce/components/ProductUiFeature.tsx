@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { TypeUiProduct } from '../../../interface'
 import { ViewDiv, Text, Image } from './ProductFeatured'
 interface Props {
@@ -9,15 +10,17 @@ const ProductUiFeature: React.FC<Props> = (props) => {
   const { item } = props
   return (
     <ViewDiv className="item-wid">
-      <ViewDiv className="item">
-        <ViewDiv className="product-show">
-          <Image className="img-product" src={item.img} />
+      <Link to={`/shop/detail/${item.id}`} onClick={() => window.scrollTo(0, 135)}>
+        <ViewDiv className="item">
+          <ViewDiv className="product-show">
+            <Image className="img-product" src={item.img} />
+          </ViewDiv>
+          <ViewDiv className="product-hilden">
+            <Image className="img-hilden" src={item.img_hide} />
+          </ViewDiv>
+          <ViewDiv className="hilden-div-opa"></ViewDiv>
         </ViewDiv>
-        <ViewDiv className="product-hilden">
-          <Image className="img-hilden" src={item.img_hide} />
-        </ViewDiv>
-        <ViewDiv className="hilden-div-opa"></ViewDiv>
-      </ViewDiv>
+      </Link>
       <ViewDiv className="text-background">
         <ViewDiv className="text-name">
           <Text className="text">{item.title}</Text>

@@ -24,7 +24,6 @@ const ShopProduct = () => {
     getHairProducts(page.page)
   }, [page])
 
-  console.log(page)
   return (
     <ViewDivShopProduct>
       <div className="header">

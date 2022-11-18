@@ -99,3 +99,9 @@ export interface TypePage {
   page: string
   category: string
 }
+
+export interface TypeNote {
+  represent: string[]
+  policy_return: string[]
+  shipping: string[]
+}

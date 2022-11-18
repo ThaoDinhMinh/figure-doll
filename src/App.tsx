@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Gallery from './pages/Gallery'
 import Introduce from './pages/introduce/Introduce'
 import Layout from './pages/Layout'
 import PageNotFound from './pages/PageNotFound'
@@ -11,6 +10,7 @@ import DetailProduct from './pages/detail/DetailProduct'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import 'animate.css'
 import 'animate.css/animate.min.css'
+import CartShow from './pages/cart/CartShow'
 
 function App() {
   return (
@@ -21,8 +21,8 @@ function App() {
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/colection" element={<Colection />} />
           <Route path="/shop" element={<ShopProduct />} />
-          <Route path="/gallery" element={<Gallery />} />
           <Route path="/shop/detail/:id" element={<DetailProduct />} />
+          <Route path="/cart" element={<CartShow />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>

@@ -20,4 +20,17 @@ export enum ActionType {
   GET_SELECT_PRODUCT_PENDING = 'get_select_product_pending',
   GET_SELECT_PRODUCT = 'get_select_product',
   GET_SELECT_PRODUCT_FAIL = 'get_select_product_fail',
+
+  GET_NOTE_PENDING = 'get_note_pending',
+  GET_NOTE = 'get_note',
+  GET_NOTE_FAIL = 'get_note_fail',
+
+  GET_MAX_PENDING = 'get_max_pending',
+  GET_MAX = 'get_max',
+  GET_MAX_FAIL = 'get_max_fail',
+
+  ADD_CART = 'add_cart',
+  ICREMENT_QTY = 'icrement_qty',
+  DECREMENT_QTY = 'decrement_qty',
+  REMOVER_HAIR = 'remover_hair',
 }

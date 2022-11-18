@@ -1,5 +1,6 @@
 import { ActionType } from '../action-types'
-import { TypeCategory, TypeCeo, TypeHairProduct, TypeColor, TypePage } from '../../interface'
+import { TypeCategory, TypeCeo, TypeHairProduct, TypeColor, TypePage, TypeNote } from '../../interface'
+import { type } from 'os'
 
 interface GetCeoPending {
   type: ActionType.GETCEO_PENDING
@@ -61,9 +62,50 @@ interface GetSelectProductFail {
   payload: string
 }
 
+interface GetSelectNotePending {
+  type: ActionType.GET_NOTE_PENDING
+}
+interface GetSelectNote {
+  type: ActionType.GET_NOTE
+  payload: TypeNote
+}
+interface GetSelectNoteFail {
+  type: ActionType.GET_NOTE_FAIL
+  payload: string
+}
+
+interface GetMaxPending {
+  type: ActionType.GET_MAX_PENDING
+}
+interface GetMax {
+  type: ActionType.GET_MAX
+  payload: TypeHairProduct[]
+}
+interface GetMaxFail {
+  type: ActionType.GET_MAX_FAIL
+  payload: string
+}
+
 interface ChangePage {
   type: ActionType.CHANGE_PAGE
   payload: TypePage
+}
+
+interface AddCart {
+  type: ActionType.ADD_CART
+  payload: TypeHairProduct
+}
+interface Remover {
+  type: ActionType.REMOVER_HAIR
+  payload: number
+}
+interface IcrementQty {
+  type: ActionType.ICREMENT_QTY
+  payload: TypeHairProduct
+}
+interface Decrement {
+  type: ActionType.DECREMENT_QTY
+  payload: TypeHairProduct
 }
 
 export type Action =
@@ -83,3 +125,13 @@ export type Action =
   | GetSelectProductPending
   | GetSelectProduct
   | GetSelectProductFail
+  | GetSelectNotePending
+  | GetSelectNote
+  | GetSelectNoteFail
+  | GetMaxPending
+  | GetMax
+  | GetMaxFail
+  | AddCart
+  | Remover
+  | IcrementQty
+  | Decrement

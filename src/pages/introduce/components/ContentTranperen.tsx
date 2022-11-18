@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import ScrollView from 'react-animate-on-scroll'
+import { Link } from 'react-router-dom'
 
 const ViewDiv = styled.div`
   text-align: center;
@@ -81,7 +82,9 @@ const ContentTranperen = () => {
                 </Text>
               </ViewDiv>
               <ViewDiv>
-                <Text className="btn-text">SHOP NOW</Text>
+                <Link to={'/shop'}>
+                  <Text className="btn-text">SHOP NOW</Text>
+                </Link>
               </ViewDiv>
             </ScrollView>
           </ViewDiv>

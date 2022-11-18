@@ -2,6 +2,7 @@ import React from 'react'
 import { TypeFeatureProduct } from '../../../interface'
 import { ViewDiv, Text, Image } from '../Introduce'
 import ScrollView from 'react-animate-on-scroll'
+import { Link } from 'react-router-dom'
 
 interface Props {
   featureProduct: TypeFeatureProduct
@@ -29,7 +30,9 @@ const FeatureProduct: React.FC<Props> = (props) => {
             </ViewDiv>
 
             <ViewDiv className="text-number">
-              <Text className="btn-see-more">Xem thêm</Text>
+              <Link to={'/aboutus'} onClick={() => window.scrollTo(0, 135)}>
+                <Text className="btn-see-more">Xem thêm</Text>
+              </Link>
             </ViewDiv>
           </ViewDiv>
         </ViewDiv>
