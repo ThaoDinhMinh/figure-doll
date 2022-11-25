@@ -2,15 +2,26 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { TypeUiProduct } from '../../../interface'
 import { ViewDiv, Text, Image } from './ProductFeatured'
+import { bindActionCreators } from 'redux'
+import { useDispatch } from 'react-redux'
+import { actionCreators } from '../../../state'
 interface Props {
   item: TypeUiProduct
 }
 
 const ProductUiFeature: React.FC<Props> = (props) => {
+  const dispatch = useDispatch()
+  const { changeLinkColor } = bindActionCreators(actionCreators, dispatch)
   const { item } = props
   return (
     <ViewDiv className="item-wid">
-      <Link to={`/shop/detail/${item.id}`} onClick={() => window.scrollTo(0, 135)}>
+      <Link
+        to={`/shop/detail/${item.id}`}
+        onClick={() => {
+          window.scrollTo(0, 135)
+          changeLinkColor(2)
+        }}
+      >
         <ViewDiv className="item">
           <ViewDiv className="product-show">
             <Image className="img-product" src={item.img} />

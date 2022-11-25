@@ -8,6 +8,8 @@ import maxminReducer from './maxminReducer'
 import noteReducer from './noteReducer'
 import pageReducer from './pageReducer'
 import selecterReducer from './selectProductReducer'
+import allProductsReducer from './allProductHairReducer'
+import changePageColorReducer from './changeColorReducer'
 
 const reducers = combineReducers({
   ceos: ceoReducer,
@@ -19,6 +21,8 @@ const reducers = combineReducers({
   note: noteReducer,
   maxmin: maxminReducer,
   carts: cartsReducer,
+  allProducts: allProductsReducer,
+  changePageColor: changePageColorReducer,
 })
 
 export default reducers

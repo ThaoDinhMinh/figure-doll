@@ -13,13 +13,14 @@ interface CategoryProps {
 const ColectionListening: React.FC<CategoryProps> = (props) => {
   const dispatch = useDispatch()
   const { item } = props
-  const { replacePage } = bindActionCreators(actionCreators, dispatch)
+  const { replacePage, changeLinkColor } = bindActionCreators(actionCreators, dispatch)
   return (
     <ViewDiv className="card-category">
       <Link
         onClick={() => {
           replacePage({ page: `?orderBy="category"&equalTo="${item.text}"`, category: item.text })
-          window.scrollTo(0, 0)
+          changeLinkColor(2)
+          window.scrollTo(0, 135)
         }}
         to={'/shop'}
       >

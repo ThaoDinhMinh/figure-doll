@@ -9,8 +9,8 @@ import { actionCreators } from '../../../state'
 interface Props {
   item: TypeCategory
   setCateg: React.Dispatch<React.SetStateAction<string>>
-  style: number | undefined
-  setStyle: React.Dispatch<React.SetStateAction<number | undefined>>
+  style: number
+  setStyle: React.Dispatch<React.SetStateAction<number>>
   count: number
 }
 

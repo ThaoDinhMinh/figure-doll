@@ -34,6 +34,10 @@ const cartsReducer = (state: InitialState = initialState, action: Action): Initi
           return { ...a, qty: a.id === action.payload.id ? (a.qty > 1 ? a.qty - 1 : (a.qty = 1)) : a.qty }
         }),
       }
+    case ActionType.CLEAR_CART:
+      return {
+        carts: action.payload,
+      }
     default:
       return state
   }

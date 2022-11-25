@@ -4,8 +4,8 @@ import { RootState } from '../../../state/reducers'
 import ColorListening from './ColorListening'
 import { ViewCategory } from '../styled'
 interface PropsColor {
-  style: number | undefined
-  setStyle: React.Dispatch<React.SetStateAction<number | undefined>>
+  style: number
+  setStyle: React.Dispatch<React.SetStateAction<number>>
 }
 
 const ColorHair: React.FC<PropsColor> = (props) => {

@@ -3,13 +3,6 @@ import styled from 'styled-components'
 export const CartView = styled.div`
   &.cart-page {
     position: relative;
-    .show-checkout {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-    }
   }
   .head-cart {
     text-align: center;
@@ -52,6 +45,7 @@ export const CartView = styled.div`
       padding: 24px;
       background-color: #fafafa;
       border-top: 1px solid rgba(0, 0, 0, 0.4);
+      margin-bottom: 35vh;
     }
     .return-home {
       padding: 8px 16px;
@@ -113,9 +107,16 @@ export const CartView = styled.div`
         align-items: center;
         button {
           padding: 8px 16px;
+          cursor: pointer;
         }
         .qty-resut {
           margin: 0 16px;
+        }
+        .btn-qty {
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fafafa;
+          }
         }
       }
       .item {
@@ -252,6 +253,42 @@ export const CartView = styled.div`
     .checkout {
       text-align: center;
       padding: 24px 0;
+    }
+  }
+
+  .show-check-out {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 0 56px;
+    .form-value {
+      color: #000000;
+      font-size: 1rem;
+      font-weight: 300;
+      margin: 6px 0;
+    }
+    .back-home,
+    .back-shop {
+      padding: 12px 16px;
+      background-color: #d3ad69;
+      border: 2px solid transparent;
+      color: white;
+      display: inline-block;
+      margin: 32px 0;
+      border-radius: 8px;
+      transition: all 0.3s linear;
+      &:hover {
+        background-color: #ffffff;
+        border: 2px solid #000000;
+        color: #000000;
+      }
+    }
+    .all-form-value {
+      text-align: left;
+      margin: auto;
     }
   }
 `

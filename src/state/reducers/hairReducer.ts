@@ -22,6 +22,7 @@ const hairReducer = (state: InitialState = initialState, action: Action): Initia
       return { loading: false, error: null, hairProduct: action.payload }
     case ActionType.GET_HAIR_FAIL:
       return { loading: false, error: action.payload, hairProduct: null }
+
     default:
       return state
   }

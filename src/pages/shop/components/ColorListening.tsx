@@ -8,8 +8,8 @@ import { useDispatch } from 'react-redux'
 interface ColorProps {
   color: TypeColor
   count: number
-  setStyle: React.Dispatch<React.SetStateAction<number | undefined>>
-  style: number | undefined
+  setStyle: React.Dispatch<React.SetStateAction<number>>
+  style: number
 }
 
 const ColorListening: React.FC<ColorProps> = (props) => {
@@ -21,7 +21,7 @@ const ColorListening: React.FC<ColorProps> = (props) => {
       className="cate-item"
       onClick={() => {
         replacePage({ page: `?orderBy="main/color"&equalTo="${color.text}"`, category: color.text })
-        window.scrollTo(0, 0)
+        window.scrollTo(0, 135)
         setStyle(count)
       }}
     >

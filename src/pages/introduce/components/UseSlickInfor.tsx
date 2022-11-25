@@ -6,6 +6,9 @@ import 'slick-carousel/slick/slick-theme.css'
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord'
 import LazyLoad from 'react-lazy-load'
 import { Link } from 'react-router-dom'
+import { actionCreators } from '../../../state'
+import { bindActionCreators } from 'redux'
+import { useDispatch } from 'react-redux'
 const botomup = keyframes`
   from {
     height: 10%;
@@ -127,6 +130,8 @@ const Image = styled.img`
 `
 
 const UseSlickInfor = () => {
+  const dispatch = useDispatch()
+  const { changeLinkColor } = bindActionCreators(actionCreators, dispatch)
   const settings: Settings = {
     dots: true,
     infinite: true,
@@ -168,7 +173,7 @@ const UseSlickInfor = () => {
               </ViewDiv>
               <ViewDiv>
                 <ViewDiv className="btn-price">
-                  <Link to={'/colection'}>
+                  <Link onClick={() => changeLinkColor(1)} to={'/colection'}>
                     <Text className="text-button ">Bắt đầu chỉ từ : 1.300k</Text>
                   </Link>
                 </ViewDiv>
@@ -201,7 +206,7 @@ const UseSlickInfor = () => {
               <LazyLoad offset={300}>
                 <ViewDiv>
                   <ViewDiv>
-                    <Link to={'/colection'}>
+                    <Link onClick={() => changeLinkColor(1)} to={'/colection'}>
                       <Text className="text-button ">Kiểm tra bộ sưu tập</Text>
                     </Link>
                   </ViewDiv>

@@ -9,8 +9,8 @@ import { actionCreators } from '../../../state'
 
 interface CategoryProps {
   setCateg: React.Dispatch<React.SetStateAction<string>>
-  style: number | undefined
-  setStyle: React.Dispatch<React.SetStateAction<number | undefined>>
+  style: number
+  setStyle: React.Dispatch<React.SetStateAction<number>>
 }
 
 const CategoryShop: React.FC<CategoryProps> = (props) => {
@@ -35,7 +35,9 @@ const CategoryShop: React.FC<CategoryProps> = (props) => {
             }}
           >
             <FiberManualRecordIcon sx={{ color: '#d3ad69', fontSize: 12 }} />
-            <span className="span">Tất cả</span>
+            <span style={style === 100 ? { color: '#d3ad69' } : { color: '#000000' }} className="span">
+              Tất cả
+            </span>
           </div>
           {categorys?.map((a, i) => (
             <CategoryListning key={a.id} item={a} count={i} setCateg={setCateg} style={style} setStyle={setStyle} />

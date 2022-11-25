@@ -68,8 +68,8 @@ interface Props {
 
 const SlickCeo: React.FC<Props> = (props) => {
   const { ceos } = props
-  const [nav1, nav1Set] = useState()
-  const [nav2, nav2Set] = useState()
+  const [nav1, nav1Set] = useState<Slider>()
+  const [nav2, nav2Set] = useState<Slider>()
   const slider1 = useRef<any>()
   const slider2 = useRef<any>()
 

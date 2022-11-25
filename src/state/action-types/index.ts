@@ -7,6 +7,10 @@ export enum ActionType {
   GET_HAIR = 'get_hair',
   GET_HAIR_FAIL = 'get_hair_fail',
 
+  GET_ALL_HAIR_PENDING = 'get_all_hair_pending',
+  GET_ALL_HAIR = 'get_all_hair',
+  GET_ALL_HAIR_FAIL = 'get_all_hair_fail',
+
   GET_CATEGORY_PENDING = 'get_category_pending',
   GET_CATEGORY = 'get_category',
   GET_CATEGORY_FAIL = 'get_category_fail',
@@ -16,6 +20,7 @@ export enum ActionType {
   GET_COLOR_FAIL = 'get_color_fail',
 
   CHANGE_PAGE = 'chage_page',
+  CHANGE_LINK_COLOR = 'chage_link_color',
 
   GET_SELECT_PRODUCT_PENDING = 'get_select_product_pending',
   GET_SELECT_PRODUCT = 'get_select_product',
@@ -33,4 +38,5 @@ export enum ActionType {
   ICREMENT_QTY = 'icrement_qty',
   DECREMENT_QTY = 'decrement_qty',
   REMOVER_HAIR = 'remover_hair',
+  CLEAR_CART = 'clear_cart',
 }

@@ -12,7 +12,7 @@ import { RootState } from '../../state/reducers'
 const ShopProduct = () => {
   const { page } = useSelector((state: RootState) => state.page)
   const [categ, setCateg] = useState<string>('')
-  const [style, setStyle] = useState<number>()
+  const [style, setStyle] = useState<number>(100)
   const dispatch = useDispatch()
   const { getCategory, getHairProducts, getColor } = bindActionCreators(actionCreators, dispatch)
 

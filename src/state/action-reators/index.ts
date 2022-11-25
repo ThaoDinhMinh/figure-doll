@@ -4,6 +4,30 @@ import { Action } from '../actions'
 import apiBase from '../../api'
 import { TypeHairProduct, TypePage } from '../../interface'
 
+export const getAllHairProducts = () => {
+  return async (dispatch: Dispatch<Action>) => {
+    try {
+      dispatch({
+        type: ActionType.GET_ALL_HAIR_PENDING,
+      })
+      const responProductHair = await apiBase.get(`hair.json`)
+      let resut: TypeHairProduct[] = []
+      for (let key in responProductHair.data) {
+        resut.push({ ...responProductHair.data[key], id: key })
+      }
+      dispatch({
+        type: ActionType.GET_ALL_HAIR,
+        payload: resut,
+      })
+    } catch (error: any) {
+      dispatch({
+        type: ActionType.GET_ALL_HAIR_FAIL,
+        payload: error.message,
+      })
+    }
+  }
+}
+
 export const getHairProducts = (page: string) => {
   return async (dispatch: Dispatch<Action>) => {
     try {
@@ -167,7 +191,7 @@ export const addCart = (product: TypeHairProduct) => {
   }
 }
 export const removeHart = (id: number) => {
-  return (dispatch: Dispatch) => {
+  return (dispatch: Dispatch<Action>) => {
     dispatch({
       type: ActionType.REMOVER_HAIR,
       payload: id,
@@ -175,7 +199,7 @@ export const removeHart = (id: number) => {
   }
 }
 export const icreMent = (product: TypeHairProduct) => {
-  return (dispatch: Dispatch) => {
+  return (dispatch: Dispatch<Action>) => {
     dispatch({
       type: ActionType.ICREMENT_QTY,
       payload: product,
@@ -183,11 +207,21 @@ export const icreMent = (product: TypeHairProduct) => {
   }
 }
 export const decreMent = (product: TypeHairProduct) => {
-  return (dispatch: Dispatch) => {
+  return (dispatch: Dispatch<Action>) => {
     dispatch({
       type: ActionType.DECREMENT_QTY,
       payload: product,
     })
+  }
+}
+export const clearCarts = () => {
+  return (dispatch: Dispatch<Action>) => {
+    dispatch({ type: ActionType.CLEAR_CART, payload: [] })
+  }
+}
+export const changeLinkColor = (color: number) => {
+  return (dispatch: Dispatch<Action>) => {
+    dispatch({ type: ActionType.CHANGE_LINK_COLOR, payload: color })
   }
 }
 
@@ -198,4 +232,4 @@ export const decreMent = (product: TypeHairProduct) => {
 //       payload: null,
 //     })
 //   }
-// }
+//

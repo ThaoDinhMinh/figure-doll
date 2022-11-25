@@ -1,6 +1,5 @@
 import { ActionType } from '../action-types'
 import { TypeCategory, TypeCeo, TypeHairProduct, TypeColor, TypePage, TypeNote } from '../../interface'
-import { type } from 'os'
 
 interface GetCeoPending {
   type: ActionType.GETCEO_PENDING
@@ -23,6 +22,18 @@ interface Get_Hair {
 }
 interface Get_Hair_Fail {
   type: ActionType.GET_HAIR_FAIL
+  payload: string
+}
+
+interface Get_All_Hair_Pending {
+  type: ActionType.GET_ALL_HAIR_PENDING
+}
+interface Get_All_Hair {
+  type: ActionType.GET_ALL_HAIR
+  payload: TypeHairProduct[]
+}
+interface Get_All_Hair_Fail {
+  type: ActionType.GET_ALL_HAIR_FAIL
   payload: string
 }
 
@@ -91,6 +102,10 @@ interface ChangePage {
   payload: TypePage
 }
 
+interface ChangeLinkColor {
+  type: ActionType.CHANGE_LINK_COLOR
+  payload: number
+}
 interface AddCart {
   type: ActionType.ADD_CART
   payload: TypeHairProduct
@@ -106,6 +121,10 @@ interface IcrementQty {
 interface Decrement {
   type: ActionType.DECREMENT_QTY
   payload: TypeHairProduct
+}
+interface ClearCart {
+  type: ActionType.CLEAR_CART
+  payload: TypeHairProduct[]
 }
 
 export type Action =
@@ -135,3 +154,8 @@ export type Action =
   | Remover
   | IcrementQty
   | Decrement
+  | ClearCart
+  | Get_All_Hair_Pending
+  | Get_All_Hair
+  | Get_All_Hair_Fail
+  | ChangeLinkColor

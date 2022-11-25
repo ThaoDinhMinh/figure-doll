@@ -110,7 +110,7 @@ export const Image = styled.img`
 
 const Introduce = () => {
   const dispatch = useDispatch()
-  const { getCeo } = bindActionCreators(actionCreators, dispatch)
+  const { getCeo, changeLinkColor } = bindActionCreators(actionCreators, dispatch)
   const { loading, ceos } = useSelector((state: RootState) => state.ceos)
 
   useEffect(() => {
@@ -130,7 +130,7 @@ const Introduce = () => {
 
         <ViewDiv className="g-content">
           {items.map((a) => (
-            <FeatureProduct key={a.id} featureProduct={a} />
+            <FeatureProduct changeLinkColor={changeLinkColor} key={a.id} featureProduct={a} />
           ))}
         </ViewDiv>
       </ViewDiv>

@@ -2,6 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import ScrollView from 'react-animate-on-scroll'
 import { Link } from 'react-router-dom'
+import { bindActionCreators } from 'redux'
+import { useDispatch } from 'react-redux'
+import { actionCreators } from '../../../state'
 const ViewDiv = styled.div`
   &.grup-body {
     display: flex;
@@ -87,6 +90,8 @@ const Text = styled.p`
 const Image = styled.img``
 
 const Textmean = () => {
+  const dispatch = useDispatch()
+  const { changeLinkColor } = bindActionCreators(actionCreators, dispatch)
   return (
     <ViewDiv className="grup-body">
       <ViewDiv className="text-mean-left">
@@ -103,7 +108,7 @@ const Textmean = () => {
               bạn là một chỉ số về tính cách của bạn, có thể tạo nên hoặc thay đổi vẻ ngoài của bạn.
             </Text>
             <ViewDiv className="btn-bot">
-              <Link to={'/aboutus'}>
+              <Link onClick={() => changeLinkColor(5)} to={'/aboutus'}>
                 <Text className="text-btn">Thông tin</Text>
               </Link>
             </ViewDiv>

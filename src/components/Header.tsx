@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone'
 import EmailIcon from '@mui/icons-material/Email'
@@ -10,6 +10,7 @@ import InstagramIcon from '@mui/icons-material/Instagram'
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import SearchIcon from '@mui/icons-material/Search'
+import CloseIcon from '@mui/icons-material/Close'
 import { bindActionCreators } from 'redux'
 import { actionCreators } from '../state'
 import { useDispatch, useSelector } from 'react-redux'
@@ -77,6 +78,7 @@ const ViewDiv = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 8px 56px;
+    background-color: #f5f5f5;
     .icon-all {
       transition: all 0.3s linear;
     }
@@ -123,6 +125,61 @@ const ViewDiv = styled.div`
     .icon-uses {
       display: flex;
       align-items: center;
+      .search-input {
+        padding: 6px 20px 6px 10px;
+        outline: none;
+        border-bottom: 1px solid black;
+      }
+      .g-search-input {
+        position: relative;
+        .icon-close {
+          position: absolute;
+          top: 5px;
+          right: 0;
+          .icon-close-input {
+            cursor: pointer;
+            &:hover {
+              color: #d3ad69;
+            }
+          }
+        }
+      }
+      .resut-find-search {
+        position: absolute;
+        top: 29px;
+        right: 0;
+        width: 300px;
+        z-index: 300;
+        box-shadow: 1px 3px 5px white;
+        max-height: 280px;
+        overflow-y: scroll;
+        border-radius: 8px;
+        .search-item {
+          display: flex;
+          background-color: white;
+          padding: 5px;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+          &:hover {
+            background-color: #d3ad69;
+            color: white;
+            cursor: pointer;
+          }
+        }
+        .img-search {
+          width: 25%;
+        }
+        .search-mean-product {
+          width: 75%;
+          color: black;
+          font-size: 0.9rem;
+          font-weight: 300;
+          padding: 12px 0 12px 12px;
+          .price-old {
+            text-decoration: line-through;
+            font-size: 0.8rem;
+          }
+        }
+      }
     }
     .text-price {
       margin-left: 12px;
@@ -263,8 +320,16 @@ const Header = () => {
   ]
   const { carts } = useSelector((state: RootState) => state.carts)
   const dispatch = useDispatch()
-  const [sel, setSel] = useState<number>(0)
-  const { removeHart } = bindActionCreators(actionCreators, dispatch)
+  const [isShowInput, setIsShowInput] = useState<boolean>(false)
+  const [inputSearchValue, setInputSearchValue] = useState<string>('')
+  const { removeHart, getAllHairProducts, changeLinkColor } = bindActionCreators(actionCreators, dispatch)
+  const { hairAllProduct, loading } = useSelector((state: RootState) => state.allProducts)
+  const { colorNumber } = useSelector((state: RootState) => state.changePageColor)
+
+  useEffect(() => {
+    getAllHairProducts()
+  }, [])
+
   return (
     <>
       <ViewDiv className="header-top">
@@ -303,7 +368,7 @@ const Header = () => {
           </div>
         </div>
         <div className="header-top-bot">
-          <Link to={'/'}>
+          <Link onClick={() => changeLinkColor(0)} to={'/'}>
             <div className="logo">
               <img className="img-logo" src="/img/logo_small.png" alt="logo-footer" />
               <h1 className="text-hear-logo">Beautyfull Hair</h1>
@@ -360,7 +425,74 @@ const Header = () => {
                 <AccountCircleIcon className="icon-all" sx={{ fontSize: 20 }} />
               </div>
               <div className="icon-use">
-                <SearchIcon className="icon-all" sx={{ fontSize: 20 }} />
+                {isShowInput ? (
+                  <div className="g-search-input">
+                    <input
+                      onChange={(e) => setInputSearchValue(e.target.value)}
+                      className="search-input"
+                      type={'text'}
+                      placeholder="Tìm kiếm"
+                      value={inputSearchValue}
+                    />
+                    <div className="icon-close">
+                      <CloseIcon
+                        onClick={() => {
+                          setInputSearchValue('')
+                          setIsShowInput(false)
+                        }}
+                        className="icon-close-input"
+                        sx={{ fontSize: 20 }}
+                      />
+                    </div>
+                    <div className="resut-find-search">
+                      {loading ? (
+                        <p>Loading...</p>
+                      ) : (
+                        <div>
+                          {hairAllProduct
+                            ?.filter((itemHair) =>
+                              inputSearchValue.length === 0
+                                ? null
+                                : itemHair.style_hair.toLocaleLowerCase().includes(inputSearchValue.toLocaleLowerCase())
+                            )
+                            .map((hairproduct) => (
+                              <Link
+                                onClick={() => {
+                                  setInputSearchValue('')
+                                  setIsShowInput(false)
+                                }}
+                                key={hairproduct.id}
+                                to={`/shop/detail/${hairproduct.id}`}
+                              >
+                                <div className="search-item">
+                                  <img className="img-search" src={hairproduct.img} alt={hairproduct.style_hair} />
+                                  <div className="search-mean-product">
+                                    <p>{hairproduct.style_hair}</p>
+                                    <p className="price-old">{Number(hairproduct.price).toLocaleString('en-US')} đ</p>
+                                    <p>
+                                      {(
+                                        Number(hairproduct.price) -
+                                        (Number(hairproduct.price) * hairproduct.sale) / 100
+                                      ).toLocaleString('en-US')}{' '}
+                                      đ
+                                    </p>
+                                  </div>
+                                </div>
+                              </Link>
+                            ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ) : (
+                  <SearchIcon
+                    onClick={() => {
+                      setIsShowInput(true)
+                    }}
+                    className="icon-all"
+                    sx={{ fontSize: 20 }}
+                  />
+                )}
               </div>
             </div>
           </div>
@@ -372,11 +504,11 @@ const Header = () => {
           {nav.map((a) => (
             <ViewDiv key={a.id} className="nav-item">
               <Link
-                style={sel === a.id ? { color: '#d3ad69' } : { color: '#FFFFFF' }}
+                style={colorNumber === a.id ? { color: '#d3ad69' } : { color: '#FFFFFF' }}
                 className="cl-hover"
                 onClick={() => {
                   window.scrollTo(0, 135)
-                  setSel(a.id)
+                  changeLinkColor(a.id)
                 }}
                 to={a.link}
               >

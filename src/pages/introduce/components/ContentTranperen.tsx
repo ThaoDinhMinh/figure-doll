@@ -2,6 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import ScrollView from 'react-animate-on-scroll'
 import { Link } from 'react-router-dom'
+import { bindActionCreators } from 'redux'
+import { useDispatch } from 'react-redux'
+import { actionCreators } from '../../../state'
 
 const ViewDiv = styled.div`
   text-align: center;
@@ -65,6 +68,8 @@ const Text = styled.p`
 const Image = styled.img``
 
 const ContentTranperen = () => {
+  const dispatch = useDispatch()
+  const { changeLinkColor } = bindActionCreators(actionCreators, dispatch)
   return (
     <ViewDiv className="content-body">
       <ViewDiv className="content-radius">
@@ -82,7 +87,13 @@ const ContentTranperen = () => {
                 </Text>
               </ViewDiv>
               <ViewDiv>
-                <Link to={'/shop'}>
+                <Link
+                  onClick={() => {
+                    window.scrollTo(0, 135)
+                    changeLinkColor(2)
+                  }}
+                  to={'/shop'}
+                >
                   <Text className="btn-text">SHOP NOW</Text>
                 </Link>
               </ViewDiv>
