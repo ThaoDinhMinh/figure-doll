@@ -122,7 +122,6 @@ const ShowDetail: React.FC<ShowProps> = (props) => {
             </div>
             <div className="add-cart">
               <button onClick={() => addCart(selecter!)} className="btn-add">
-                {' '}
                 Thêm vào giỏ hàng
               </button>
             </div>

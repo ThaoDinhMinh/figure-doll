@@ -11,6 +11,7 @@ import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import SearchIcon from '@mui/icons-material/Search'
 import CloseIcon from '@mui/icons-material/Close'
+import { removeVietnameseTones } from '../removerVNTones'
 import { bindActionCreators } from 'redux'
 import { actionCreators } from '../state'
 import { useDispatch, useSelector } from 'react-redux'
@@ -453,7 +454,9 @@ const Header = () => {
                             ?.filter((itemHair) =>
                               inputSearchValue.length === 0
                                 ? null
-                                : itemHair.style_hair.toLocaleLowerCase().includes(inputSearchValue.toLocaleLowerCase())
+                                : removeVietnameseTones(itemHair.style_hair.toLocaleLowerCase()).includes(
+                                    removeVietnameseTones(inputSearchValue.toLocaleLowerCase())
+                                  )
                             )
                             .map((hairproduct) => (
                               <Link

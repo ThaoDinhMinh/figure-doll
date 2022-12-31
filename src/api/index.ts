@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export default axios.create({
-  baseURL: 'https://salon-house-default-rtdb.firebaseio.com/',
+  baseURL: 'https://rica-house-default-rtdb.firebaseio.com/',
 })
