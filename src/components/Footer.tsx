@@ -151,16 +151,16 @@ const Footer = () => {
           <ul className="items-link-footer">
             <li className="header-ul">Tất cả chủ đề</li>
             <li>
-              <Link to={'/'}>Bộ sưu tập</Link>
+              <Link to={'/colection'}>Bộ sưu tập</Link>
             </li>
             <li>
-              <Link to={'/'}>Màu tóc</Link>
+              <Link to={'/shop'}>Màu tóc</Link>
             </li>
             <li>
-              <Link to={'/'}>Thông tin</Link>
+              <Link to={'/aboutus'}>Thông tin</Link>
             </li>
             <li>
-              <Link to={'/'}>Bộ sưu tập</Link>
+              <Link to={'/shop'}>Chi tiết Shipping</Link>
             </li>
           </ul>
           <ul className="items-link-footer items-link-footer-1">
