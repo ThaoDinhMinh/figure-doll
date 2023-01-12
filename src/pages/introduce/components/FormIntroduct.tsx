@@ -138,7 +138,7 @@ const FormIntroduct = () => {
               <EmailIcon sx={{ fontSize: 42, color: '#d3ad69' }} />
               <Text className="text-mean-icon">Liên hệ</Text>
             </ViewDiv>
-            <Text className="text-email">alice.schurbeg@hotmail.com</Text>
+            <Text className="text-email">kienminh.tnut@gmail.com</Text>
           </ViewDiv>
           <ViewDiv className="adress-prone">
             <ViewDiv className="g-phone">

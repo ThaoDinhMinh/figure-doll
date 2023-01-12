@@ -11,6 +11,7 @@ import ShowSale from './ShowSale'
 import { useDispatch } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { actionCreators } from '../../../state'
+import Toastify from 'toastify-js'
 interface ShowProps {
   selecter: TypeHairProduct | null
   idtingSet: React.Dispatch<React.SetStateAction<number>>
@@ -121,7 +122,24 @@ const ShowDetail: React.FC<ShowProps> = (props) => {
               <button className="btn">Mua Ngay</button>
             </div>
             <div className="add-cart">
-              <button onClick={() => addCart(selecter!)} className="btn-add">
+              <button
+                onClick={() => {
+                  addCart(selecter!)
+                  Toastify({
+                    text: 'Đã thêm vào giỏ hàng',
+                    position: 'right',
+                    duration: 2000,
+                    newWindow: true,
+                    close: true,
+                    gravity: 'top',
+                    stopOnFocus: true,
+                    style: {
+                      background: 'linear-gradient(to right, #00b09b, #96c93d)',
+                    },
+                  }).showToast()
+                }}
+                className="btn-add"
+              >
                 Thêm vào giỏ hàng
               </button>
             </div>
