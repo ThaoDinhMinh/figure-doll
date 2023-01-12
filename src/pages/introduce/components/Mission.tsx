@@ -3,6 +3,7 @@ import { looking } from './dataItem'
 import styled from 'styled-components'
 import ScrollView from 'react-animate-on-scroll'
 import MissionComponent from './MissionComponent'
+import { Link } from 'react-router-dom'
 
 export const ViewDiv = styled.div`
   &.text-top {
@@ -147,7 +148,14 @@ const Mission = () => {
                     khi một khách hàng yêu cầu.
                   </Text>
                   <ViewDiv className="btn-text">
-                    <Text className="text-btn">Thông tin thêm</Text>
+                    <Link
+                      onClick={() => {
+                        window.scrollTo(0, 135)
+                      }}
+                      to={'/aboutus'}
+                    >
+                      <Text className="text-btn">Thông tin thêm</Text>
+                    </Link>
                   </ViewDiv>
                 </ViewDiv>
                 <ViewDiv className="g-text-hide"></ViewDiv>
