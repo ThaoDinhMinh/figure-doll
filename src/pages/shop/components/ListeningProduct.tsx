@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 import { actionCreators } from '../../../state'
 import { useDispatch } from 'react-redux'
+import Toastify from 'toastify-js'
+import 'toastify-js/src/toastify.css'
 
 interface PropsProduct {
   item: TypeHairProduct | undefined
@@ -50,7 +52,24 @@ const ListeningProduct: React.FC<PropsProduct> = (props) => {
               </Stack>
             </div>
             <div className="button-item">
-              <button onClick={() => (item ? addCart(item) : null)} className="btn">
+              <button
+                onClick={() => {
+                  item ? addCart(item) : null
+                  Toastify({
+                    text: 'Đã thêm vào giỏ hàng',
+                    position: 'right',
+                    duration: 2000,
+                    newWindow: true,
+                    close: true,
+                    gravity: 'top',
+                    stopOnFocus: true,
+                    style: {
+                      background: 'linear-gradient(to right, #00b09b, #96c93d)',
+                    },
+                  }).showToast()
+                }}
+                className="btn"
+              >
                 Thêm vào giỏ
               </button>
             </div>

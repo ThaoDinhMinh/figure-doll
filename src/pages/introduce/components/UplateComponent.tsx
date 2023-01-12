@@ -2,6 +2,7 @@ import React from 'react'
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
 import { TypeUplate } from '../../../interface'
 import { ViewDiv, Text, Image } from './UpdateType'
+import { Link } from 'react-router-dom'
 
 interface UplateProps {
   item: TypeUplate
@@ -24,7 +25,9 @@ const UplateComponent: React.FC<UplateProps> = (props) => {
         <Text className="text-head">{item.title}</Text>
         <Text className="text-view">{item.content}</Text>
         <ViewDiv className="btn">
-          <Text className="btn-tect">Đọc thêm</Text>
+          <Link onClick={() => window.scrollTo(0, 135)} to={'/aboutus'}>
+            <Text className="btn-tect">Đọc thêm</Text>
+          </Link>
         </ViewDiv>
       </ViewDiv>
     </ViewDiv>

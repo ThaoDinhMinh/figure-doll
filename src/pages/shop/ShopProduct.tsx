@@ -8,6 +8,8 @@ import CategoryShop from './components/CategoryShop'
 import ProductList from './components/ProductList'
 import ColorHair from './components/ColorHair'
 import { RootState } from '../../state/reducers'
+import Toastify from 'toastify-js'
+import 'toastify-js/src/toastify.css'
 
 const ShopProduct = () => {
   const { page } = useSelector((state: RootState) => state.page)
@@ -23,6 +25,20 @@ const ShopProduct = () => {
   useEffect(() => {
     getHairProducts(page.page)
   }, [page])
+  const handleClickShowToat: React.MouseEventHandler<HTMLSpanElement> = () => {
+    Toastify({
+      text: 'This is a toast',
+      position: 'right',
+      duration: 2000,
+      newWindow: true,
+      close: true,
+      gravity: 'top',
+      stopOnFocus: true,
+      style: {
+        background: 'linear-gradient(to right, #00b09b, #96c93d)',
+      },
+    }).showToast()
+  }
 
   return (
     <ViewDivShopProduct>
@@ -34,7 +50,9 @@ const ShopProduct = () => {
               Trang chủ
             </Link>
             <span className="span">/</span>
-            <span className="span">Cửa hàng</span>
+            <span onClick={handleClickShowToat} className="span">
+              Cửa hàng
+            </span>
             <span className="span">{page.category === '' ? '' : `/ ${' '} ${page.category}`}</span>
           </div>
         </div>

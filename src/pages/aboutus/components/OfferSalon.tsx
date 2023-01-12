@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import styled from 'styled-components'
 
@@ -52,7 +53,9 @@ const OfferSalon = () => {
           Rất nhiều sản phẩm được trưng bày bán trực tiếp, nói chuyện cùng chuyên gia về những vấn đề về tóc !
         </Text>
         <ViewDiv className="btn">
-          <Button className="text-btn">Xem thêm</Button>
+          <Link to={'/shop'}>
+            <Button className="text-btn">Xem thêm</Button>
+          </Link>
         </ViewDiv>
       </ViewDiv>
     </ViewDiv>
