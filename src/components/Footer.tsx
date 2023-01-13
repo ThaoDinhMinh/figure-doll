@@ -5,6 +5,7 @@ import TwitterIcon from '@mui/icons-material/Twitter'
 import YouTubeIcon from '@mui/icons-material/YouTube'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import { Link } from 'react-router-dom'
+import Toastify from 'toastify-js'
 
 const ViewDiv = styled.div`
   .link-location {
@@ -144,6 +145,20 @@ const Button = styled.button`
 const LinkTo = styled.a``
 
 const Footer = () => {
+  const handleClickResign: React.MouseEventHandler<HTMLButtonElement> = () => {
+    Toastify({
+      text: 'Vui lòng kiểm trong tra hòm thư của bạn !',
+      position: 'right',
+      duration: 2000,
+      newWindow: true,
+      close: true,
+      gravity: 'top',
+      stopOnFocus: true,
+      style: {
+        background: 'linear-gradient(to right, #00b09b, #96c93d)',
+      },
+    }).showToast()
+  }
   return (
     <ViewDiv>
       <div className="link-location">
@@ -208,7 +223,9 @@ const Footer = () => {
             <ViewDiv className="g-input">
               <Input placeholder="Nhập địa chỉ email" type={'text'} />
               <ViewDiv>
-                <Button className="g-btn">Đăng ký ngay</Button>
+                <Button onClick={handleClickResign} className="g-btn">
+                  Đăng ký ngay
+                </Button>
               </ViewDiv>
             </ViewDiv>
           </Form>

@@ -7,6 +7,7 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime'
 import PersonIcon from '@mui/icons-material/Person'
 import SubjectIcon from '@mui/icons-material/Subject'
 import TextSnippetIcon from '@mui/icons-material/TextSnippet'
+import Toastify from 'toastify-js'
 
 const ViewDiv = styled.div`
   &.form-adress {
@@ -113,6 +114,20 @@ const TextArea = styled.textarea`
 `
 
 const FormIntroduct = () => {
+  const handleClickForm: React.MouseEventHandler<HTMLParagraphElement> = () => {
+    Toastify({
+      text: 'Cám ơn bạn đã gửi phiếu điều tra của chúng tôi',
+      position: 'right',
+      duration: 2000,
+      newWindow: true,
+      close: true,
+      gravity: 'top',
+      stopOnFocus: true,
+      style: {
+        background: 'linear-gradient(to right, #00b09b, #96c93d)',
+      },
+    }).showToast()
+  }
   return (
     <ViewDiv className="form-adress">
       <ViewDiv className="face adress">
@@ -197,7 +212,9 @@ const FormIntroduct = () => {
             </ViewDiv>
           </Form>
           <ViewDiv className="buttom">
-            <Text className="btn-text">Hoàn thành</Text>
+            <Text onClick={handleClickForm} className="btn-text">
+              Hoàn thành
+            </Text>
           </ViewDiv>
         </ViewDiv>
       </ViewDiv>
