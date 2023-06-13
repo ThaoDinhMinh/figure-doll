@@ -25,6 +25,20 @@ const ViewDiv = styled.div`
     border-radius: 50%;
     padding: 84px;
   }
+  @media (max-width: 684px) {
+    &.content-radius-child {
+      padding: 44px 84px;
+    }
+    &.content-radius {
+      padding: 8px;
+    }
+  }
+  @media (max-width: 320px) {
+    &.content-radius-child {
+      padding: 15px 15px;
+      border: 1px dashed black;
+    }
+  }
 `
 const Text = styled.p`
   &.long-text {
@@ -64,6 +78,34 @@ const Text = styled.p`
       cursor: pointer;
     }
   }
+  @media (max-width: 684px) {
+    &.btn-text {
+      margin-top: 16px;
+    }
+    &.long-text {
+      width: 200px;
+    }
+    &.text-shop {
+      margin-bottom: 10px;
+    }
+    &.text-logo-head {
+      line-height: 36px;
+    }
+    @media (max-width: 320px) {
+      &.btn-text {
+        padding: 6px 8px;
+        border: 1px solid transparent;
+        margin-top: 8px;
+      }
+      &.long-text {
+        width: 100%;
+      }
+      &.text-shop {
+        line-height: 24px;
+        margin-bottom: 8px;
+      }
+    }
+  }
 `
 const Image = styled.img``
 
@@ -71,7 +113,7 @@ const ContentTranperen = () => {
   const dispatch = useDispatch()
   const { changeLinkColor } = bindActionCreators(actionCreators, dispatch)
   return (
-    <ViewDiv className="content-body">
+    <ViewDiv className="content-body container">
       <ViewDiv className="content-radius">
         <ViewDiv className="content-radius-child">
           <ViewDiv>

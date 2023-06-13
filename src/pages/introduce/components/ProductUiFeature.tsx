@@ -14,7 +14,7 @@ const ProductUiFeature: React.FC<Props> = (props) => {
   const { changeLinkColor } = bindActionCreators(actionCreators, dispatch)
   const { item } = props
   return (
-    <ViewDiv className="item-wid">
+    <ViewDiv className="item-wid col-lg-3 col-md-6 col-12 mt-4">
       <Link
         to={`/shop/detail/${item.id}`}
         onClick={() => {

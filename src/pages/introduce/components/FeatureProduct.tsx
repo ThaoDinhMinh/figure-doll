@@ -14,7 +14,7 @@ interface Props {
 const FeatureProduct: React.FC<Props> = (props) => {
   const { featureProduct, changeLinkColor } = props
   return (
-    <ViewDiv className="g-items-scroll">
+    <ViewDiv className="g-items-scroll col-12 col-lg-4 col-md-6">
       <ScrollView animateOnce={true} animateIn="animate__fadeInDown" duration={featureProduct.duration}>
         <ViewDiv className="card-item">
           <ViewDiv className="img-g-item">

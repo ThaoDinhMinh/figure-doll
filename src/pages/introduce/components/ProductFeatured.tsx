@@ -52,8 +52,7 @@ export const ViewDiv = styled.div`
     text-align: center;
   }
   &.item-wid {
-    width: 20%;
-    margin: 0 20px;
+    padding: 30px 30px 0 30px;
     &:hover .text {
       color: #d3ad69;
       cursor: pointer;
@@ -87,7 +86,7 @@ export const ViewDiv = styled.div`
   }
   &.items-product {
     display: flex;
-    padding: 60px 100px;
+    padding-bottom: 64px;
     justify-content: center;
   }
   &.g-price {
@@ -126,7 +125,6 @@ export const Text = styled.p`
     font-size: 1.3rem;
     font-weight: 200;
     margin: auto;
-    width: 500px;
     padding-top: 20px;
     line-height: 28px;
   }
@@ -154,17 +152,19 @@ export const Text = styled.p`
 const ProductFeatured = () => {
   return (
     <ViewDiv className="product">
-      <ViewDiv className="g-text-product">
+      <ViewDiv className="g-text-product container">
         <Text className="text-product">Sản phẩm nổi bật</Text>
         <Text className="text-mean-product">
-          Tự tin khẳng định sự nữ tính của bạn khi sử dụng Sản phẩm chăm sóc tóc Hair Beautifull
+          Tự tin khẳng định sự nữ tính của bạn khi sử dụng <br /> Sản phẩm chăm sóc tóc Hair Beautifull
         </Text>
       </ViewDiv>
-      <ViewDiv className="items-product">
-        {missiondata.map((a) => (
-          <ProductUiFeature key={a.id} item={a} />
-        ))}
-      </ViewDiv>
+      <div className="container">
+        <ViewDiv className="items-product row flex-wrap">
+          {missiondata.map((a) => (
+            <ProductUiFeature key={a.id} item={a} />
+          ))}
+        </ViewDiv>
+      </div>
     </ViewDiv>
   )
 }

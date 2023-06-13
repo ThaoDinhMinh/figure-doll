@@ -19,7 +19,7 @@ import FeatureProduct from './components/FeatureProduct'
 import { items } from './components/dataItem/feature'
 
 export const ViewDiv = styled.div`
-  &.container {
+  &.container-home {
     background-image: url(' /img/nguoidep.jpg');
     background-position: center;
     background-attachment: fixed;
@@ -34,12 +34,11 @@ export const ViewDiv = styled.div`
     text-align: center;
   }
   &.g-items-scroll {
-    width: 30%;
   }
   &.g-content {
-    display: flex;
+    /* display: flex;
     padding: 0 80px;
-    justify-content: center;
+    justify-content: center; */
   }
   &.card-item {
     padding: 30px 20px 0 20px;
@@ -68,7 +67,6 @@ export const Text = styled.p`
     font-size: 1.3rem;
     font-weight: 200;
     margin: auto;
-    width: 500px;
     padding-top: 20px;
     line-height: 28px;
   }
@@ -118,21 +116,22 @@ const Introduce = () => {
   }, [])
 
   return (
-    <ViewDiv className="container">
+    <ViewDiv className="container-home">
       <UseSlickInfor />
       <ViewDiv className="content">
-        <ViewDiv className="g-text">
+        <ViewDiv className="g-text container">
           <Text className="content-text-head">Bộ sưu tập nổi bật</Text>
           <Text className="content-text-mean">
             Chúng tôi có những giải pháp thiết kế riêng cho từng cá nhân để biết được nhu cầu cụ thể
           </Text>
         </ViewDiv>
-
-        <ViewDiv className="g-content">
-          {items.map((a) => (
-            <FeatureProduct changeLinkColor={changeLinkColor} key={a.id} featureProduct={a} />
-          ))}
-        </ViewDiv>
+        <div className="container">
+          <ViewDiv className="g-content  row flex-wrap">
+            {items.map((a) => (
+              <FeatureProduct changeLinkColor={changeLinkColor} key={a.id} featureProduct={a} />
+            ))}
+          </ViewDiv>
+        </div>
       </ViewDiv>
 
       <Textmean />
