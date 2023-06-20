@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 
 export const ViewDiv = styled.div`
   &.text-top {
+    padding: 0 20px;
   }
   &.mission {
     background-color: black;
@@ -28,23 +29,59 @@ export const ViewDiv = styled.div`
   }
   //////
   &.g-animate {
+    padding: 0 30px;
   }
 
   &.animate {
-    width: 50%;
   }
+
   &.animate-container {
-    perspective: 50%;
+    /* perspective: 50%; */
   }
   &.card-animate {
-    height: 212px;
-
+    height: 240px;
     transform-style: preserve-3d;
     position: relative;
     transition: 1s;
     cursor: pointer;
     &:hover {
       transform: rotateY(180deg);
+    }
+  }
+  @media (min-width: 992px) {
+    &.animate {
+      padding: 30px;
+    }
+    &.card-animate {
+      height: 300px;
+    }
+  }
+  @media (min-width: 768px) {
+    &.animate {
+      padding: 40px 40px 20px 40px;
+    }
+    &.card-animate {
+      height: 213px;
+    }
+    .g-animate {
+      padding: 0 20px;
+      padding-bottom: 40px;
+    }
+  }
+  @media (min-width: 531px) {
+    &.animate {
+      padding: 30px;
+    }
+    &.card-animate {
+      height: 158px;
+    }
+  }
+  @media (min-width: 376px) {
+    &.animate {
+      padding: 20px;
+    }
+    &.card-animate {
+      height: 212px;
     }
   }
   &.card-image {
@@ -62,10 +99,6 @@ export const ViewDiv = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  @media (max-width: 1277px) {
-    &.card-animate {
-    }
   }
 `
 export const Text = styled.p`
@@ -131,12 +164,12 @@ export const Image = styled.img`
 const Mission = () => {
   return (
     <ViewDiv className="mission py-5">
-      <ViewDiv className="g-mission row flex-wrap">
+      <ViewDiv className="g-mission d-flex flex-wrap">
         <ViewDiv className="g-body col-12 col-lg-6">
           <ViewDiv className="text-top container">
             <ScrollView animateIn="animate__fadeInLeft" duration={2} animateOnce={true}>
               <ViewDiv className="g-text-all">
-                <ViewDiv className="g-text-body ms-lg-5 ms-0 px-5">
+                <ViewDiv className="g-text-body ms-lg-5 ms-0 px-3">
                   <Text className="t-head">Nhiệm vụ</Text>
                   <Text className="t-body-top">
                     Chúng tôi là một tổ chức theo định hướng nghiên cứu. Mục tiêu của chúng tôi là cung cấp cho mọi cá
@@ -163,7 +196,7 @@ const Mission = () => {
           </ViewDiv>
         </ViewDiv>
         <ViewDiv className="g-body mt-5 col-12 col-lg-6">
-          <ViewDiv className="g-animate row flex-warp align-items-center">
+          <ViewDiv className="g-animate d-flex flex-wrap align-items-center">
             {looking.map((a) => (
               <MissionComponent key={a.id} item={a} />
             ))}

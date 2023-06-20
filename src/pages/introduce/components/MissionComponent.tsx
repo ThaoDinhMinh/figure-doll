@@ -11,7 +11,7 @@ interface MissionProps {
 const MissionComponent: React.FC<MissionProps> = (props) => {
   const { item } = props
   return (
-    <ViewDiv className="animate">
+    <ViewDiv className="animate col-md-6 col-sm-6 col-12">
       <ScrollView animateIn={item.animate} duration={item.duration} animateOnce={true}>
         <Link to={'/aboutus'} onClick={() => window.scrollTo(0, 135)}>
           <ViewDiv className="animate-container">

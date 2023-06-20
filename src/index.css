@@ -44,4 +44,7 @@ li {
   .hezImx.text-button {
     padding: 16px 8px !important;
   }
+  canvas {
+    display: none;
+  }
 }

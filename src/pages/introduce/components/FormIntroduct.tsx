@@ -13,17 +13,29 @@ const ViewDiv = styled.div`
   &.form-adress {
     display: flex;
   }
+  .from-uplate {
+    background-color: #f7f7f7;
+  }
+
   &.face {
-    width: 50%;
+    /* padding: 0 20px; */
   }
   &.adress {
     background-color: #f7f7f7;
-    padding: 0 28px 0 100px;
+    /* padding: 0 28px 0 100px; */
+    padding: 0 20px;
   }
   &.form {
     background-color: #ffffff;
     height: 100%;
-    padding: 0 100px 0 28px;
+    /* padding: 0 100px 0 28px; */
+    padding: 0 20px;
+  }
+  @media (min-width: 992px) {
+    .form,
+    .adress {
+      padding: 0 40px;
+    }
   }
   &.g-phone {
     display: flex;
@@ -129,92 +141,94 @@ const FormIntroduct = () => {
     }).showToast()
   }
   return (
-    <ViewDiv className="form-adress">
-      <ViewDiv className="face adress">
-        <ViewDiv className="adress-items">
-          <Text className="text-head">Thông tin</Text>
-          <ViewDiv className="adress-prone">
-            <ViewDiv className="g-phone">
-              <LocalPhoneIcon sx={{ fontSize: 42, color: '#d3ad69' }} />
+    <ViewDiv className="from-uplate">
+      <ViewDiv className="d-flex flex-wrap">
+        <ViewDiv className="face adress col-lg-6 col-12">
+          <ViewDiv className="adress-items">
+            <Text className="text-head">Thông tin</Text>
+            <ViewDiv className="adress-prone">
+              <ViewDiv className="g-phone">
+                <LocalPhoneIcon sx={{ fontSize: 42, color: '#d3ad69' }} />
 
-              <Text className="text-mean-icon">Gọi cho chúng tôi</Text>
+                <Text className="text-mean-icon">Gọi cho chúng tôi</Text>
+              </ViewDiv>
+              <ViewDiv className="g-phone bold">
+                <Bord>Gọi miễn phí :</Bord>
+                <Text className="text-phone">0987654312</Text>
+              </ViewDiv>
+              <ViewDiv className="g-phone bold">
+                <Bord>Fax :</Bord>
+                <Text className="text-phone">01272653000</Text>
+              </ViewDiv>
             </ViewDiv>
-            <ViewDiv className="g-phone bold">
-              <Bord>Gọi miễn phí :</Bord>
-              <Text className="text-phone">0987654312</Text>
+            <ViewDiv className="adress-prone">
+              <ViewDiv className="g-phone">
+                <EmailIcon sx={{ fontSize: 42, color: '#d3ad69' }} />
+                <Text className="text-mean-icon">Liên hệ</Text>
+              </ViewDiv>
+              <Text className="text-email">kienminh.tnut@gmail.com</Text>
             </ViewDiv>
-            <ViewDiv className="g-phone bold">
-              <Bord>Fax :</Bord>
-              <Text className="text-phone">01272653000</Text>
+            <ViewDiv className="adress-prone">
+              <ViewDiv className="g-phone">
+                <NearMeIcon sx={{ fontSize: 42, color: '#d3ad69' }} />
+                <Text className="text-mean-icon">Địa điểm</Text>
+              </ViewDiv>
+              <Text className="text-email">58/34 Trung Kính ,Cầu Giấy ,Hà Nội</Text>
             </ViewDiv>
-          </ViewDiv>
-          <ViewDiv className="adress-prone">
-            <ViewDiv className="g-phone">
-              <EmailIcon sx={{ fontSize: 42, color: '#d3ad69' }} />
-              <Text className="text-mean-icon">Liên hệ</Text>
+            <ViewDiv className="adress-prone adress-prone-1">
+              <ViewDiv className="g-phone">
+                <AccessTimeIcon sx={{ fontSize: 42, color: '#d3ad69' }} />
+                <Text className="text-mean-icon">Giờ mở cửa</Text>
+              </ViewDiv>
+              <Text className="text-email">Thứ 2 - Thứ 7 9h:00 đến 20h:00 </Text>
+              <Text className="text-email">Chủ nhật 10h:00 đến 15h:30 </Text>
             </ViewDiv>
-            <Text className="text-email">kienminh.tnut@gmail.com</Text>
-          </ViewDiv>
-          <ViewDiv className="adress-prone">
-            <ViewDiv className="g-phone">
-              <NearMeIcon sx={{ fontSize: 42, color: '#d3ad69' }} />
-              <Text className="text-mean-icon">Địa điểm</Text>
-            </ViewDiv>
-            <Text className="text-email">58/34 Trung Kính ,Cầu Giấy ,Hà Nội</Text>
-          </ViewDiv>
-          <ViewDiv className="adress-prone adress-prone-1">
-            <ViewDiv className="g-phone">
-              <AccessTimeIcon sx={{ fontSize: 42, color: '#d3ad69' }} />
-              <Text className="text-mean-icon">Giờ mở cửa</Text>
-            </ViewDiv>
-            <Text className="text-email">Thứ 2 - Thứ 7 9h:00 đến 20h:00 </Text>
-            <Text className="text-email">Chủ nhật 10h:00 đến 15h:30 </Text>
           </ViewDiv>
         </ViewDiv>
-      </ViewDiv>
 
-      <ViewDiv className="face form-items">
-        <ViewDiv className="form">
-          <Text className="text-head">Phiếu điều tra</Text>
-          <Form>
-            <ViewDiv className="input-icon">
-              <ViewDiv className="icone">
-                <PersonIcon sx={{ fontSize: 20, color: '#d3ad69' }} />
-              </ViewDiv>
+        <ViewDiv className="face form-items col-lg-6 col-12">
+          <ViewDiv className="form">
+            <Text className="text-head">Phiếu điều tra</Text>
+            <Form>
+              <ViewDiv className="input-icon">
+                <ViewDiv className="icone">
+                  <PersonIcon sx={{ fontSize: 20, color: '#d3ad69' }} />
+                </ViewDiv>
 
-              <Input type="text" placeholder="Nhập tên" />
-            </ViewDiv>
-            <ViewDiv className="input-icon">
-              <ViewDiv className="icone">
-                <EmailIcon sx={{ fontSize: 20, color: '#d3ad69' }} />
+                <Input type="text" placeholder="Nhập tên" />
               </ViewDiv>
+              <ViewDiv className="input-icon">
+                <ViewDiv className="icone">
+                  <EmailIcon sx={{ fontSize: 20, color: '#d3ad69' }} />
+                </ViewDiv>
 
-              <Input type="text" placeholder="Nhập email" />
-            </ViewDiv>
-            <ViewDiv className="input-icon">
-              <ViewDiv className="icone">
-                <LocalPhoneIcon sx={{ fontSize: 20, color: '#d3ad69' }} />
+                <Input type="text" placeholder="Nhập email" />
               </ViewDiv>
+              <ViewDiv className="input-icon">
+                <ViewDiv className="icone">
+                  <LocalPhoneIcon sx={{ fontSize: 20, color: '#d3ad69' }} />
+                </ViewDiv>
 
-              <Input type="text" placeholder="Nhập số điện thoại" />
-            </ViewDiv>
-            <ViewDiv className="input-icon">
-              <ViewDiv className="icone">
-                <SubjectIcon sx={{ fontSize: 20, color: '#d3ad69' }} />
+                <Input type="text" placeholder="Nhập số điện thoại" />
               </ViewDiv>
-              <Input type="text" placeholder="Vấn đề" />
-            </ViewDiv>
-            <ViewDiv className="input-icon">
-              <ViewDiv className="icone">
-                <TextSnippetIcon sx={{ fontSize: 20, color: '#d3ad69' }} />
+              <ViewDiv className="input-icon">
+                <ViewDiv className="icone">
+                  <SubjectIcon sx={{ fontSize: 20, color: '#d3ad69' }} />
+                </ViewDiv>
+                <Input type="text" placeholder="Vấn đề" />
               </ViewDiv>
-              <TextArea rows={8} placeholder="Nhập tin nhắn thêm"></TextArea>
+              <ViewDiv className="input-icon">
+                <ViewDiv className="icone">
+                  <TextSnippetIcon sx={{ fontSize: 20, color: '#d3ad69' }} />
+                </ViewDiv>
+                <TextArea rows={7} placeholder="Nhập tin nhắn thêm"></TextArea>
+              </ViewDiv>
+            </Form>
+            <ViewDiv className="buttom">
+              <Text onClick={handleClickForm} className="btn-text mb-4">
+                Hoàn thành
+              </Text>
             </ViewDiv>
-          </Form>
-          <ViewDiv className="buttom">
-            <Text onClick={handleClickForm} className="btn-text">
-              Hoàn thành
-            </Text>
           </ViewDiv>
         </ViewDiv>
       </ViewDiv>

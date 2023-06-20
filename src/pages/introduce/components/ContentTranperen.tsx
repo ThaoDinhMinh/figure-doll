@@ -91,19 +91,22 @@ const Text = styled.p`
     &.text-logo-head {
       line-height: 36px;
     }
-    @media (max-width: 320px) {
-      &.btn-text {
-        padding: 6px 8px;
-        border: 1px solid transparent;
-        margin-top: 8px;
-      }
-      &.long-text {
-        width: 100%;
-      }
-      &.text-shop {
-        line-height: 24px;
-        margin-bottom: 8px;
-      }
+  }
+  @media (max-width: 390px) {
+    .content-radius-child {
+      padding: 33px 68px;
+    }
+    &.btn-text {
+      padding: 6px 8px;
+      border: 1px solid transparent;
+      margin-top: 8px;
+    }
+    &.long-text {
+      width: 100%;
+    }
+    &.text-shop {
+      line-height: 24px;
+      margin-bottom: 8px;
     }
   }
 `

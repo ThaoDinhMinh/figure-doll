@@ -97,7 +97,7 @@ const Textmean = () => {
   const { changeLinkColor } = bindActionCreators(actionCreators, dispatch)
   return (
     <ViewDiv className="grup-body">
-      <div className="row flex-warp grup-body-items">
+      <div className="d-flex flex-wrap grup-body-items">
         <div className="col-12 col-lg-6 color-left">
           <ViewDiv className="text-mean-left">
             <ScrollView animateIn="animate__fadeInLeft" animateOnce={true}>

@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { ReactNode, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone'
 import EmailIcon from '@mui/icons-material/Email'
 import FacebookIcon from '@mui/icons-material/Facebook'
 import TwitterIcon from '@mui/icons-material/Twitter'
+import HomeIcon from '@mui/icons-material/Home'
 import YouTubeIcon from '@mui/icons-material/YouTube'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import SearchIcon from '@mui/icons-material/Search'
 import CloseIcon from '@mui/icons-material/Close'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { removeVietnameseTones } from '../removerVNTones'
 import { bindActionCreators } from 'redux'
 import { actionCreators } from '../state'
@@ -18,12 +20,24 @@ import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../state/reducers'
 
 const ViewDiv = styled.div`
+  .icon-small-390 {
+    cursor: pointer;
+    display: none;
+  }
   &.nav-item {
-    padding: 8px 20px;
+    padding: 12px 20px;
     font-size: 1.2rem;
     transition: all 0.3s linear;
     &:hover .cl-hover {
       color: #d3ad69;
+    }
+  }
+  @media (max-width: 992px) {
+    .nav-item {
+      padding: 12px 0;
+    }
+    .icon-small-390 {
+      display: block;
     }
   }
   a {
@@ -44,9 +58,10 @@ const ViewDiv = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 56px;
+    padding: 8px 20px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   }
+
   .top-top-left {
     display: flex;
     align-items: center;
@@ -70,22 +85,27 @@ const ViewDiv = styled.div`
   }
   .text-hear-logo {
     font-weight: 300;
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     margin-left: 12px;
     color: #000000;
+  }
+  @media (max-width: 390px) {
+    .text-hear-logo {
+      display: none;
+    }
   }
   .header-top-bot {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 56px;
+    padding: 8px 20px;
     background-color: #f5f5f5;
     .icon-all {
       transition: all 0.3s linear;
     }
     .logo {
-      display: flex;
-      align-items: center;
+      /* display: flex;
+      align-items: center; */
     }
     .cart-login {
       display: flex;
@@ -186,7 +206,6 @@ const ViewDiv = styled.div`
       margin-left: 12px;
       font-weight: 300;
       font-size: 0.9rem;
-      margin-bottom: 4px;
     }
   }
   .phone-text {
@@ -272,6 +291,12 @@ const ViewDiv = styled.div`
       cursor: pointer;
     }
   }
+
+  @media (max-width: 776px) {
+    .header-top-top {
+      display: none;
+    }
+  }
 `
 const Navbar = styled.nav`
   display: flex;
@@ -288,11 +313,6 @@ interface Nav {
 }
 const Header = () => {
   const nav: Nav[] = [
-    {
-      id: 0,
-      text: 'Trang chủ',
-      link: '/',
-    },
     {
       id: 1,
       text: 'Bộ sưu tập',
@@ -331,171 +351,187 @@ const Header = () => {
     getAllHairProducts()
   }, [])
 
+  const handleClickShowNav: React.MouseEventHandler<HTMLDivElement> = () => {
+    document.querySelector('.g-items-nav')?.classList.toggle('d-none')
+  }
   return (
     <>
-      <ViewDiv className="header-top">
-        <div className="header-top-top">
-          <div className="top-top-left">
-            <div className="item-left">
-              <LocalPhoneIcon sx={{ fontSize: 20 }} />
-              <p className="phone-text">+84 97649 1200</p>
-            </div>
-            <div className="item-left">
-              <EmailIcon sx={{ fontSize: 20 }} />
-              <p className="phone-text">kienminh.tnut@gmail.com</p>
-            </div>
-          </div>
-          <div className="top-top-right">
-            <div className="icon-ftyi">
-              <a href="https://www.facebook.com/">
-                <FacebookIcon className="icon-all" sx={{ fontSize: 20, color: '#000000' }} />
-              </a>
-            </div>
-            <div className="icon-ftyi">
-              <a href="https://twitter.com">
-                <TwitterIcon className="icon-all" sx={{ fontSize: 20, color: '#000000' }} />
-              </a>
-            </div>
-            <div className="icon-ftyi">
-              <a href="https://www.youtube.com/watch?v=QakzCGr5EXs">
-                <YouTubeIcon className="icon-all" sx={{ fontSize: 20, color: '#000000' }} />
-              </a>
-            </div>
-            <div className="icon-ftyi">
-              <a href="https://www.instagram.com/">
-                <InstagramIcon className="icon-all" sx={{ fontSize: 20, color: '#000000' }} />
-              </a>
+      <ViewDiv className="header-top ">
+        <div className="container">
+          <div className="row">
+            <div className="header-top-top">
+              <div className="top-top-left">
+                <div className="item-left">
+                  <LocalPhoneIcon sx={{ fontSize: 20 }} />
+                  <p className="phone-text">+84 97649 1200</p>
+                </div>
+                <div className="item-left">
+                  <EmailIcon sx={{ fontSize: 20 }} />
+                  <p className="phone-text">kienminh.tnut@gmail.com</p>
+                </div>
+              </div>
+              <div className="top-top-right">
+                <div className="icon-ftyi">
+                  <a href="https://www.facebook.com/">
+                    <FacebookIcon className="icon-all" sx={{ fontSize: 20, color: '#000000' }} />
+                  </a>
+                </div>
+                <div className="icon-ftyi">
+                  <a href="https://twitter.com">
+                    <TwitterIcon className="icon-all" sx={{ fontSize: 20, color: '#000000' }} />
+                  </a>
+                </div>
+                <div className="icon-ftyi">
+                  <a href="https://www.youtube.com/watch?v=QakzCGr5EXs">
+                    <YouTubeIcon className="icon-all" sx={{ fontSize: 20, color: '#000000' }} />
+                  </a>
+                </div>
+                <div className="icon-ftyi">
+                  <a href="https://www.instagram.com/">
+                    <InstagramIcon className="icon-all" sx={{ fontSize: 20, color: '#000000' }} />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div className="header-top-bot">
-          <Link onClick={() => changeLinkColor(0)} to={'/'}>
-            <div className="logo">
-              <img className="img-logo" src="/img/logo_small.png" alt="logo-footer" />
-              <h1 className="text-hear-logo">Beautyfull Hair</h1>
-            </div>
-          </Link>
-          <div className="cart-login">
-            <div className="cart-item cart-item-begin">
-              <div className="icon-cart">
-                <Link to={'/cart'}>
-                  <ShoppingBasketIcon className="icon-all" sx={{ fontSize: 20, color: '#000000' }} />
+
+        <div className="header-top-bot ">
+          <div className="container">
+            <div className="d-flex justify-content-between align-items-center">
+              <div className="g-icon-cart">
+                <Link onClick={() => changeLinkColor(0)} to={'/'}>
+                  <div className="logo d-flex align-items-center">
+                    <img className="img-logo" src="/img/logo_small.png" alt="logo-footer" />
+                    <h1 className="text-hear-logo">Beautyfull Hair</h1>
+                  </div>
                 </Link>
-                <div className="show-cart">
-                  <div className="show-cart-items">
-                    {carts.length === 0 ? (
-                      <div className="g-text-emty">
-                        <p className="text-emty">Chưa có sản phẩm nào</p>
-                        <div className="no-empty">
-                          <img className="img-no-item" src="/img/no-item.webp" alt="no item" />
+              </div>
+              <div className="cart-login">
+                <div className="cart-item cart-item-begin">
+                  <div className="icon-cart">
+                    <Link to={'/cart'}>
+                      <ShoppingBasketIcon className="icon-all" sx={{ fontSize: 20, color: '#000000' }} />
+                    </Link>
+                    <div className="show-cart">
+                      <div className="show-cart-items">
+                        {carts.length === 0 ? (
+                          <div className="g-text-emty">
+                            <p className="text-emty">Chưa có sản phẩm nào</p>
+                            <div className="no-empty">
+                              <img className="img-no-item" src="/img/no-item.webp" alt="no item" />
+                            </div>
+                          </div>
+                        ) : (
+                          <div>
+                            {carts?.map((a) => (
+                              <div key={a.id}>
+                                <div className="g-img-cart">
+                                  <img className="i-cart" src={a.img} alt={a.style_hair} />
+                                  <div className="g-tex-price">
+                                    <div className="text">{a.style_hair}</div>
+                                    <p className="te-price">
+                                      {a.qty} x{' '}
+                                      {(Number(a.price) - (Number(a.price) * a.sale!) / 100).toLocaleString('en-US')} đ
+                                    </p>
+                                    <div className="g-butom-cart">
+                                      <Link to={'/cart'}>
+                                        <button className="btn-cart">Xem</button>
+                                      </Link>
+                                      <button className="btn-cart" onClick={() => removeHart(a.id)}>
+                                        Xóa
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-price">{carts.length} item</p>
+                </div>
+                <div className="icon-uses">
+                  <div className="icon-use">
+                    <AccountCircleIcon className="icon-all" sx={{ fontSize: 20 }} />
+                  </div>
+                  <div className="icon-use">
+                    {isShowInput ? (
+                      <div className="g-search-input">
+                        <input
+                          onChange={(e) => setInputSearchValue(e.target.value)}
+                          className="search-input"
+                          type={'text'}
+                          placeholder="Tìm kiếm"
+                          value={inputSearchValue}
+                        />
+                        <div className="icon-close">
+                          <CloseIcon
+                            onClick={() => {
+                              setInputSearchValue('')
+                              setIsShowInput(false)
+                            }}
+                            className="icon-close-input"
+                            sx={{ fontSize: 20 }}
+                          />
+                        </div>
+                        <div className="resut-find-search">
+                          {loading ? (
+                            <p>Loading...</p>
+                          ) : (
+                            <div>
+                              {hairAllProduct
+                                ?.filter((itemHair) =>
+                                  inputSearchValue.length === 0
+                                    ? null
+                                    : removeVietnameseTones(itemHair.style_hair.toLocaleLowerCase()).includes(
+                                        removeVietnameseTones(inputSearchValue.toLocaleLowerCase())
+                                      )
+                                )
+                                .map((hairproduct) => (
+                                  <Link
+                                    onClick={() => {
+                                      setInputSearchValue('')
+                                      setIsShowInput(false)
+                                    }}
+                                    key={hairproduct.id}
+                                    to={`/shop/detail/${hairproduct.id}`}
+                                  >
+                                    <div className="search-item">
+                                      <img className="img-search" src={hairproduct.img} alt={hairproduct.style_hair} />
+                                      <div className="search-mean-product">
+                                        <p>{hairproduct.style_hair}</p>
+                                        <p className="price-old">
+                                          {Number(hairproduct.price).toLocaleString('en-US')} đ
+                                        </p>
+                                        <p>
+                                          {(
+                                            Number(hairproduct.price) -
+                                            (Number(hairproduct.price) * hairproduct.sale) / 100
+                                          ).toLocaleString('en-US')}{' '}
+                                          đ
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </Link>
+                                ))}
+                            </div>
+                          )}
                         </div>
                       </div>
                     ) : (
-                      <div>
-                        {carts?.map((a) => (
-                          <div key={a.id}>
-                            <div className="g-img-cart">
-                              <img className="i-cart" src={a.img} alt={a.style_hair} />
-                              <div className="g-tex-price">
-                                <div className="text">{a.style_hair}</div>
-                                <p className="te-price">
-                                  {a.qty} x{' '}
-                                  {(Number(a.price) - (Number(a.price) * a.sale!) / 100).toLocaleString('en-US')} đ
-                                </p>
-                                <div className="g-butom-cart">
-                                  <Link to={'/cart'}>
-                                    <button className="btn-cart">Xem</button>
-                                  </Link>
-                                  <button className="btn-cart" onClick={() => removeHart(a.id)}>
-                                    Xóa
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
+                      <SearchIcon
+                        onClick={() => {
+                          setIsShowInput(true)
+                        }}
+                        className="icon-all"
+                        sx={{ fontSize: 20 }}
+                      />
                     )}
                   </div>
                 </div>
-              </div>
-              <p className="text-price">{carts.length} item</p>
-            </div>
-            <div className="icon-uses">
-              <div className="icon-use">
-                <AccountCircleIcon className="icon-all" sx={{ fontSize: 20 }} />
-              </div>
-              <div className="icon-use">
-                {isShowInput ? (
-                  <div className="g-search-input">
-                    <input
-                      onChange={(e) => setInputSearchValue(e.target.value)}
-                      className="search-input"
-                      type={'text'}
-                      placeholder="Tìm kiếm"
-                      value={inputSearchValue}
-                    />
-                    <div className="icon-close">
-                      <CloseIcon
-                        onClick={() => {
-                          setInputSearchValue('')
-                          setIsShowInput(false)
-                        }}
-                        className="icon-close-input"
-                        sx={{ fontSize: 20 }}
-                      />
-                    </div>
-                    <div className="resut-find-search">
-                      {loading ? (
-                        <p>Loading...</p>
-                      ) : (
-                        <div>
-                          {hairAllProduct
-                            ?.filter((itemHair) =>
-                              inputSearchValue.length === 0
-                                ? null
-                                : removeVietnameseTones(itemHair.style_hair.toLocaleLowerCase()).includes(
-                                    removeVietnameseTones(inputSearchValue.toLocaleLowerCase())
-                                  )
-                            )
-                            .map((hairproduct) => (
-                              <Link
-                                onClick={() => {
-                                  setInputSearchValue('')
-                                  setIsShowInput(false)
-                                }}
-                                key={hairproduct.id}
-                                to={`/shop/detail/${hairproduct.id}`}
-                              >
-                                <div className="search-item">
-                                  <img className="img-search" src={hairproduct.img} alt={hairproduct.style_hair} />
-                                  <div className="search-mean-product">
-                                    <p>{hairproduct.style_hair}</p>
-                                    <p className="price-old">{Number(hairproduct.price).toLocaleString('en-US')} đ</p>
-                                    <p>
-                                      {(
-                                        Number(hairproduct.price) -
-                                        (Number(hairproduct.price) * hairproduct.sale) / 100
-                                      ).toLocaleString('en-US')}{' '}
-                                      đ
-                                    </p>
-                                  </div>
-                                </div>
-                              </Link>
-                            ))}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                ) : (
-                  <SearchIcon
-                    onClick={() => {
-                      setIsShowInput(true)
-                    }}
-                    className="icon-all"
-                    sx={{ fontSize: 20 }}
-                  />
-                )}
               </div>
             </div>
           </div>
@@ -504,21 +540,47 @@ const Header = () => {
 
       <ViewDiv className="header-bot">
         <Navbar>
-          {nav.map((a) => (
-            <ViewDiv key={a.id} className="nav-item">
-              <Link
-                style={colorNumber === a.id ? { color: '#d3ad69' } : { color: '#FFFFFF' }}
-                className="cl-hover"
-                onClick={() => {
-                  window.scrollTo(0, 135)
-                  changeLinkColor(a.id)
-                }}
-                to={a.link}
-              >
-                {a.text}
-              </Link>
-            </ViewDiv>
-          ))}
+          <div className="container">
+            <div className="head-navr d-lg-flex d-block align-items-center">
+              <div className="nav-bar-main d-flex justify-content-between align-items-center">
+                <ViewDiv className="">
+                  <Link
+                    style={colorNumber === 0 ? { color: '#d3ad69' } : { color: '#FFFFFF' }}
+                    className="cl-hover"
+                    onClick={() => {
+                      document.querySelector('.g-items-nav')?.classList.add('d-none')
+                      window.scrollTo(0, 135)
+                      changeLinkColor(0)
+                    }}
+                    to={'/'}
+                  >
+                    <HomeIcon sx={{ fontSize: 32 }} />
+                  </Link>
+                </ViewDiv>
+                <div onClick={handleClickShowNav} className="icon-small-390">
+                  <ExpandMoreIcon sx={{ fontSize: 35, color: '#d3ad69' }} />
+                </div>
+              </div>
+              <div className="g-items-nav d-lg-flex justify-content-between align-items-center">
+                {nav.map((a) => (
+                  <ViewDiv key={a.id} className="nav-item">
+                    <Link
+                      style={colorNumber === a.id ? { color: '#d3ad69' } : { color: '#FFFFFF' }}
+                      className="cl-hover"
+                      onClick={() => {
+                        window.scrollTo(0, 135)
+                        changeLinkColor(a.id)
+                        document.querySelector('.g-items-nav')?.classList.toggle('d-none')
+                      }}
+                      to={a.link}
+                    >
+                      {a.text}
+                    </Link>
+                  </ViewDiv>
+                ))}
+              </div>
+            </div>
+          </div>
         </Navbar>
       </ViewDiv>
     </>

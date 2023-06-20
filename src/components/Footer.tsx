@@ -9,19 +9,13 @@ import Toastify from 'toastify-js'
 
 const ViewDiv = styled.div`
   .link-location {
-    padding: 0 100px;
-    display: flex;
-    flex-direction: row;
-
+    padding: 32px 30px;
     .all-link-footer {
       display: flex;
-      width: 50%;
-      height: 100%;
       .items-link-footer-1 {
-        padding-right: 42px;
+        margin-left: 28px;
       }
       .items-link-footer {
-        width: 50%;
         list-style: none;
         li {
           margin-bottom: 8px;
@@ -40,13 +34,6 @@ const ViewDiv = styled.div`
           padding: 92px 0 12px 0;
           text-decoration: none;
         }
-      }
-    }
-    .map-location {
-      width: 50%;
-      .img-location-footer {
-        width: 100%;
-        display: block;
       }
     }
   }
@@ -71,7 +58,6 @@ const ViewDiv = styled.div`
   }
   &.g-input {
     position: relative;
-    width: 35%;
   }
   &.g-mxh {
     display: flex;
@@ -103,7 +89,11 @@ const Form = styled.form`
 const Input = styled.input`
   padding: 15px 15px 15px 25px;
   outline: none;
-  width: 100%;
+  width: 450px;
+  @media (max-width: 390px) {
+    width: 200px;
+    padding: 8px;
+  }
 `
 const Text = styled.p`
   font-size: 0.9rem;
@@ -141,6 +131,14 @@ const Button = styled.button`
       background-color: #000000;
     }
   }
+  @media (max-width: 390px) {
+    &.g-btn {
+      padding: 8px;
+      &:hover {
+        padding: 6px;
+      }
+    }
+  }
 `
 const LinkTo = styled.a``
 
@@ -161,8 +159,8 @@ const Footer = () => {
   }
   return (
     <ViewDiv>
-      <div className="link-location">
-        <div className="all-link-footer">
+      <div className="link-location container">
+        <div className="all-link-footer d-flex">
           <ul className="items-link-footer">
             <li className="header-ul">Tất cả chủ đề</li>
             <li>
@@ -200,10 +198,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="map-location">
-          <img className="img-location-footer" src="maplocation.png" alt="" />
-        </div>
-      </div>{' '}
+      </div>
       <ViewDiv className="footer">
         <ViewDiv className="bg-dark"></ViewDiv>
 
