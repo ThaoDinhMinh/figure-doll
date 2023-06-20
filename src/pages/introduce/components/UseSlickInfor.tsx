@@ -83,7 +83,6 @@ const Text = styled.p`
     margin-bottom: 40px;
     font-size: 3rem;
     font-weight: 300;
-    width: 500px;
     line-height: 70px;
     font-family: 'Open Sans', sans-serif;
   }

@@ -19,19 +19,16 @@ export const ViewDiv = styled.div`
   }
   &.news {
     margin: 60px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   &.news-items {
-    width: 25%;
+    padding-top: 10px;
   }
   &.news-margin {
     margin: 0 32px;
   }
   &.day-month {
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     width: 100%;
   }
   &.g-image-child {
@@ -51,20 +48,21 @@ export const ViewDiv = styled.div`
   }
   &.uplate-form {
     background-color: #fbf2db;
-    display: flex;
-    justify-content: center;
-    padding: 12px 0 66px 0;
+    padding: 12px 20px 66px 20px;
   }
   &.g-form {
-    width: calc(75% + 74px);
     background-color: #000000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 36px 56px;
   }
   &.form-right {
     position: relative;
+  }
+  @media (max-width: 390px) {
+    .news {
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-top: 28px;
+    }
   }
 `
 export const Text = styled.p`
@@ -72,6 +70,7 @@ export const Text = styled.p`
   color: #000000;
   &.text-product {
     font-size: 2.5rem;
+    padding: 0 30px;
     padding-top: 60px;
     letter-spacing: 0.5px;
   }
@@ -125,14 +124,15 @@ export const Image = styled.img`
 const Input = styled.input`
   outline: none;
   padding: 14px 24px;
-  width: 310px;
+
+  width: 100%;
 `
 const Button = styled.button`
   cursor: pointer;
   &.button-icon {
     position: absolute;
-    top: 4px;
-    right: 4px;
+    top: 7px;
+    right: 5px;
     background-color: #000000;
     padding: 6px 8px;
   }
@@ -147,22 +147,35 @@ const UpdateType = () => {
       </ViewDiv>
 
       <ViewDiv className="news">
-        {data.map((a) => (
-          <UplateComponent key={a.id} item={a} />
-        ))}
+        <div className="container">
+          <div className="row justify-content-between">
+            {data.map((a) => (
+              <UplateComponent key={a.id} item={a} />
+            ))}
+          </div>
+        </div>
       </ViewDiv>
+
       <ViewDiv className="uplate-form">
-        <ViewDiv className="g-form">
-          <ViewDiv className="lable-left">
-            <Text className="text-lable">Hãy theo dõi các bản tin mới nhất</Text>
+        <div className="container">
+          <ViewDiv className="g-form">
+            <div className="row flex-wrap justify-content-between align-items-center">
+              <div className="col-12 col-md">
+                <ViewDiv className="lable-left mb-3 mb-md-0">
+                  <Text className="text-lable">Hãy theo dõi các bản tin mới nhất</Text>
+                </ViewDiv>
+              </div>
+              <div className="col-12 col-md">
+                <ViewDiv className="form-right">
+                  <Input type="text" placeholder="Nhập địa chỉ email của bạn" />
+                  <Button className="button-icon">
+                    <ArrowForwardIosIcon sx={{ color: '#ffffff', fontSize: 20 }} />
+                  </Button>
+                </ViewDiv>
+              </div>
+            </div>
           </ViewDiv>
-          <ViewDiv className="form-right">
-            <Input type="text" placeholder="Nhập địa chỉ email của bạn" />
-            <Button className="button-icon">
-              <ArrowForwardIosIcon sx={{ color: '#ffffff', fontSize: 20 }} />
-            </Button>
-          </ViewDiv>
-        </ViewDiv>
+        </div>
       </ViewDiv>
     </ViewDiv>
   )

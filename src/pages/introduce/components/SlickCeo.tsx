@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import Slider from 'react-slick'
+import Slider, { Settings } from 'react-slick'
 import styled from 'styled-components'
 import { TypeCeo } from '../../../interface'
 
@@ -12,13 +12,12 @@ const ViewDiv = styled.div`
   text-align: center;
   padding: 72px 0;
   .slick-ceo {
-    padding: 0 100px;
+    padding: 0 20px;
   }
   .text-listen {
     color: white;
-    width: 700px;
     margin: auto;
-    line-height: 36px;
+    line-height: 28px;
     font-size: 1.5rem;
     font-weight: 300;
     margin-bottom: 12px;
@@ -73,6 +72,37 @@ const SlickCeo: React.FC<Props> = (props) => {
   const slider1 = useRef<any>()
   const slider2 = useRef<any>()
 
+  const setting: Settings = {
+    slidesToShow: 5,
+    swipeToSlide: true,
+    focusOnSelect: true,
+    centerMode: true,
+    arrows: false,
+    centerPadding: '10px',
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 5,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 3,
+          centerMode: true,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 3,
+          centerMode: true,
+        },
+      },
+    ],
+  }
+
   useEffect(() => {
     nav1Set(slider1.current)
     nav2Set(slider2.current)
@@ -80,7 +110,7 @@ const SlickCeo: React.FC<Props> = (props) => {
   return (
     <ViewDiv>
       <h1 className="head">Nhân viên của chúng tôi</h1>
-      <div className="slick-ceo">
+      <div className="slick-ceo container">
         <Slider asNavFor={nav2} ref={slider1} arrows={false}>
           {ceos?.map((a) => (
             <div key={a.id}>
@@ -89,16 +119,7 @@ const SlickCeo: React.FC<Props> = (props) => {
           ))}
         </Slider>
 
-        <Slider
-          asNavFor={nav1}
-          ref={slider2}
-          slidesToShow={5}
-          swipeToSlide={true}
-          focusOnSelect={true}
-          centerMode={true}
-          arrows={false}
-          centerPadding="10px"
-        >
+        <Slider asNavFor={nav1} ref={slider2} {...setting}>
           {ceos?.map((a) => (
             <div key={a.id} className="item-slick">
               <div>

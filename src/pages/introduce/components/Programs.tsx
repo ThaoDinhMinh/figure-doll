@@ -14,10 +14,6 @@ export const ViewDiv = styled.div`
   &.container-item {
     width: 25%;
   }
-  &.container {
-    display: flex;
-    justify-content: center;
-  }
   &.image-item {
     padding: 44px 24px 20px 24px;
   }
@@ -66,6 +62,7 @@ export const ViewDiv = styled.div`
   &.btn-foot {
     text-align: center;
     padding: 12px 0 60px 0;
+    margin-top: 16px;
   }
 `
 export const Image = styled.img`
@@ -87,7 +84,6 @@ export const Text = styled.p`
     font-size: 1.3rem;
     font-weight: 200;
     margin: auto;
-    width: 500px;
     padding-top: 20px;
     line-height: 28px;
   }
@@ -139,9 +135,11 @@ const Programs = () => {
       </ViewDiv>
 
       <ViewDiv className="container">
-        {dataProgram.map((a) => (
-          <ProgramComponent key={a.id} item={a} />
-        ))}
+        <div className="d-flex justify-content-between flex-wrap">
+          {dataProgram.map((a) => (
+            <ProgramComponent key={a.id} item={a} />
+          ))}
+        </div>
       </ViewDiv>
       <ViewDiv className="btn-foot">
         <Link to={'/shop'} onClick={() => window.scrollTo(0, 135)}>
