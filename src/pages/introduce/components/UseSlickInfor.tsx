@@ -19,6 +19,9 @@ const botomup = keyframes`
   }
 `
 const ViewDiv = styled.div`
+  .text-space-left {
+    margin-left: 14vw;
+  }
   &.slick-view {
     position: relative;
   }
@@ -37,7 +40,6 @@ const ViewDiv = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 12vw;
   }
   &.grup-scroll-center {
     top: 0;
@@ -149,34 +151,36 @@ const UseSlickInfor = () => {
           <ViewDiv className="text-scroll">
             <ViewDiv className="grup-srcoll">
               <ViewDiv>
-                <Text className="text ">Thật tuyệt vời với dịch vụ Làm đẹp</Text>
+                <Text className="text text-center">Thật tuyệt vời với dịch vụ Làm đẹp</Text>
               </ViewDiv>
-              <ViewDiv>
-                <ViewDiv className="text-extesion">
-                  <FiberManualRecordIcon sx={{ color: '#dcdbdb', fontSize: 12 }} />
-                  <Text className="text-mean-extension ">100% tóc thật</Text>
+              <div className="text-space-left">
+                <ViewDiv>
+                  <ViewDiv className="text-extesion">
+                    <FiberManualRecordIcon sx={{ color: '#dcdbdb', fontSize: 12 }} />
+                    <Text className="text-mean-extension ">100% tóc thật</Text>
+                  </ViewDiv>
                 </ViewDiv>
-              </ViewDiv>
-              <ViewDiv>
-                <ViewDiv className="text-extesion">
-                  <FiberManualRecordIcon sx={{ color: '#dcdbdb', fontSize: 12 }} />
-                  <Text className="text-mean-extension ">Điều trị tự nhiên</Text>
+                <ViewDiv>
+                  <ViewDiv className="text-extesion">
+                    <FiberManualRecordIcon sx={{ color: '#dcdbdb', fontSize: 12 }} />
+                    <Text className="text-mean-extension ">Điều trị tự nhiên</Text>
+                  </ViewDiv>
                 </ViewDiv>
-              </ViewDiv>
 
-              <ViewDiv>
-                <ViewDiv className="text-extesion">
-                  <FiberManualRecordIcon sx={{ color: '#dcdbdb', fontSize: 12 }} />
-                  <Text className="text-mean-extension ">Chất lượng cao</Text>
+                <ViewDiv>
+                  <ViewDiv className="text-extesion">
+                    <FiberManualRecordIcon sx={{ color: '#dcdbdb', fontSize: 12 }} />
+                    <Text className="text-mean-extension ">Chất lượng cao</Text>
+                  </ViewDiv>
                 </ViewDiv>
-              </ViewDiv>
-              <ViewDiv>
-                <ViewDiv className="btn-price">
-                  <Link onClick={() => changeLinkColor(1)} to={'/colection'}>
-                    <Text className="text-button ">Bắt đầu chỉ từ : 1.300k</Text>
-                  </Link>
+                <ViewDiv>
+                  <ViewDiv className="btn-price">
+                    <Link onClick={() => changeLinkColor(1)} to={'/colection'}>
+                      <Text className="text-button ">Bắt đầu chỉ từ : 1.300k</Text>
+                    </Link>
+                  </ViewDiv>
                 </ViewDiv>
-              </ViewDiv>
+              </div>
             </ViewDiv>
           </ViewDiv>
         </ViewDiv>
