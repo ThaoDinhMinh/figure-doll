@@ -64,6 +64,14 @@ export const ViewDiv = styled.div`
       margin-top: 28px;
     }
   }
+
+  @media (max-width: 475px) {
+    .news {
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-top: 28px;
+    }
+  }
 `
 export const Text = styled.p`
   font-weight: 300;

@@ -90,6 +90,9 @@ const Input = styled.input`
   padding: 15px 15px 15px 25px;
   outline: none;
   width: 450px;
+  @media (max-width: 425px) {
+    width: 300px;
+  }
   @media (max-width: 390px) {
     width: 200px;
     padding: 8px;
