@@ -296,6 +296,9 @@ const ViewDiv = styled.div`
     .header-top-top {
       display: none;
     }
+    .g-items-nav {
+      display: none;
+    }
   }
 `
 const Navbar = styled.nav`
