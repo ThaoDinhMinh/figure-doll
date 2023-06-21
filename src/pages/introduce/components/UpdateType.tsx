@@ -64,6 +64,7 @@ export const ViewDiv = styled.div`
       margin-top: 28px;
     }
   }
+
   @media (max-width: 475px) {
     .news {
       padding-left: 20px;

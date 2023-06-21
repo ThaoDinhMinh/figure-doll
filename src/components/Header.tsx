@@ -292,12 +292,10 @@ const ViewDiv = styled.div`
     }
   }
 
-  @media (max-width: 776px) {
+  @media (max-width: 775px) {
     .header-top-top {
       display: none;
     }
-  }
-  @media (max-width: 775px) {
     .g-items-nav {
       display: none;
     }
