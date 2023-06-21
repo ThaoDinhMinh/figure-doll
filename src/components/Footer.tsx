@@ -89,8 +89,7 @@ const Form = styled.form`
 const Input = styled.input`
   padding: 15px 15px 15px 25px;
   outline: none;
-  width: 450px;
-  @media (max-width: 425px) {
+  @media (min-width: 391px) {
     width: 300px;
   }
   @media (max-width: 390px) {

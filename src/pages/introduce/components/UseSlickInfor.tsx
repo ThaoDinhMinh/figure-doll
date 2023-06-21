@@ -21,6 +21,7 @@ const botomup = keyframes`
 const ViewDiv = styled.div`
   .text-space-left {
     margin-left: 14vw;
+    margin-bottom: 20px;
   }
   &.slick-view {
     position: relative;
@@ -105,7 +106,7 @@ const Text = styled.p`
   &.text-head-extension {
     font-size: 2.5rem;
     font-weight: 300;
-    padding: 40px;
+    padding: 40px 0;
     text-align: center;
   }
   &.text-button {
@@ -119,12 +120,20 @@ const Text = styled.p`
       color: black;
     }
   }
+  @media (max-width: 775px) {
+    &.text-button {
+      padding: 12px 8px;
+    }
+    &.text-head-extension {
+      padding: 20px 0;
+    }
+  }
 `
 const Image = styled.img`
   &.img-slick {
     width: 100%;
     display: block;
-    height: calc(100vh - 50px);
+    height: calc(100vh + 75px);
     object-fit: cover;
     overflow: hidden;
   }
@@ -150,8 +159,11 @@ const UseSlickInfor = () => {
 
           <ViewDiv className="text-scroll">
             <ViewDiv className="grup-srcoll">
-              <ViewDiv>
-                <Text className="text text-center">Thật tuyệt vời với dịch vụ Làm đẹp</Text>
+              <ViewDiv className="container">
+                <Text className="text text-center text-lg-start ps-lg-5">
+                  Thật tuyệt vời với dịch vụ
+                  <br /> Làm đẹp
+                </Text>
               </ViewDiv>
               <div className="text-space-left">
                 <ViewDiv>
