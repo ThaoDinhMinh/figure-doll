@@ -564,7 +564,7 @@ const Header = () => {
                   <ExpandMoreIcon sx={{ fontSize: 35, color: '#d3ad69' }} />
                 </div>
               </div>
-              <div className="g-items-nav d-lg-flex justify-content-between align-items-center">
+              <div className="g-items-nav d-lg-flex d-none justify-content-between align-items-center">
                 {nav.map((a) => (
                   <ViewDiv key={a.id} className="nav-item">
                     <Link
