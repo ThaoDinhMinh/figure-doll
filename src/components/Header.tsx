@@ -297,6 +297,11 @@ const ViewDiv = styled.div`
       display: none;
     }
   }
+  @media (max-width: 775px) {
+    .g-items-nav {
+      display: none;
+    }
+  }
 `
 const Navbar = styled.nav`
   display: flex;
